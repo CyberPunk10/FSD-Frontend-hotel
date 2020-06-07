@@ -1,4 +1,8 @@
-const path = require('path');
+// basic vars
+const path = require('path')
+
+// additional plugins
+const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const pug = {
@@ -26,6 +30,7 @@ const config = {
   },
 
   plugins: [
+    new CleanWebpackPlugin(),
     new ExtractTextPlugin(
       {
         filename: 'main.css',
