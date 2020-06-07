@@ -3,13 +3,39 @@ const path = require('path')
 
 // additional plugins
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const pug = {
-  test: /\.pug$/,
-  use: ['html-loader?attrs=false', 'pug-html-loader']
-};
-const config = {
+const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+
+// helping vars
+const isDev = process.env.NODE_ENV === 'development'
+const isProd = !isDev
+console.log(isDev)
+
+const filename = ext => isDev ? `[name].${ext}` : `[name].[hash].${ext}`
+
+const cssLoaders = extra => {
+  const loaders = [
+    {
+      loader: MiniCssExtractPlugin.loader,
+      options: {
+        hmr: isDev,
+        reloadAll: true,
+        publicPath: '../'             /* для ссылок внутри, например для fonts и bgc-image*/
+      },
+    },
+    'css-loader'
+  ]
+
+  if (extra) {
+    loaders.push(extra)
+  }
+
+  return loaders
+}
+
+
+// module settings
+module.exports  = {
   entry: './src/app.js',
   output: {
     path: path.resolve(__dirname, 'dist'),
@@ -17,31 +43,56 @@ const config = {
   },
   module: {
     rules: [
-      pug,
+
+      // PUG
       {
-        test: /\.css$/,
-        use: ExtractTextPlugin.extract(
+        test: /\.pug$/,
+        // use: ['html-loader?attrs=false', 'pug-html-loader']
+        loaders: [
           {
-            fallback: 'style-loader',
-            use: ['css-loader']
-          })
+            loader: 'html-loader?attrs=false',
+            options: {
+              minimize: {
+                removeComments: isDev,  // в 'isDev' на выходе будет читабельный html + комментарии
+                collapseWhitespace: isDev,  // в 'isDev' на выходе будет читабельный html
+              },
+            }
+          },
+          {
+            loader: 'pug-html-loader',
+            options: {
+              "pretty":isDev          // в 'isDev' на выходе будет читабельный html
+            }
+          },
+        ]
       },
+
+      // CSS, SASS, SCSS, LESS
+      {
+        test: /\.css$/i,
+        use: cssLoaders()
+      },
+      //  {
+      //   test: /\.less$/i,
+      //   use: cssLoaders('less-loader')
+      // }, {
+      //   test: /\.s[ac]ss$/i,
+      //   use: cssLoaders('sass-loader')
+      // },
     ],
   },
 
   plugins: [
     new CleanWebpackPlugin(),
-    new ExtractTextPlugin(
-      {
-        filename: 'main.css',
-      }
-    ),
+
     new HtmlWebpackPlugin({
       filename: 'index.html',
       template: 'src/index.pug',
-      inject: false
+      //inject: false             // если оставить false, то не будет генерироваться имя с [hash]
     }),
-
+    new MiniCssExtractPlugin({
+      filename: `./css/${filename('css')}`
+      // filename: `./css/main.css`
+    }),
  ]
-};
-module.exports = config;
+}
