@@ -1,4 +1,4 @@
-# Webpack-02-Pug
+# Webpack-02-Pug (в разработке)
 ## перед запуском нужно выполнить 
 1) `npm install`
 2) `npm run dev`
