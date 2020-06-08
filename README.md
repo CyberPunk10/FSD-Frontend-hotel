@@ -3,5 +3,7 @@
 1) `npm install`
 2) `npm run dev`
 готовые файлы появятся в папке `dist`
-2) `npm run dev`
+3) `npm run dev`
+готовые файлы появятся в папке `dist`
+4) `npm run dev`
 готовые файлы появятся в папке `dist`
