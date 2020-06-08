@@ -3,6 +3,3 @@
 1) `npm install`
 2) `npm run dev`
 готовые файлы появятся в папке `dist`
-3) `npm run dev`
-готовые файлы появятся в папке `dist`
-4) Created new branch
