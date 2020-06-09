@@ -58,8 +58,7 @@ module.exports = {
                 collapseWhitespace: isDev,  // в 'isDev' на выходе будет читабельный html
               },
             }
-          },
-          {
+          }, {
             loader: 'pug-html-loader',
             options: {
               "pretty": isDev          // в 'isDev' на выходе будет читабельный html
@@ -89,7 +88,7 @@ module.exports = {
           {
             loader: 'file-loader',
             options: {
-              name: 'assets/fonts/[name].[ext]'
+              name: 'assets/fonts/[hash].[ext]'
             }
           },
         ]
