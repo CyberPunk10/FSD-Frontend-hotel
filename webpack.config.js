@@ -81,6 +81,20 @@ module.exports = {
         test: /\.s[ac]ss$/i,
         use: cssLoaders('sass-loader')
       },
+
+      // FONTS
+      {
+        test: /\.(ttf|woff|woff2|eot|otf)$/i,
+        loaders: [
+          {
+            loader: 'file-loader',
+            options: {
+              name: 'assets/fonts/[name].[ext]'
+            }
+          },
+        ]
+      },
+
     ],
   },
 
