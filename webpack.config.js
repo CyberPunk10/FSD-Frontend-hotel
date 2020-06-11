@@ -3,7 +3,8 @@ const path = require('path')
 
 // additional plugins
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
-const HtmlWebpackPlugin = require('html-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 
 // helping vars
@@ -35,7 +36,7 @@ const cssLoaders = extra => {
 
 
 // module settings
-module.exports  = {
+module.exports = {
   entry: './src/app.js',
   output: {
     path: path.resolve(__dirname, 'dist'),
@@ -57,11 +58,10 @@ module.exports  = {
                 collapseWhitespace: isDev,  // в 'isDev' на выходе будет читабельный html
               },
             }
-          },
-          {
+          }, {
             loader: 'pug-html-loader',
             options: {
-              "pretty":isDev          // в 'isDev' на выходе будет читабельный html
+              "pretty": isDev          // в 'isDev' на выходе будет читабельный html
             }
           },
         ]
@@ -75,16 +75,35 @@ module.exports  = {
       //  {
       //   test: /\.less$/i,
       //   use: cssLoaders('less-loader')
-      // }, {
-      //   test: /\.s[ac]ss$/i,
-      //   use: cssLoaders('sass-loader')
-      // },
+      // }, 
+      {
+        test: /\.s[ac]ss$/i,
+        use: cssLoaders('sass-loader')
+      },
+
+      // FONTS
+      {
+        test: /\.(ttf|woff|woff2|eot|otf)$/i,
+        loaders: [
+          {
+            loader: 'file-loader',
+            options: {
+              name: 'assets/fonts/[hash].[ext]'
+            }
+          },
+        ]
+      },
+
     ],
   },
 
   plugins: [
     new CleanWebpackPlugin(),
-
+    new CopyWebpackPlugin({
+      patterns: [
+        { from: 'src/images', to: 'images' }
+      ],
+    }),
     new HtmlWebpackPlugin({
       filename: 'index.html',
       template: 'src/index.pug',
@@ -94,5 +113,5 @@ module.exports  = {
       filename: `./css/${filename('css')}`
       // filename: `./css/main.css`
     }),
- ]
+  ]
 }

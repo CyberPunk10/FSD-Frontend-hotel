@@ -1,5 +1,4 @@
 include ./components/plan/plan
-include ./components/testpug/testpug
 
 doctype html
 html(lang="ru")
@@ -16,51 +15,5 @@ html(lang="ru")
       +plan({title: "business", price: 50, isBusiness: true})
       +plan({title: "ultimate", price: 99})
 
-    .wrapper
-      +testpug({title: "free", price: 0})
-
-
-    p.
-      Minus exercitationem cum porro soluta illum, aperiam asperiores eaque molestias ipsa eum aliquam, dolore vel optio saepe, vero nihil? Cupiditate!.
-    
-    
-    nav.menu
-      ul.menu__list
-        each value, index in {'Глвная' : 'home','О компании' : 'about','Услуги' : 'services','Каталог' : 'catalog','Контакты' : 'contact'}
-          li
-            a(href="/" + value + ".html")= index
-    
-
-    - var i = 0;
-    ul.list
-      while i < 4
-        li= i++
-    
-
-    mixin listItems(name="Значение по умлочанию")
-      ul.list-items
-        li= name
-        li= name
-
-    +listItems('One')
-    +listItems(22)
-    +listItems(33)
-    +listItems(44)
-    +listItems(55)
-    +listItems()
-
-    //- Mixin declaration
-    mixin article(title)
-      article.article
-        h1= title
-        if block
-          block
-        else
-          p Нет контента для отображения
-
-    //- Call mixin
-    +article("Заголовок страницы")
-      p Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-      p Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-
-    
+    .wrap 
+      include ./components/testpug/testpug
