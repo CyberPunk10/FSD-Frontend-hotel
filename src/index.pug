@@ -5,13 +5,12 @@ html(lang="ru")
   head
     meta(charset="UTF-8")
     title Пример страницы
-    link(rel="stylesheet" type="text/css" href="main.css")
+    //- link(href="./css/main.css" rel="stylesheet" type="text/css")
 
   body
     .wrapper
       +plan({title: "free", price: 0})
       +plan({title: "personal", price: 25})
-      +plan({title: "business", price: 50, isBusiness: true})
       +plan({title: "business", price: 50, isBusiness: true})
       +plan({title: "ultimate", price: 99})
 
