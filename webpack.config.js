@@ -41,14 +41,19 @@ module.exports = {
   // базовый путь к проекту
   context: path.resolve(__dirname),
 
-  // точка входа js
-  entry: './src/app.js',      // основной файл приложения
+  // точка входа (основной файл приложения)
+  entry: {
+    app: [
+      '@babel/polyfill',            // полифил babel
+      './src/app.js'
+    ],
+  },
 
   // путь для собранных файлов
   output: {
-    path: path.resolve(__dirname, 'dist'),
-    // publicPath: "/",                // возможно нужен, пока не разобрался
-    filename: '[name].bundle.js'
+    path: path.resolve(__dirname, './dist'),
+    filename: '[name].bundle.js',
+    // publicPath: "/"                // для dev-server (если включить, то будет преоритетнее, чем 'contentBase' в настройках devServer)
   },
 
   // dev-server configuration
@@ -57,9 +62,24 @@ module.exports = {
     port: 8521,
   },
 
+  // в панеле devtool показывает исходный несжатый код и помогает отслеживать исходные файлы этого кода
+  devtool: isDev ? 'source-map' : '',
+
   // module
   module: {
     rules: [
+
+      // JS + BABEL
+      {
+        test: /\.m?js$/,
+        exclude: /(node_modules|bower_components)/,         // что такое 'bower_components' - имею плохое представление
+        use: {
+          loader: 'babel-loader',
+          options: {
+            presets: ['@babel/preset-env']
+          }
+        }
+      },
 
       // PUG
       {
