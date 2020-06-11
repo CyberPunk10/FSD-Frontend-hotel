@@ -53,7 +53,7 @@ module.exports = {
 
   // dev-server configuration
   devServer: {
-    contentBase: './dist',
+    contentBase: 'dist',
     port: 8521,
   },
 
