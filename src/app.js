@@ -2,12 +2,7 @@
 import './main.sass'
 import './sass/style.sass'
 
-let i = 5
-let j = function (i) { console.log(i) };
-let k = i => { console.log(i) }
-
-j()
-k()
-
-console.log(j)
-console.log(k)
+// проверка ES6 синтаксиса
+let i = 'проверка ES6 синтаксиса'
+let k = value => console.log(value)
+k(i)
