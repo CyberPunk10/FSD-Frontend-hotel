@@ -16,6 +16,7 @@ const filename = ext => isDev ? `[name].${ext}` : `[name].[hash].${ext}`
 
 const cssLoaders = extra => {
   const loaders = [
+    // 'style-loader',                // возможно нужен, пока не разобрался
     {
       loader: MiniCssExtractPlugin.loader,
       options: {
@@ -37,11 +38,26 @@ const cssLoaders = extra => {
 
 // module settings
 module.exports = {
-  entry: './src/app.js',
+  // базовый путь к проекту
+  context: path.resolve(__dirname),
+
+  // точка входа js
+  entry: './src/app.js',      // основной файл приложения
+
+  // путь для собранных файлов
   output: {
     path: path.resolve(__dirname, 'dist'),
+    // publicPath: "/",                // возможно нужен, пока не разобрался
     filename: '[name].bundle.js'
   },
+
+  // dev-server configuration
+  devServer: {
+    contentBase: './dist',
+    port: 8521,
+  },
+
+  // module
   module: {
     rules: [
 
