@@ -6,4 +6,4 @@
 
 Из .gitignore убрана папка 'dist/', которая, теперь, является корнеыой для GitHub Pages
 
-[Ссылка на GitHub Pages](https://cyberpunk10.github.io/FSD-Frontend-hotel/.)
+[Ссылка на GitHub Pages](https://cyberpunk10.github.io/FSD-Frontend-hotel/dist "перейти на сайт")
