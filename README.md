@@ -11,7 +11,11 @@
 
 Из .gitignore убрана папка 'dist/', которая, теперь, является корневой для GitHub Pages
 <hr>
+
 В Webpack есть: Pug, Sass, Babel + Polyfill, DevServer, ClearWebpackPlugin, CopyWebpackPlugin, MiniCssExtractPlugin.
+<hr>
+
+
 
 
 
