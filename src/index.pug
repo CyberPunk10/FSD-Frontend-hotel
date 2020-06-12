@@ -1,18 +1,55 @@
-include ./components/plan/plan
+extends ./templates/_template.pug
 
-doctype html
-html(lang="ru")
-  head
-    meta(charset="UTF-8")
-    title Пример страницы
-    //- link(href="./css/main.css" rel="stylesheet" type="text/css")
+block title
+  title Home
 
-  body
+block basicSeo
+  meta(name='description' content='Home Page')
+  meta(name='keywords', content='main page, home page')
+  meta(name='author' content='CyberPunk10')
+
+block links
+  link(href='')
+
+block content
+
+  section.page
+    //- header
+    //- include ./components/header/header
+
+    //- colors_type
+    include ./pages/colors_type.pug
+
+    //- form_elements
+    include ./pages/form_elements
+
+    //- cards
+    include ./pages/cards
+
+    //- headers_footers
+    include ./pages/headers_footers
+    
+    //- content
+    //- include ./components/main/main_content
+
+
+
+
+
+//- include ./components/plan/plan
+
+//- doctype html
+//- html(lang="ru")
+//-   head
+//-     meta(charset="UTF-8")
+//-     title Пример страницы
+//-     //- link(href="./css/main.css" rel="stylesheet" type="text/css")
+
+//-   body
+
     .wrapper
       +plan({title: "free", price: 0})
       +plan({title: "personal", price: 25})
       +plan({title: "business", price: 50, isBusiness: true})
       +plan({title: "ultimate", price: 99})
 
-    .wrap 
-      include ./components/testpug/testpug
