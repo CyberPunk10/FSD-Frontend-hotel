@@ -1,0 +1,79 @@
+/* src/assets/styles/base/_fonts.scss  */
+
+/*
+ * Helvetica Neue Cyr
+ */
+
+// @font-face {
+//   font-family: "Helvetica";
+//   font-weight: 700;
+//   src: url("@~fonts/HelveticaNeueCyr-Bold.otf");
+// }
+
+// @font-face {
+//   font-family: "Helvetica";
+//   font-weight: 500;
+//   src: url("@~fonts/HelveticaNeueCyr-Medium.otf");
+// }
+
+// @font-face {
+//   font-family: "Helvetica";
+//   font-weight: 400;
+//   src: url("@~fonts/HelveticaNeue-Regular.woff2");
+// }
+
+// @font-face {
+//   font-family: "Helvetica";
+//   font-weight: 300;
+//   src: url("@~fonts/HelveticaNeueCyr-light.otf");
+// }
+
+
+// $helvetica: "Helvetica", sans-serif;
+
+
+// /*
+//  * Quicksand
+//  */
+
+// @font-face {
+//   font-family: "Quicksand";
+//   font-weight: 700;
+//   src: url("@~fonts/Quicksand-Bold.woff");
+// }
+
+// @font-face {
+//   font-family: "Quicksand";
+//   font-weight: 500;
+//   src: url("@~fonts/Quicksand-Medium.woff");
+// }
+
+// @font-face {
+//   font-family: "Quicksand";
+//   font-weight: 400;
+//   src: url("@~fonts/Quicksand-Regular.woff");
+// }
+
+// @font-face {
+//   font-family: "Quicksand";
+//   font-weight: 300;
+//   src: url("@~fonts/Quicksand-Light.woff");
+// }
+
+// $quicksand: "Quicksand", sans-serif;
+
+
+/*
+ * ExoSoft
+ */
+
+@font-face {
+  font-family: 'ExoSoft';
+  src: url('./assets/fonts/ExoSoft-Medium.eot');
+  src: url('./assets/fonts/ExoSoft-Medium.eot?#iefix') format('embedded-opentype'),
+      url('./assets/fonts/ExoSoft-Medium.woff2') format('woff2'),
+      url('./assets/fonts/ExoSoft-Medium.woff') format('woff'),
+      url('./assets/fonts/ExoSoft-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+}

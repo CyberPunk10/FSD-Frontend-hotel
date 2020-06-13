@@ -1,17 +1,34 @@
-@import "styles/index";
+// @import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css");
+// @import "normalize.css";
 
-@import "components/button/_button.sass";
-@import "components/plan/_plan.sass";
+/*
+ *  Base 
+ */
+@import "./styles/base/fonts";
+// @import "./base/normalize.scss";
 
-body 
-  font-family: 'Source Sans Pro', Arial, sans-serif
-  font-size: 18px
-  line-height: 1.45
-  color: #999
-  -webkit-font-smoothing: antialiased
+/*
+ * mixins
+ */
+@import "./styles/mixins/mixins";
 
-.wrapper 
-  display: flex
-  justify-content: space-around
-  flex-wrap: wrap
+/*
+ * Utils
+ */
+@import "./styles/utils/_index_utils";
+
+/*
+ * Components
+ */
+@import "./components/_index_components";
+
+/*
+ * Layout
+ */
+@import "./styles/common/_general";
+
+/*
+ * Pages
+ */
+@import "./pages/_index_pages";
 

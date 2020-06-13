@@ -137,7 +137,7 @@ module.exports = {
     new CleanWebpackPlugin(),
     new CopyWebpackPlugin({       // плагин просто копирует, без какой-либо дополнительной обработки
       patterns: [
-        { from: 'src/images', to: 'images' },
+        { from: 'src/assets/images', to: 'assets/images' },
         // { from: 'src/assets/fonts', to: 'assets/fonts' }
       ],
     }),
