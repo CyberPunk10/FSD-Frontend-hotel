@@ -39,13 +39,13 @@ const cssLoaders = extra => {
 // module settings
 module.exports = {
   // базовый путь к проекту
-  context: path.resolve(__dirname),
+  context: path.resolve(__dirname, "src"),
 
   // точка входа (основной файл приложения)
   entry: {
     app: [
       '@babel/polyfill',            // полифил babel
-      './src/app.js'
+      './app.js'
     ],
   },
 
@@ -137,13 +137,13 @@ module.exports = {
     new CleanWebpackPlugin(),
     new CopyWebpackPlugin({       // плагин просто копирует, без какой-либо дополнительной обработки
       patterns: [
-        { from: 'src/assets/images', to: 'assets/images' },
-        // { from: 'src/assets/fonts', to: 'assets/fonts' }
+        { from: 'assets/images', to: 'assets/images' },
+        // { from: 'assets/fonts', to: 'assets/fonts' }
       ],
     }),
     new HtmlWebpackPlugin({
       filename: 'index.html',
-      template: 'src/index.pug',
+      template: 'index.pug',
       //inject: false             // если оставить false, то не будет генерироваться имя с [hash]
     }),
     new MiniCssExtractPlugin({
