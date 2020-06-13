@@ -10,7 +10,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 // helping vars
 const isDev = process.env.NODE_ENV === 'development'
 const isProd = !isDev
-console.log(isDev)
+console.log("isDev: ", isDev)
 
 const filename = ext => isDev ? `[name].${ext}` : `[name].[hash].${ext}`
 
@@ -110,7 +110,7 @@ module.exports = {
       },
       //  {
       //   test: /\.less$/i,
-      //   use: cssLoaders('less-loader')
+      //   use: cssLoaders('less-loader')  // если нужен Less, то надо ставить less-loader и может ещё что-то, гугли
       // }, 
       {
         test: /\.s[ac]ss$/i,
@@ -135,9 +135,10 @@ module.exports = {
 
   plugins: [
     new CleanWebpackPlugin(),
-    new CopyWebpackPlugin({
+    new CopyWebpackPlugin({       // плагин просто копирует, без какой-либо дополнительной обработки
       patterns: [
-        { from: 'src/images', to: 'images' }
+        { from: 'src/images', to: 'images' },
+        // { from: 'src/assets/fonts', to: 'assets/fonts' }
       ],
     }),
     new HtmlWebpackPlugin({
