@@ -8,10 +8,13 @@ html,
 body 
   height: 100%
 
-body 
-  //@include container(964)
-  // font-family: $quicksand
+html
+  font-size: 10px     // 1rem = 10px
+
+body
+  background-color: #e5e5e5
   font-size: 14px
+  @include container()
   // background: $darkslategray
 
 // .container 
@@ -49,7 +52,6 @@ li
 // 
 
 body 
-  font-family: 'Source Sans Pro', Arial, sans-serif
   // font-family: 'ExoSoft', Arial, sans-serif
   line-height: 1.45
   color: #999
@@ -59,3 +61,6 @@ body
   display: flex
   justify-content: space-around
   flex-wrap: wrap
+
+section.section
+  background-color: #fff

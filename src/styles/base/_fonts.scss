@@ -32,35 +32,35 @@
 // $helvetica: "Helvetica", sans-serif;
 
 
-// /*
-//  * Quicksand
-//  */
+/*
+ * Quicksand
+ */
 
-// @font-face {
-//   font-family: "Quicksand";
-//   font-weight: 700;
-//   src: url("@~fonts/Quicksand-Bold.woff");
-// }
+@font-face {
+  font-family: "Quicksand";
+  font-weight: 700;
+  src: url("assets/fonts/Quicksand-Bold.woff");
+}
 
-// @font-face {
-//   font-family: "Quicksand";
-//   font-weight: 500;
-//   src: url("@~fonts/Quicksand-Medium.woff");
-// }
+@font-face {
+  font-family: "Quicksand";
+  font-weight: 500;
+  src: url("assets/fonts/Quicksand-Medium.woff");
+}
 
-// @font-face {
-//   font-family: "Quicksand";
-//   font-weight: 400;
-//   src: url("@~fonts/Quicksand-Regular.woff");
-// }
+@font-face {
+  font-family: "Quicksand";
+  font-weight: 400;
+  src: url("assets/fonts/Quicksand-Regular.woff");
+}
 
-// @font-face {
-//   font-family: "Quicksand";
-//   font-weight: 300;
-//   src: url("@~fonts/Quicksand-Light.woff");
-// }
+@font-face {
+  font-family: "Quicksand";
+  font-weight: 300;
+  src: url("assets/fonts/Quicksand-Light.woff");
+}
 
-// $quicksand: "Quicksand", sans-serif;
+$quicksand: "Quicksand", Arial, sans-serif;
 
 
 /*
@@ -69,11 +69,11 @@
 
 @font-face {
   font-family: 'ExoSoft';
-  src: url('./assets/fonts/ExoSoft-Medium.eot');
-  src: url('./assets/fonts/ExoSoft-Medium.eot?#iefix') format('embedded-opentype'),
-      url('./assets/fonts/ExoSoft-Medium.woff2') format('woff2'),
-      url('./assets/fonts/ExoSoft-Medium.woff') format('woff'),
-      url('./assets/fonts/ExoSoft-Medium.ttf') format('truetype');
+  src: url('assets/fonts/ExoSoft-Medium.eot');
+  src: url('assets/fonts/ExoSoft-Medium.eot?#iefix') format('embedded-opentype'),
+      url('assets/fonts/ExoSoft-Medium.woff2') format('woff2'),
+      url('assets/fonts/ExoSoft-Medium.woff') format('woff'),
+      url('assets/fonts/ExoSoft-Medium.ttf') format('truetype');
   font-weight: 500;
   font-style: normal;
 }
