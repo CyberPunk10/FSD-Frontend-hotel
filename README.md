@@ -15,6 +15,7 @@
 В Webpack есть: Pug, Sass, Babel + Polyfill, DevServer, ClearWebpackPlugin, CopyWebpackPlugin, MiniCssExtractPlugin.
 <hr>
 
+Точка входа: src/app.js
 
 
 
