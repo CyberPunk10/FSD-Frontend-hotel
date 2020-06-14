@@ -10,13 +10,13 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 // helping vars
 const isDev = process.env.NODE_ENV === 'development'
 const isProd = !isDev
-console.log(isDev)
+console.log("isDev: ", isDev)
 
-const filename = ext => isDev ? `[name].${ext}` : `[name].[hash].${ext}`
+const filename = ext => isDev ? `[name].${ext}` : `[name].[hash:10].${ext}`
 
 const cssLoaders = extra => {
   const loaders = [
-    // 'style-loader',                // возможно нужен, пока не разобрался
+    // 'style-loader',                // возможно нужен, пока не разобрался.. возможно нужен только для isDev
     {
       loader: MiniCssExtractPlugin.loader,
       options: {
@@ -39,26 +39,26 @@ const cssLoaders = extra => {
 // module settings
 module.exports = {
   // базовый путь к проекту
-  context: path.resolve(__dirname),
+  context: path.resolve(__dirname, "src"),
 
   // точка входа (основной файл приложения)
   entry: {
     app: [
       '@babel/polyfill',            // полифил babel
-      './src/app.js'
+      './app.js'
     ],
   },
 
   // путь для собранных файлов
   output: {
-    path: path.resolve(__dirname, './dist'),
-    filename: '[name].bundle.js',
+    path: path.resolve(__dirname, 'dist'),
+    filename: '[name].[hash:10].bundle.js',
     // publicPath: "/"                // для dev-server (если включить, то будет преоритетнее, чем 'contentBase' в настройках devServer)
   },
 
   // dev-server configuration
   devServer: {
-    contentBase: 'dist',
+    contentBase: path.join(__dirname, 'dist'),
     port: 8521,
   },
 
@@ -110,7 +110,7 @@ module.exports = {
       },
       //  {
       //   test: /\.less$/i,
-      //   use: cssLoaders('less-loader')
+      //   use: cssLoaders('less-loader')  // если нужен Less, то надо ставить less-loader и может ещё что-то, гугли
       // }, 
       {
         test: /\.s[ac]ss$/i,
@@ -124,7 +124,10 @@ module.exports = {
           {
             loader: 'file-loader',
             options: {
-              name: 'assets/fonts/[hash].[ext]'
+              name: `assets/fonts/${filename('')}[ext]`,
+              // name: 'assets/fonts/[hash].[ext]'
+              esModule: false, // По умолчанию file-loader экспортирует файл в виде ES-модуля. Изменить это можно опцией esModule: false. Если true, то, несмотря на то, что шрифты копируются, они, почему-то не подгружаюся на страницу, при этом ошибок нет. 
+
             }
           },
         ]
@@ -135,15 +138,16 @@ module.exports = {
 
   plugins: [
     new CleanWebpackPlugin(),
-    new CopyWebpackPlugin({
+    new CopyWebpackPlugin({       // плагин просто копирует, без какой-либо дополнительной обработки
       patterns: [
-        { from: 'src/images', to: 'images' }
+        { from: 'assets/images', to: 'assets/images' },
+        // { from: 'assets/fonts', to: 'assets/fonts' }
       ],
     }),
     new HtmlWebpackPlugin({
       filename: 'index.html',
-      template: 'src/index.pug',
-      //inject: false             // если оставить false, то не будет генерироваться имя с [hash]
+      template: 'index.pug',
+      //inject: false             // если оставить false, то внутри не будут генерироваться  пути с именами, включающими [hash].. вроде так
     }),
     new MiniCssExtractPlugin({
       filename: `./css/${filename('css')}`

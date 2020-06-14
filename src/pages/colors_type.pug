@@ -1,0 +1,42 @@
+mixin color-template(options)
+  -
+    var title = options.title || "Name color"
+    var colorHex = options.color || "HEX #..."
+    var boxClassName = "color-template__box"
+    boxClassName += ` color-template__box_${options.colorBox}`|| ""
+    
+  .color-template
+    div(class = boxClassName)
+    .color-template__description
+      h2= title
+      p= colorHex
+
+
+//- mixin section-pages()
+
+section.section
+  h3.section__title Colors & Type
+  .section__logo
+  .wrap.colors
+    +color-template({title: "Dark Shade 100%",  color: "#1F2041", colorBox: "color-dark-shade-100"})
+    +color-template({title: "Dark Shade 75%", color: "#1F2041", colorBox: "color-dark-shade-75"})
+    +color-template({title: "Dark Shade 50%", color: "#1F2041", colorBox: "color-dark-shade-50"})
+    +color-template({title: "Dark Shade 25%", color: "#1F2041", colorBox: "color-dark-shade-25"})
+    +color-template({title: "Dark Shade 5%", color: "#1F2041", colorBox: "color-dark-shade-5"})
+    +color-template({title: "Purple", color: "#BC9CFF", colorBox: "color-purple"})
+    +color-template({title: "Green", color: "#6FCF97", colorBox: "color-green"})
+  
+    .typography-template
+      .typography-template__wrap
+        p.typography-template__tag.typography-template__tag_fz-24.typography-template__tag_color-dark-shade-25 H1 
+        h1.typography-template__exemple This one is the sub-section or widget title
+      .typography-template__wrap
+        p.typography-template__tag.typography-template__tag_fz-19.typography-template__tag_color-dark-shade-25 H2
+        h2.typography-template__exemple Next one is the item title inside widgets
+      .typography-template__wrap
+        p.typography-template__tag.typography-template__tag_fz-12.typography-template__tag_color-dark-shade-25 H3
+        h3.typography-template__exemple This is a label or CTA text
+      .typography-template__wrap
+        p.typography-template__tag.typography-template__tag_fz-14.typography-template__tag_color-dark-shade-25 Body
+        p.typography-template__exemple This is the body text which is used for most of the design, like paragraphs, lists, etc.
+    
