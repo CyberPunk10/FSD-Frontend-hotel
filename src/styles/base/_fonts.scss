@@ -1,79 +1,69 @@
 /* src/assets/styles/base/_fonts.scss  */
 
-/*
- * Helvetica Neue Cyr
- */
-
-// @font-face {
-//   font-family: "Helvetica";
-//   font-weight: 700;
-//   src: url("@~fonts/HelveticaNeueCyr-Bold.otf");
-// }
-
-// @font-face {
-//   font-family: "Helvetica";
-//   font-weight: 500;
-//   src: url("@~fonts/HelveticaNeueCyr-Medium.otf");
-// }
-
-// @font-face {
-//   font-family: "Helvetica";
-//   font-weight: 400;
-//   src: url("@~fonts/HelveticaNeue-Regular.woff2");
-// }
-
-// @font-face {
-//   font-family: "Helvetica";
-//   font-weight: 300;
-//   src: url("@~fonts/HelveticaNeueCyr-light.otf");
-// }
-
-
-// $helvetica: "Helvetica", sans-serif;
+// http://www.font2web.com/ , https://transfonter.org/
 
 
 /*
- * Quicksand
+ *  Montserrat
  */
 
 @font-face {
-  font-family: "Quicksand";
-  font-weight: 700;
-  src: url("assets/fonts/Quicksand-Bold.woff");
-}
-
-@font-face {
-  font-family: "Quicksand";
-  font-weight: 500;
-  src: url("assets/fonts/Quicksand-Medium.woff");
-}
-
-@font-face {
-  font-family: "Quicksand";
-  font-weight: 400;
-  src: url("assets/fonts/Quicksand-Regular.woff");
-}
-
-@font-face {
-  font-family: "Quicksand";
-  font-weight: 300;
-  src: url("assets/fonts/Quicksand-Light.woff");
-}
-
-$quicksand: "Quicksand", Arial, sans-serif;
-
-
-/*
- * ExoSoft
- */
-
-@font-face {
-  font-family: 'ExoSoft';
-  src: url('assets/fonts/ExoSoft-Medium.eot');
-  src: url('assets/fonts/ExoSoft-Medium.eot?#iefix') format('embedded-opentype'),
-      url('assets/fonts/ExoSoft-Medium.woff2') format('woff2'),
-      url('assets/fonts/ExoSoft-Medium.woff') format('woff'),
-      url('assets/fonts/ExoSoft-Medium.ttf') format('truetype');
-  font-weight: 500;
+	font-family: 'Montserrat';
+	src: url('assets/fonts/Montserrat-Regular.eot');
+  src: url('assets/fonts/Montserrat-Regular.eot?#iefix') format('embedded-opentype'),
+       url('assets/fonts/Montserrat-Regular.woff') format('woff2'),
+       url('assets/fonts/Montserrat-Regular.woff') format('woff'),
+       url('assets/fonts/Montserrat-Regular.ttf') format('truetype');
+      //  url('assets/fonts/Montserrat-Regular.svg') format('svg');
+	font-weight: normal;
   font-style: normal;
+  font-display: swap; // параметр swap, который не дожидаясь подгрузки вашего красивого и тяжёлого шрифта показывает текст в браузере используя встроенный в этот же браузер шрифт (например sans-serif)
 }
+
+@font-face {
+	font-family: 'Montserrat';
+	src: url('assets/fonts/Montserrat-Bold.eot');
+  src: url('assets/fonts/Montserrat-Bold.eot?#iefix') format('embedded-opentype'),
+       url('assets/fonts/Montserrat-Bold.woff') format('woff2'),
+       url('assets/fonts/Montserrat-Bold.woff') format('woff'),
+       url('assets/fonts/Montserrat-Bold.ttf') format('truetype');
+      //  url('assets/fonts/Montserrat-Bold.svg') format('svg');
+	font-weight: bold;
+  font-style: normal;
+  font-display: swap; // параметр swap, который не дожидаясь подгрузки вашего красивого и тяжёлого шрифта показывает текст в браузере используя встроенный в этот же браузер шрифт (например sans-serif)
+}
+
+$Montserrat: "Montserrat", Arial, sans-serif;
+
+
+/*
+ *  Quicksand
+ */
+
+ @font-face {
+  font-family: "Quicksand";
+  src: url('assets/fonts/Quicksand-Regular.eot');
+  src: url('assets/fonts/Quicksand-Regular.eot?#iefix') format('embedded-opentype'),
+       url('assets/fonts/Quicksand-Regular.woff') format('woff2'),
+       url('assets/fonts/Quicksand-Regular.woff') format('woff'),
+       url('assets/fonts/Quicksand-Regular.ttf') format('truetype');
+      //  url('assets/fonts/Quicksand-Regular.svg') format('svg');
+	font-weight: normal;
+  font-style: normal;
+  font-display: swap; // параметр swap, который не дожидаясь подгрузки вашего красивого и тяжёлого шрифта показывает текст в браузере используя встроенный в этот же браузер шрифт (например sans-serif)
+}
+
+@font-face {
+  font-family: "Quicksand";
+  src: url('assets/fonts/Quicksand-Bold.eot');
+  src: url('assets/fonts/Quicksand-Bold.eot?#iefix') format('embedded-opentype'),
+       url('assets/fonts/Quicksand-Bold.woff') format('woff2'),
+       url('assets/fonts/Quicksand-Bold.woff') format('woff'),
+       url('assets/fonts/Quicksand-Bold.ttf') format('truetype');
+      //  url('assets/fonts/Quicksand-Bold.svg') format('svg');
+	font-weight: normal;
+  font-style: normal;
+  font-display: swap; // параметр swap, который не дожидаясь подгрузки вашего красивого и тяжёлого шрифта показывает текст в браузере используя встроенный в этот же браузер шрифт (например sans-serif)
+}
+
+$Quicksand: "Quicksand", Arial, sans-serif;
