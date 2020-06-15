@@ -1,5 +1,11 @@
 /* src\pages\_colors_type.sass */
 
+.content-colors-type
+  display: flex
+  justify-content: space-around
+  padding-top: 13.5rem
+  padding-bottom: 13.5rem
+
 .color-template
   display: flex
   align-items: center
@@ -8,7 +14,7 @@
     width: 70px
     height: 70px
     border-radius: 6px
-    margin: 10px 40px 10px
+    margin: 10px 40px 10px 0
 
     &_color-dark-shade-100
       background-color: $color-dark-shade-100
@@ -26,17 +32,24 @@
       background-color: $color-green
  
 
-  // &__description
-  //   h2
-  //   p
+  &__description
+    font-size: 19px
+    font-family: $Quicksand
+    p
+      line-height: 30px
+    
+
 .typography-template
-  &__wrap
-    padding: 2.5rem
-    display: flex
+  padding-bottom: 5rem
+  display: flex
+  max-width: 42rem
   &__tag
     margin-right: 3rem
     min-width: 4.5rem
-    text-align: right
+    display: flex
+    align-items: flex-start
+    justify-content: flex-end
+
     &_fz-24
       font-size: 24px
     &_fz-19
@@ -50,3 +63,4 @@
 
 
 
+      
