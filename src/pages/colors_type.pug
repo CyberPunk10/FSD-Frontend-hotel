@@ -1,23 +1,10 @@
 include ../components/section-pages/section-pages.pug
-
-//- mixin color-template()
-mixin color-template(options)
-  -
-    var title = options.title || "Name color"
-    var colorHex = options.color || "HEX #..."
-    var boxClassName = "color-template__box"
-    boxClassName += ` color-template__box_${options.colorBox}`|| ""
-    
-  .color-template
-    div(class = boxClassName)
-    .color-template__description
-      h2= title
-      p= colorHex
+include ../components/color-template/color-template.pug
 
 
 +section-pages('Colors & Type')
   .content-colors-type
-    .wrap
+    .wrap-color-template
       +color-template({title: "Dark Shade 100%",  color: "#1F2041", colorBox: "color-dark-shade-100"})
       +color-template({title: "Dark Shade 75%", color: "#1F2041", colorBox: "color-dark-shade-75"})
       +color-template({title: "Dark Shade 50%", color: "#1F2041", colorBox: "color-dark-shade-50"})
@@ -26,17 +13,7 @@ mixin color-template(options)
       +color-template({title: "Purple", color: "#BC9CFF", colorBox: "color-purple"})
       +color-template({title: "Green", color: "#6FCF97", colorBox: "color-green"})
     
-    .wrap
-      .typography-template
-        p.typography-template__tag.typography-template__tag_fz-24.typography-template__tag_color-dark-shade-25 H1 
-        h1.typography-template__exemple This one is the sub-section or widget title
-      .typography-template
-        p.typography-template__tag.typography-template__tag_fz-19.typography-template__tag_color-dark-shade-25 H2
-        h2.typography-template__exemple Next one is the item title inside widgets
-      .typography-template
-        p.typography-template__tag.typography-template__tag_fz-12.typography-template__tag_color-dark-shade-25 H3
-        h3.typography-template__exemple This is a label or CTA text
-      .typography-template
-        p.typography-template__tag.typography-template__tag_fz-14.typography-template__tag_color-dark-shade-25 Body
-        p.typography-template__exemple.typography-template__tag_color-dark-shade-75.line-height-large This is the body text which is used for most <br> of the design, like paragraphs, lists, etc.
+    .wrap-typography-template
+      include ../components/typography-template/typography-template.pug
+
     

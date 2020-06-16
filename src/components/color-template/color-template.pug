@@ -1,0 +1,12 @@
+mixin color-template(options)
+  -
+    var title = options.title || "Name color"
+    var colorHex = options.color || "HEX #..."
+    var boxClassName = "color-template__box"
+    boxClassName += ` color-template__box_${options.colorBox}`|| ""
+
+  .color-template
+    div(class = boxClassName)
+    .color-template__description
+      h2= title
+      p= colorHex
