@@ -1,5 +1,11 @@
 include ../components/section-pages/section-pages.pug
 
 +section-pages('Form Elements')
-  hr
-  p form_elements.pug подключен
+  .content-form-elements
+
+    .text-field
+      .text-field__flex-titles
+        h3.text-field__title Text Field
+        p.text-field__subtitle default
+      input(class="text-field__input" placeholder="Email")
+
