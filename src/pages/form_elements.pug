@@ -1,11 +1,60 @@
 include ../components/section-pages/section-pages.pug
+include ../components/form-element-title/form-element-title.pug
 
-+section-pages('Form Elements')
+mixin text-field-or-dropdown(options)
+  -
+    var b = "text-field-or-dropdown"
+    var state = options.state || '_hover-focus' || ''
+    var placeholder = options.placeholder || 'Email'
+    var value = options.value || ''
+    //- var focus = options.autofocus ? autofocus : ''
+
+  div(class= b)
+    input(type="text" autofocus class=`${b}__input-or-btn ${b}__input-or-btn${hoverFocusClassName}` value=value placeholder=placeholder)
+
++section-pages("Form Elements")
   .content-form-elements
+    
+    +form-element-title({state: "default"})
+      +text-field-or-dropdown({})
+      //- input(type="text" class=`${b}__input-or-btn ${b}__input-or-btn${hoverFocusClassName}` placeholder= placeholder)
+    
+    +form-element-title({state: "hover-focus"})
+      +text-field-or-dropdown({autofocus: "true", value: "This is pretty awesome"})
+      //- input(type="text" class=`${b}__input-or-btn ${b}__input-or-btn${hoverFocusClassName}` placeholder= placeholder)
+    
+    +form-element-title({state: "default"})
+      +text-field-or-dropdown({})
+      //- input(type="text" class=`${b}__input-or-btn ${b}__input-or-btn${hoverFocusClassName}` placeholder= placeholder)
 
-    .text-field
-      .text-field__flex-titles
-        h3.text-field__title Text Field
-        p.text-field__subtitle default
-      input(class="text-field__input" placeholder="Email")
+    +form-element-title({state: "default"})
+      +text-field-or-dropdown({})
+    
+    +form-element-title({state: "default"})
+      +text-field-or-dropdown({state: "hover/focus", placeholder: "This is pretty awesome"})
 
+    .text-field-or-dropdown
+      .text-field-or-dropdown__flex-titles
+        h3 dropdown
+        p.text-field-or-dropdown__state default
+      button.text-field-or-dropdown__input-or-btn.text-field-or-dropdown__input-or-btn_isClickable Сколько гостей
+      .text-field-or-dropdown__dropdown-content
+        a(href="#" class="text-field-or-dropdown__link") Link 1
+        a(href="#" class="text-field-or-dropdown__link") Link 2
+        a(href="#" class="text-field-or-dropdown__link") Link 3
+
+    +text-field-or-dropdown({title: "Masked text Field"})
+
+    .grid-container-form-elements
+      .cell 1
+      .cell2 2
+      .cell 3
+      .cell2 4
+      .cell 5
+      .cell2 6
+      .cell 7
+      .cell 8
+      .cell 9
+      .cell 10
+      .cell 11
+      .cell 12
