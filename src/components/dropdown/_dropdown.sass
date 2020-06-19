@@ -1,0 +1,76 @@
+.dropbtn 
+  background-color: #3498DB  // Кнопка выпадающего списка
+  color: white
+  padding: 16px
+  font-size: 16px
+  border: none
+  cursor: pointer
+  &:hover, &:focus             // Кнопка выпадающего меню при наведении и фокусировке
+    background-color: #2980B9
+
+.dropdown                      // Контейнер <div> - необходим для размещения выпадающего содержимого
+  position: relative
+  display: inline-block
+
+.dropdown-content              // Выпадающее содержимое (скрыто по умолчанию)
+  display: none
+  position: absolute
+  background-color: #f1f1f1
+  min-width: 160px
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2)
+  z-index: 1
+  a                            // Ссылки внутри выпадающего списка
+    color: black
+    padding: 12px 16px
+    text-decoration: none
+    display: block
+    &:hover 
+      background-color: #ddd // Изменение цвета выпадающих ссылок при наведении курсора
+
+.show                          // Показать выпадающее меню (используйте JS, чтобы добавить этот класс .dropdown-content содержимого, когда пользователь нажимает на кнопку выпадающего списка)
+  display: block
+
+
+
+
+  .text-field
+    max-width: 32rem
+    position: relative
+  
+  &__input
+    background: #FFFFFF
+    box-sizing: border-box
+    border: 1px solid $color-dark-shade-25
+    border-radius: 4px
+    padding: 1.3rem 1.5rem
+    width: 100%
+    font-size: 14px
+    font-family: $Montserrat
+    color: $color-dark-shade-75
+    &:focus
+      border: 1px solid red
+    &::-webkit-input-placeholder
+      color: $color-dark-shade-25
+    &::-moz-placeholder
+      color: $color-dark-shade-25
+
+    &_hover-focus
+      border: 1px solid $color-dark-shade-50
+      &::-webkit-input-placeholder
+        color: $color-dark-shade-75
+      &::-moz-placeholder
+        color: $color-dark-shade-75
+
+    &_isClickable
+      cursor: pointer
+      text-align-last: left
+
+  &__dropdown-content
+    display: none
+    positon: absolute
+
+  &:hover .text-field-or-dropdown__dropdown-content
+    display: block
+    
+  &__link
+    display: block

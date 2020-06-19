@@ -1,5 +1,6 @@
 include ../components/section-pages/section-pages.pug
 include ../components/form-element-title/form-element-title.pug
+include ../components/text-field/text-field.pug
 
 mixin text-field-or-dropdown(options)
   -
@@ -7,22 +8,31 @@ mixin text-field-or-dropdown(options)
     var state = options.state || '_hover-focus' || ''
     var placeholder = options.placeholder || 'Email'
     var value = options.value || ''
-    //- var focus = options.autofocus ? autofocus : ''
+    var focus = options.autofocus ? autofocus : ''  //- ""
+    var width = options.width ? `form-element-title__flex-titles_width-${options.width}` : ''   //- "sm"
 
-  div(class= b)
-    input(type="text" autofocus class=`${b}__input-or-btn ${b}__input-or-btn${hoverFocusClassName}` value=value placeholder=placeholder)
+
+  div(class=`b form-element-title__flex-titles ${width}`)
+    input(type="text" !=focus class=`${b}__input-or-btn ${b}__input-or-btn${hoverFocusClassName}` value=value placeholder=placeholder)
+
 
 +section-pages("Form Elements")
   .content-form-elements
     
-    +form-element-title({state: "default"})
-      +text-field-or-dropdown({})
-      //- input(type="text" class=`${b}__input-or-btn ${b}__input-or-btn${hoverFocusClassName}` placeholder= placeholder)
+    hr
+    br
+
+    +form-element-title({state: "default", width: "sm"})
+      +text-field({placeholder: "Email", autofocus: false})
     
     +form-element-title({state: "hover-focus"})
-      +text-field-or-dropdown({autofocus: "true", value: "This is pretty awesome"})
-      //- input(type="text" class=`${b}__input-or-btn ${b}__input-or-btn${hoverFocusClassName}` placeholder= placeholder)
+      +text-field({value: "This is pretty awesome", autofocus: true})
     
+    br
+    br
+    hr
+    br
+
     +form-element-title({state: "default"})
       +text-field-or-dropdown({})
       //- input(type="text" class=`${b}__input-or-btn ${b}__input-or-btn${hoverFocusClassName}` placeholder= placeholder)
@@ -44,6 +54,15 @@ mixin text-field-or-dropdown(options)
         a(href="#" class="text-field-or-dropdown__link") Link 3
 
     +text-field-or-dropdown({title: "Masked text Field"})
+
+    include ../components/dropdown/dropdown.pug
+
+    hr
+    br
+    
+
+
+    
 
     .grid-container-form-elements
       .cell 1

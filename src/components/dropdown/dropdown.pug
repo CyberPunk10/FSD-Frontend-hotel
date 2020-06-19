@@ -1,0 +1,15 @@
+mixin dropdown(options)
+  -
+    var className = options.className || "dropdown"
+    var width = options.width ? `${className}_width-${options.width}` : ''   //- "sm"
+    var classN = `${className} ${width}`
+    var value = options.value || false
+    var type = options.type || "text"
+    var focus = options.autofocus ? true : false  //- ""
+  
+  .dropdown
+    button.dropbtn Dropdown
+    #myDropdown.dropdown-content
+      a(href="https://schoolsw3.com/howto/howto_js_dropdown.php") schoolsw3.com
+      a(href="#") Link 2
+      a(href="#") Link 3
