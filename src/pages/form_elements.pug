@@ -1,5 +1,9 @@
 include ../components/section-pages/section-pages.pug
 include ../components/form-element-title/form-element-title.pug
+include ../components/text-field/text-field.pug
+include ../components/dropdown/dropdown.pug
+include ../components/dropdown/option-for-dropdown/option-for-dropdown.pug
+include ../components/dropdown/apply-btn-for-dropdown/apply-btn-for-dropdown.pug
 
 mixin text-field-or-dropdown(options)
   -
@@ -7,51 +11,81 @@ mixin text-field-or-dropdown(options)
     var state = options.state || '_hover-focus' || ''
     var placeholder = options.placeholder || 'Email'
     var value = options.value || ''
-    //- var focus = options.autofocus ? autofocus : ''
+    var focus = options.autofocus ? autofocus : ''  //- ""
+    var width = options.width ? `form-element-title__flex-titles_width-${options.width}` : ''   //- "sm"
 
-  div(class= b)
-    input(type="text" autofocus class=`${b}__input-or-btn ${b}__input-or-btn${hoverFocusClassName}` value=value placeholder=placeholder)
+
+  div(class=`b form-element-title__flex-titles ${width}`)
+    input(type="text" !=focus class=`${b}__input-or-btn ${b}__input-or-btn${hoverFocusClassName}` value=value placeholder=placeholder)
+
 
 +section-pages("Form Elements")
   .content-form-elements
-    
+
     +form-element-title({state: "default"})
-      +text-field-or-dropdown({})
-      //- input(type="text" class=`${b}__input-or-btn ${b}__input-or-btn${hoverFocusClassName}` placeholder= placeholder)
+      +text-field({placeholder: "Email", autofocus: false})
     
     +form-element-title({state: "hover-focus"})
-      +text-field-or-dropdown({autofocus: "true", value: "This is pretty awesome"})
-      //- input(type="text" class=`${b}__input-or-btn ${b}__input-or-btn${hoverFocusClassName}` placeholder= placeholder)
+      +text-field({value: "This is pretty awesome", autofocus: true})
+
+    +form-element-title({title: "dropdown", state: "default"})
+      +dropdown({id: "dropdown-how-many-guests", text: "Сколько гостей"})
+        +option-for-dropdown({title: "Взрослые"})
+        +option-for-dropdown({title: "Дети"})
+        +option-for-dropdown({title: "Младенцы"})
+        +apply-btn-for-dropdown({})
     
-    +form-element-title({state: "default"})
-      +text-field-or-dropdown({})
-      //- input(type="text" class=`${b}__input-or-btn ${b}__input-or-btn${hoverFocusClassName}` placeholder= placeholder)
+    +form-element-title({title: "Masked text field", state: "default"})
+      +text-field({})
 
-    +form-element-title({state: "default"})
-      +text-field-or-dropdown({})
+    .container-flex
+
+      +form-element-title({title: "date dropdown", width: "xs"})
+        +dropdown({id: "dropdown-date-1", width: "xs"})
+          +option-for-dropdown({})
+          a(href="https://schoolsw3.com/howto/howto_js_dropdown.php") schoolsw3.com
+          a(href="#") Link 2
+          a(href="#") Link 3
+      
+      +form-element-title({title: "date dropdown", width: "xs"})
+        +dropdown({id: "dropdown-date-2", width: "xs"})
+          a(href="https://schoolsw3.com/howto/howto_js_dropdown.php") schoolsw3.com
+          a(href="#") Link 2
+          a(href="#") Link 3
+
+    +form-element-title({title: "filter date dropdown", width: "sm", paddingTop: "40"})
+      +dropdown({id: "dropdown-filter", width: "sm"})
+        a(href="https://schoolsw3.com/howto/howto_js_dropdown.php") schoolsw3.com
+        a(href="#") Link 2
+        a(href="#") Link 3
     
-    +form-element-title({state: "default"})
-      +text-field-or-dropdown({state: "hover/focus", placeholder: "This is pretty awesome"})
+    +form-element-title({title: "subscription text field", width: "sm", paddingTop: "40"})
+      +text-field({placeholder: "Email", autofocus: false, width: "sm"})
 
-    .text-field-or-dropdown
-      .text-field-or-dropdown__flex-titles
-        h3 dropdown
-        p.text-field-or-dropdown__state default
-      button.text-field-or-dropdown__input-or-btn.text-field-or-dropdown__input-or-btn_isClickable Сколько гостей
-      .text-field-or-dropdown__dropdown-content
-        a(href="#" class="text-field-or-dropdown__link") Link 1
-        a(href="#" class="text-field-or-dropdown__link") Link 2
-        a(href="#" class="text-field-or-dropdown__link") Link 3
 
-    +text-field-or-dropdown({title: "Masked text Field"})
+    br
+    br
+    hr
+    hr
+    br
+    p для тестов
+    br
+    hr
+    hr
+    br
+    br
+    
+
+
+    
 
     .grid-container-form-elements
       .cell 1
-      .cell2 2
+      .cell 2
       .cell 3
-      .cell2 4
+      .cell 4
       .cell 5
-      .cell2 6
+      .cell 6
       .cell 7
       .cell 8
       .cell 9

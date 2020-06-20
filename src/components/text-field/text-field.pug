@@ -1,0 +1,11 @@
+mixin text-field(options)
+  -
+    var className = options.className || "text-field"
+    var width = options.width ? `${className}_width-${options.width}` : ''   //- "sm"
+    var classN = `${className} ${width}`
+    var placeholder = options.placeholder || false
+    var value = options.value || false
+    var type = options.type || "text"
+    var focus = options.autofocus ? true : false  //- ""
+  
+  input(type = type, class = classN, value = value, placeholder = placeholder, autofocus=focus)

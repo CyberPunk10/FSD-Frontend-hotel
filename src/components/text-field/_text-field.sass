@@ -1,0 +1,14 @@
+.text-field
+  @include text-field-and-drop-btn
+  max-width: 32rem
+  
+  &:hover, &:focus
+    border: 1px solid $color-dark-shade-50
+
+  &::-webkit-input-placeholder
+    color: $color-dark-shade-25
+  &::-moz-placeholder
+    color: $color-dark-shade-25
+    
+  &_width-sm
+    max-width: 26.6rem
