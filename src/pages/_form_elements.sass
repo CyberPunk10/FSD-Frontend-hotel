@@ -7,11 +7,14 @@
 
 .grid-container-form-elements
   display: grid
-  grid: auto auto auto / 320px 320px 320px 
+  grid: auto auto auto / repeat(3, minmax(auto, 320px))
   grid-column-gap: 20px
-  background-color: #eee
   max-width: 1200px
   .cell
-    background-color: #ddd
+    border: 1px dashed #aaa
 
 
+.container-flex
+  max-width: 32rem
+  display: flex
+  justify-content: space-between

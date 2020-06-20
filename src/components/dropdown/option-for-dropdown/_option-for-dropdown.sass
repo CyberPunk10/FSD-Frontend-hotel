@@ -1,0 +1,35 @@
+.option-for-dropdown
+  @include isFlex($justify: space-between)
+  padding: .35rem .7rem .35rem 1.5rem
+  
+  &__title
+    @include  font-how-h3
+
+  &__counter
+    @include isFlex($justify: space-between)
+
+  &__minus, &__plus
+    @include isFlex
+    cursor: pointer
+    border-radius: 50%
+    width: 3rem
+    height: 3rem
+    font-size: 1.8rem
+
+  &__minus
+    border: 1px solid $color-dark-shade-10
+    color: $color-dark-shade-25
+    &_active
+      border: 1px solid $color-dark-shade-25
+      color: $color-dark-shade-50
+
+  &__plus
+    border: 1px solid $color-dark-shade-25
+    color: $color-dark-shade-50
+
+  &__value
+    @include  font-how-h3
+    line-height: 3rem
+    text-align: center
+    width: 3.2rem
+

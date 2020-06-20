@@ -1,19 +1,14 @@
 .text-field
+  @include text-field-and-drop-btn
   max-width: 32rem
-  width: 100%
-  background: #FFFFFF
-  box-sizing: border-box
-  border: 1px solid $color-dark-shade-25
-  border-radius: 4px
-  padding: 1.3rem 1.5rem
-  font-size: 14px
-  font-family: $Montserrat
-  color: $color-dark-shade-75
-  &:focus
+  
+  &:hover, &:focus
     border: 1px solid $color-dark-shade-50
+
   &::-webkit-input-placeholder
     color: $color-dark-shade-25
   &::-moz-placeholder
     color: $color-dark-shade-25
+    
   &_width-sm
     max-width: 26.6rem

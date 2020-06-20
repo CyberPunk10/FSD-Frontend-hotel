@@ -1,15 +1,20 @@
 mixin dropdown(options)
   -
+    // for container
     var className = options.className || "dropdown"
     var width = options.width ? `${className}_width-${options.width}` : ''   //- "sm"
     var classN = `${className} ${width}`
+    
+    // for btn
     var value = options.value || false
     var type = options.type || "text"
-    var focus = options.autofocus ? true : false  //- ""
+    var focus = options.autofocus ? true : false 
+    var text = options.text || 'button' 
+
+    // for dropdown-content
+    var id = options.id || false
   
-  .dropdown
-    button.dropbtn Dropdown
-    #myDropdown.dropdown-content
-      a(href="https://schoolsw3.com/howto/howto_js_dropdown.php") schoolsw3.com
-      a(href="#") Link 2
-      a(href="#") Link 3
+  div(class = classN)
+    button(class = "dropbtn", value = value, type = type, focus = focus)= text
+    div(class="dropdown-content" id = id)
+      block
