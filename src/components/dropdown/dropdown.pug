@@ -1,20 +1,26 @@
 mixin dropdown(options)
   -
-    // for container
-    var className = options.className || "dropdown"
-    var width = options.width ? `${className}_width-${options.width}` : ''   //- "sm"
-    var classN = `${className} ${width}`
-    
-    // for btn
+    // for dropdown
+    var classNameDrop = "dropdown"
+    var width = options.width ? `${classNameDrop}_width-${options.width}` : ''   //- "sm/xs"
+    classNameDrop += ` ${width}`
+    var show = options.show ? 'show' : ''   //- "true" (при зарузке страницы dropdown будет открытым. Используется в __btn & __content) 
+
+    // for dropdown__btn
     var value = options.value || false
     var type = options.type || "text"
     var focus = options.autofocus ? true : false 
     var text = options.text || 'button' 
+    var classNameDrop__btn = "dropdown__btn"
+    classNameDrop__btn += options.show ? ` dropdown__btn_expanded ` : ''
 
-    // for dropdown-content
+    // for dropdown__content
     var id = options.id || false
+    var classNameDrop__content = "dropdown__content"
+    var noAbsolute = options.noAbsolute ? `${classNameDrop__content}_no-absolute` : ''   //- "true"
+    classNameDrop__content += ` ${noAbsolute} ${show}`
   
-  div(class = classN)
-    button(class = "dropbtn", value = value, type = type, focus = focus)= text
-    div(class="dropdown-content" id = id)
+  div(class = classNameDrop)
+    button(class = classNameDrop__btn, value = value, type = type, focus = focus)= text
+    div(class = classNameDrop__content, id = id)
       block

@@ -1,9 +1,9 @@
-let dropbtns = document.querySelectorAll(".dropbtn")
-let dropdowns = document.querySelectorAll(".dropdown-content")
+let dropdown__btns = document.querySelectorAll(".dropdown__btn")
+let dropdowns = document.querySelectorAll(".dropdown__content")
 
 
 // Навешиваем на все dropdowns функцию по клику
-dropbtns.forEach(element => {
+dropdown__btns.forEach(element => {
   element.addEventListener('click', openDropdown);
 });
 
@@ -12,16 +12,16 @@ dropbtns.forEach(element => {
 переключение между скрытием и отображением раскрывающегося содержимого */
 function openDropdown() {
   event.target.nextElementSibling.classList.toggle("show")
-  event.target.classList.toggle("dropbtn_expanded")
+  event.target.classList.toggle("dropdown__btn_expanded")
 }
 
 
 // Закройте выпадающее меню, если пользователь щелкает за его пределами
 window.onclick = function (event) {
-  if (!event.target.matches('.dropbtn')) {
-    for (let i = 0; i < dropbtns.length; i++) {
-      if (dropbtns[i].classList.contains('dropbtn_expanded')) {
-        dropbtns[i].classList.remove('dropbtn_expanded');
+  if (!event.target.matches('.dropdown__btn')) {
+    for (let i = 0; i < dropdown__btns.length; i++) {
+      if (dropdown__btns[i].classList.contains('dropdown__btn_expanded')) {
+        dropdown__btns[i].classList.remove('dropdown__btn_expanded');
       }
       if (dropdowns[i].classList.contains('show')) {
         dropdowns[i].classList.remove('show');
@@ -31,12 +31,12 @@ window.onclick = function (event) {
 
     let drop_id = event.target.nextElementSibling.id  // id dropdown, по которому произошёл клик
 
-    for (let i = 0; i < dropbtns.length; i++) {
+    for (let i = 0; i < dropdown__btns.length; i++) {
       
       if (dropdowns[i].id != drop_id) {
   
-        if (dropbtns[i].classList.contains('dropbtn_expanded')) {
-          dropbtns[i].classList.remove('dropbtn_expanded');
+        if (dropdown__btns[i].classList.contains('dropdown__btn_expanded')) {
+          dropdown__btns[i].classList.remove('dropdown__btn_expanded');
         }
         if (dropdowns[i].classList.contains('show')) {
           dropdowns[i].classList.remove('show');
