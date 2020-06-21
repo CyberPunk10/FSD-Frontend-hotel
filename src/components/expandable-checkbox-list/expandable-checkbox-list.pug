@@ -1,0 +1,17 @@
+mixin checkbox-list(options)
+  -
+    var title = options.title || "expandable checkbox list"
+    var description = options.description || "Завтрак"
+
+
+  .checkbox-list
+    .checkbox-list__header
+      h3.checkbox-list__title= title
+      <i class="checkbox-list__icon material-icons">expand_more</i>
+
+    .checkbox-list__content
+      .checkbox-list__item
+        input(type="checkbox" class="checkbox-list__checkbox")
+        label.checkbox-list__description= description
+
+      
