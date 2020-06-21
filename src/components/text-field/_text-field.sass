@@ -1,14 +1,37 @@
 .text-field
-  @include text-field-and-drop-btn
+  position: relative
   max-width: 32rem
-  
-  &:hover, &:focus
-    border: 1px solid $color-dark-shade-50
 
-  &::-webkit-input-placeholder
-    color: $color-dark-shade-25
-  &::-moz-placeholder
-    color: $color-dark-shade-25
-    
   &_width-sm
     max-width: 26.6rem
+
+  &__input
+    @include text-field-and-drop-btn
+
+    &::-webkit-input-placeholder
+      color: $color-dark-shade-25
+    &::-moz-placeholder
+      color: $color-dark-shade-25
+    
+    &:hover, &:focus
+      border: 1px solid $color-dark-shade-50
+      
+
+  &__icon
+    position: absolute
+    cursor: pointer
+    @include isFlex
+    height: calc(100% - 2px)
+    width: 4.3rem
+    background-color: #fff
+    border-radius: 5px
+    top: 1px
+    bottom: 0
+    right: 1px
+    // ниже 4 строчки нужны для градиента текста (https://html5book.ru/gradient-dlya-teksta/)
+    -webkit-background-clip: text
+    -webkit-text-fill-color: transparent
+    color: $color-purple
+    @include linear-gradient
+    // z-index: 1
+
