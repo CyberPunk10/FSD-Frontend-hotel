@@ -34,6 +34,21 @@
 
 }
 
+// Для градиента значения по умолчанию
+
+@mixin linear-gradient($direction: 180deg, $fromColor: #BC9CFF, $toColor: #8BA4F9) {
+  background-color: $toColor; /* Fallback Color */
+  background-image: -webkit-gradient(linear, $direction, from($fromColor), to($toColor)); /* Saf4+, Chrome */
+  background-image: -webkit-linear-gradient($direction, $fromColor, $toColor); /* Chrome 10+, Saf5.1+, iOS 5+ */
+  background-image:    -moz-linear-gradient($direction, $fromColor, $toColor); /* FF3.6 */
+  background-image:     -ms-linear-gradient($direction, $fromColor, $toColor); /* IE10 */
+  background-image:      -o-linear-gradient($direction, $fromColor, $toColor); /* Opera 11.10+ */
+  background-image:         linear-gradient($direction, $fromColor, $toColor);
+  filter: progid:DXImageTransform.Microsoft.gradient(GradientType=1,StartColorStr='#{$fromColor}', EndColorStr='#{$toColor}');
+}
+
+
+
 @mixin font-how-h3($color: $color-dark-shade-100) {
   font-size: 12px;
   text-transform: uppercase;
@@ -41,7 +56,6 @@
   font-weight: bold;
   color: $color;
 }
-
 
 // special for .text-field & .drop-btn
 @mixin text-field-and-drop-btn {
@@ -55,3 +69,5 @@
   color: $color-dark-shade-75;
   transition: 0.2s ease all;
 }
+
+

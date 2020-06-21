@@ -1,30 +1,5 @@
-.dropbtn                       // Кнопка выпадающего списка
-  @include text-field-and-drop-btn
-  cursor: pointer
-  text-align: left
-
-  &::-webkit-input-placeholder
-    color: $color-dark-shade-25
-  &::-moz-placeholder
-    color: $color-dark-shade-25
-
-  &:hover, &:focus             // Кнопка выпадающего меню при наведении и фокусировке
-    border-color: $color-dark-shade-50
-
-    &::-webkit-input-placeholder
-      color: $color-dark-shade-75
-    &::-moz-placeholder
-      color: $color-dark-shade-75
-  
-  &_expanded                   // Открытое состояние
-    border-bottom-left-radius: 0
-    border-bottom-right-radius: 0
-    border-bottom-color: $color-dark-shade-25
-    &:hover, &:focus             // Кнопка выпадающего меню при наведении и фокусировке
-      border-bottom-color: $color-dark-shade-25
-
-
-.dropdown                      // Контейнер <div> - необходим для размещения выпадающего содержимого
+// Контейнер <div> - необходим для размещения выпадающего содержимого
+.dropdown                      
   position: relative
   display: inline-block
   max-width: 32rem
@@ -35,43 +10,64 @@
   &_width-xs
     max-width: 15rem
 
-.dropdown-content              // Выпадающее содержимое (скрыто по умолчанию)
-  display: none
-  position: absolute
-  z-index: 1
-  width: 100%
-  border: 1px solid $color-dark-shade-50
-  border-top-color: $color-dark-shade-25
-  border-bottom-left-radius: 4px
-  border-bottom-right-radius: 4px
-  box-shadow: 0px 10px 20px $color-dark-shade-5
-  overflow: hidden
-  padding: .35rem 0 .2rem
-  background-color: #fff
-
+  &:hover &__btn,
+  &:hover &__content
+    border-color: $color-dark-shade-50
   
-  a                            // Ссылки внутри выпадающего списка
+
+  // Кнопка выпадающего списка   
+
+  &__btn                       
+    @include text-field-and-drop-btn
     cursor: pointer
-    display: block
-    background: #FFFFFF
-    padding: 1.3rem 1.5rem
-    font-size: 14px
-    font-family: $Montserrat
-    color: $color-dark-shade-75
+    text-align: left
 
-    // &:hover 
-    //   border-color: $color-dark-shade-50 // Изменение цвета выпадающих ссылок при наведении курсора
+    &::-webkit-input-placeholder
+      color: $color-dark-shade-25
+    &::-moz-placeholder
+      color: $color-dark-shade-25
 
-.show                          // Показать выпадающее меню (используйте JS, чтобы добавить этот класс .dropdown-content содержимого, когда пользователь нажимает на кнопку выпадающего списка)
-  display: block
+    &:focus,
+    &:focus + .dropdown__content
+      border-color: $color-dark-shade-50
+
+    // Открытое состояние
+    &_expanded                   
+      border-bottom-left-radius: 0
+      border-bottom-right-radius: 0
 
 
-  //     &_isClickable
-  //     cursor: pointer
-  //     text-align-last: left
+  // Выпадающее содержимое (скрыто по умолчанию)
 
-  // &:hover .text-field-or-dropdown__dropdown-content
-  //   display: block
+  &__content              
+    display: none
+    position: absolute
+    z-index: 1
+    width: 100%
+    border: 1px solid $color-dark-shade-25
+    border-top: none
+    border-bottom-left-radius: 4px
+    border-bottom-right-radius: 4px
+    box-shadow: 0px 10px 20px $color-dark-shade-5
+    overflow: hidden
+    padding: .35rem 0 .2rem
+    background-color: #fff
+    transition: all ease .2s
     
-  // &__link
-  //   display: block
+    // C этим классом dropdown не вываливается из потока и показывает контент, отодвигая нижележащие сущности
+    &_no-absolute
+      position: static
+
+    // Ссылки внутри выпадающего списка (в макете от FSD не используются)
+    a                            
+      cursor: pointer
+      display: block
+      background: #FFFFFF
+      padding: 1.3rem 1.5rem
+      font-size: 14px
+      font-family: $Montserrat
+      color: $color-dark-shade-75
+
+// Показать выпадающее меню (используйте JS, чтобы добавить этот класс .dropdown-content содержимого, когда пользователь нажимает на кнопку выпадающего списка)
+.show                          
+  display: block
