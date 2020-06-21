@@ -4,6 +4,7 @@ include ../components/text-field/text-field.pug
 include ../components/dropdown/dropdown.pug
 include ../components/dropdown/option-for-dropdown/option-for-dropdown.pug
 include ../components/dropdown/apply-btn-for-dropdown/apply-btn-for-dropdown.pug
+include ../components/expandable-checkbox-list/expandable-checkbox-list.pug
 
 mixin text-field-or-dropdown(options)
   -
@@ -22,6 +23,33 @@ mixin text-field-or-dropdown(options)
 +section-pages("Form Elements")
   .content-form-elements
 
+    +checkbox-list({})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    br
+    br
+    hr
+    hr
+    br
+    p для тестов
+    br
+    hr
+    hr
+    br
+    br
+    
     .grid-container-form-elements
       .cell
         +form-element-title({state: "default"})

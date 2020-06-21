@@ -1,0 +1,52 @@
+.checkbox-list
+  max-width: 32rem
+
+  &__header
+    @include isFlex($justify: space-between)
+
+  &__icon
+    width: 4.4rem
+    color: $color-dark-shade-50
+
+  &__description
+    color: $color-dark-shade-50
+  
+  &__checkbox[type="checkbox"]:checked,
+  &__checkbox[type="checkbox"]:not(:checked)
+    position: absolute
+    left: -9999px
+
+  &__description[type="checkbox"]:checked + label,
+  &__description[type="checkbox"]:not(:checked) + label
+    display: inline-block
+    position: relative
+    padding-left: 28px
+    line-height: 20px
+    cursor: pointer
+    color: red
+
+
+
+// https://habr.com/ru/post/489476/
+// https://itchief.ru/html-and-css/styling-checkbox-and-radio
+
+
+
+// input[type="checkbox"]:checked, 
+// input[type="checkbox"]:not(:checked), 
+// input[type="radio"]:checked, 
+// input[type="radio"]:not(:checked) 
+//   position: absolute
+//   left: -9999px
+
+
+// input[type="checkbox"]:checked + label, 
+// input[type="checkbox"]:not(:checked) + label, 
+// input[type="radio"]:checked + label, 
+// input[type="radio"]:not(:checked) + label 
+//   display: inline-block
+//   position: relative
+//   padding-left: 28px
+//   line-height: 20px
+//   cursor: pointer
+
