@@ -1,3 +1,6 @@
+include ../checkbox-btn/checkbox-btn.pug
+
+
 mixin checkbox-list(options)
   -
     var title = options.title || "expandable checkbox list"
@@ -10,8 +13,7 @@ mixin checkbox-list(options)
       <i class="checkbox-list__icon material-icons">expand_more</i>
 
     .checkbox-list__content
-      .checkbox-list__item
-        input(type="checkbox" class="checkbox-list__checkbox")
-        label(class="checkbox-list__description")= description
+      block
+
 
       
