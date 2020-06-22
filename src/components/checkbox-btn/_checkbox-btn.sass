@@ -9,6 +9,9 @@
     &:checked + .checkbox-btn__label:after
       opacity: 1
 
+    &:checked + .checkbox-btn__label:before
+      border-color: $color-purple
+
     &:not(:checked) + .checkbox-btn__label:after
       opacity: 0
 
@@ -17,8 +20,10 @@
     position: relative
     cursor: pointer
     display: inline-block
-    line-height: 2rem
-    padding: .2rem 0 .2rem 3rem
+    line-height: 1.8rem
+    padding: .3rem 0 .3rem 3rem
+    user-select: none         // делает текст невыделяемым
+
 
     &:before
       content: ""
@@ -41,14 +46,21 @@
       height: .6rem
       box-sizing: border-box
       border-radius: 1px
-      border-left: 2px solid #e145a3
-      border-bottom: 2px solid #e145a3
+      border-left: 2px solid $color-purple
+      border-bottom: 2px solid $color-purple
+
+      // -webkit-border-image: $gradient-linear
+      // -moz-border-image: $gradient-linear
+      // -o-border-image: $gradient-linear
+      // -ms-border-image: $gradient-linear
+      // border-image: $gradient-linear
+
       -webkit-transform: rotate(-45deg)
       -moz-transform: rotate(-45deg)
       -o-transform: rotate(-45deg)
       -ms-transform: rotate(-45deg)
       transform: rotate(-45deg)
-
+      
     &_title
       font-weight: bold
       color: $color-dark-shade-75
@@ -57,6 +69,7 @@
     padding: .2rem 0 .2rem 3rem
     font-size: 1.2rem
     color: $color-dark-shade-50
+    user-select: none         // делает текст невыделяемым
 
 
 

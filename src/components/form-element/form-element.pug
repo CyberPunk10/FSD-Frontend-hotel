@@ -1,0 +1,14 @@
+mixin form-element(options)
+  -
+    var title = options.title || false
+    var state = options.state || ''             //- "hover/focus"
+    var width = options.width ? `form-element_width-${options.width}` : ''   //- "sm"
+    var paddingTop = options.paddingTop ? `form-element_padding-top-${options.paddingTop}` : ''   //- "40"
+    var paddingBottom = options.paddingBottom ? `form-element__title_padding-bottom-${options.paddingBottom}` : ''   //- "16"
+
+  div(class=`form-element ${width} ${paddingTop}`)
+    if title
+      div(class=`form-element__title ${paddingBottom}`)
+        h3= title
+        p.form-element__state= state
+    block
