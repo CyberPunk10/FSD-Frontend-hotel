@@ -1,63 +1,62 @@
-.checkbox-list
+.checkbox-btn
   max-width: 32rem
+  padding: .3rem 0
 
-  &__header
-    @include isFlex($justify: space-between)
-
-  &__icon
-    width: 4.4rem
-    color: $color-dark-shade-50
-
-  &__checkbox
+  &__input
     position: absolute
     left: -9999px
     
-    &:checked + label:after
+    &:checked + .checkbox-btn__label:after
+      opacity: 1
 
-    &:not(:checked) + label:after
+    &:not(:checked) + .checkbox-btn__label:after
+      opacity: 0
 
-  &__description
+  &__label
     color: $color-dark-shade-50
     position: relative
-    display: inline-block
-    width: 100%
-    padding-left: 28px
-    line-height: 20px
     cursor: pointer
+    display: inline-block
     line-height: 2rem
+    padding: .2rem 0 .2rem 3rem
 
     &:before
       content: ""
       position: absolute
-      left: 0px
-      top: 0px
+      left: 0
+      top: .2rem
       width: 2rem
       height: 2rem
+      background-color: #ffffff
       box-sizing: border-box
       border: 1px solid $color-dark-shade-25
-      background-color: #ffffff
       border-radius: 4px
 
     &:after
       content: ""
       position: absolute
-      -webkit-transition: all 0.2s ease
-      -moz-transition: all 0.2s ease
-      -o-transition: all 0.2s ease
-      transition: all 0.2s ease
-      left: 6px
-      top: 6px
-      width: 8px
-      height: 6px
+      left: .6rem
+      top: .8rem
+      width: .8rem
+      height: .6rem
+      box-sizing: border-box
       border-radius: 1px
       border-left: 2px solid #e145a3
       border-bottom: 2px solid #e145a3
-      box-sizing: border-box
       -webkit-transform: rotate(-45deg)
       -moz-transform: rotate(-45deg)
       -o-transform: rotate(-45deg)
       -ms-transform: rotate(-45deg)
       transform: rotate(-45deg)
+
+    &_title
+      font-weight: bold
+      color: $color-dark-shade-75
+
+  &__description
+    padding: .2rem 0 .2rem 3rem
+    font-size: 1.2rem
+    color: $color-dark-shade-50
 
 
 
