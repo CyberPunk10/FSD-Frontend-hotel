@@ -1,0 +1,23 @@
+mixin radio-btn(options)
+  -
+    var title = options.title || "label for radio"
+    var isChecked = options.checked || false          // checked: true
+    var id = options.id || false          
+    var name = options.name || false          
+
+    // for radio-btn__label
+    var classNameLabel = "radio-btn__label"         
+    var description = options.description || ""
+    classNameLabel += options.description ? " radio-btn__label_title" : ""
+
+    // for radio-btn__description
+    var classNameDescription = "radio-btn__description"         
+
+  .radio-btn
+    input(type="radio", class="radio-btn__input", id = id, name = name, checked = isChecked)
+    label(class = classNameLabel, for = id)= title
+    if description
+      p.radio-btn__description= description
+
+
+      

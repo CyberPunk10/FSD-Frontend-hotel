@@ -1,0 +1,54 @@
+.like-btn
+  max-width: 32rem
+  padding: .3rem 0
+  display: inline-block
+
+  &__input
+    position: absolute
+    left: -9999px
+    
+    &:checked + .like-btn__label
+      color: $color-purple
+
+    &:checked + .like-btn__label:before
+      border-color: $color-purple
+
+  &__label
+    position: relative
+    cursor: pointer
+    display: inline-block
+    line-height: 1.8rem
+    padding: .3rem .4rem
+    width: 4rem
+    user-select: none         // делает текст невыделяемым
+    color: $color-dark-shade-25
+
+    &:before
+      content: ""
+      position: absolute
+      left: 0
+      top: .2rem
+      width: 4rem
+      height: 2rem
+      box-sizing: border-box
+      border: 1px solid $color-dark-shade-25
+      border-radius: 1rem
+  
+  &__icon, &__title
+    position: absolute
+    height: 1.2rem
+    box-sizing: border-box
+    font-size: 1rem
+
+  &__icon
+    left: .5rem
+    top: .7rem
+    width: 1.2rem
+
+  &__title
+    left: 1.6rem
+    top: .3rem
+    width: calc(100% - 2px - 1.6rem - .4rem)
+    text-align: center
+
+

@@ -5,7 +5,12 @@ include ../components/dropdown/dropdown.pug
 include ../components/dropdown/option-for-dropdown/option-for-dropdown.pug
 include ../components/dropdown/apply-btn-for-dropdown/apply-btn-for-dropdown.pug
 include ../components/expandable-checkbox-list/expandable-checkbox-list.pug
+
 include ../components/checkbox-btn/checkbox-btn.pug
+include ../components/radio-btn/radio-btn.pug
+include ../components/toggle-btn/toggle-btn.pug
+include ../components/like-btn/like-btn.pug
+include ../components/rate-btn/rate-btn.pug
 
 
 +section-pages("Form Elements")
@@ -87,7 +92,24 @@ include ../components/checkbox-btn/checkbox-btn.pug
           +checkbox-btn({id: "checkbox-btn-1", title: "Можно курить"})
           +checkbox-btn({id: "checkbox-btn-2", title: "Можно с питомцами", checked: true})
           +checkbox-btn({id: "checkbox-btn-3", title: "Можно пригласить гостей (до 10 человек)", checked: true})
+        
+        +form-element({title: "Radio Buttons", paddingBottom: "11", paddingTop: "40"})
+          +radio-btn({name: "sex", id: "radio-btn-men", title: "Мужчина", checked: true})
+          +radio-btn({name: "sex", id: "radio-btn-women", title: "Женщина"})
+        
+        +form-element({title: "Toggle Buttons", paddingBottom: "11", paddingTop: "40"})
+          +toggle-btn({id: "toggle-btn-1", title: "Получать спецпредложения", checked: true})
+          +toggle-btn({id: "toggle-btn-2", title: "Получать спецпредложения"})
+        
+        +form-element({title: "Like Buttons", paddingBottom: "11", paddingTop: "40"})
+          +like-btn({id: "like-btn-1", title: "2"})
+          +like-btn({id: "like-btn-2", title: "12", checked: true})
+        
+        +form-element({title: "Rate button", paddingBottom: "11", paddingTop: "40"})
+          +rate-btn({name: "rate-btn-0", id: "rate-btn-0"})
+          +rate-btn({name: "rate-btn-1", id: "rate-btn-1", rating: "5/5"})
 
+          
       .cell
 
         +form-element({title: "Range Slider"})
