@@ -47,6 +47,14 @@
   filter: progid:DXImageTransform.Microsoft.gradient(GradientType=1,StartColorStr='#{$fromColor}', EndColorStr='#{$toColor}');
 }
 
+@mixin text-linear-gradient($direction: 180deg, $fromColor: #BC9CFF, $toColor: #8BA4F9) {
+  // ниже 4 строчки нужны для градиента текста (https://html5book.ru/gradient-dlya-teksta/)
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: $color-purple;
+  @include linear-gradient;
+}
+
 
 
 @mixin font-how-h3($color: $color-dark-shade-100) {

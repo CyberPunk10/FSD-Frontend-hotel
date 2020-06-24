@@ -28,10 +28,6 @@
     top: 1px
     bottom: 0
     right: 1px
-    // ниже 4 строчки нужны для градиента текста (https://html5book.ru/gradient-dlya-teksta/)
-    -webkit-background-clip: text
-    -webkit-text-fill-color: transparent
-    color: $color-purple
-    @include linear-gradient
+    @include text-linear-gradient
     // z-index: 1
 

@@ -1,0 +1,61 @@
+.toggle-btn
+  max-width: 32rem
+  padding: .3rem 0
+
+  &__input
+    position: absolute
+    left: -9999px
+    
+    &:checked + .toggle-btn__label:before
+      border-color: $color-purple
+
+    &:not(:checked) + .toggle-btn__label:after
+      background: $color-dark-shade-25 
+      left: .4rem
+
+
+  &__label
+    color: $color-dark-shade-75
+    position: relative
+    cursor: pointer
+    display: inline-block
+    line-height: 1.8rem
+    padding: .3rem 0 .3rem 5rem
+    user-select: none         // делает текст невыделяемым
+
+
+    &:before
+      content: ""
+      position: absolute
+      left: 0
+      top: .2rem
+      width: 4rem
+      height: 2rem
+      background-color: #ffffff
+      box-sizing: border-box
+      border: 1px solid $color-dark-shade-25
+      border-radius: 1rem
+
+    &:after
+      content: ""
+      position: absolute
+      left: 2.4rem
+      top: .6rem
+      width: 1.2rem
+      height: 1.2rem
+      box-sizing: border-box
+      border-radius: 50%
+      @include linear-gradient
+      transition: .15s all linear
+
+    &_title
+      font-weight: bold
+      color: $color-dark-shade-75
+
+  &__description
+    padding: .2rem 0 .2rem 3rem
+    font-size: 1.2rem
+    color: $color-dark-shade-50
+    user-select: none         // делает текст невыделяемым
+
+
