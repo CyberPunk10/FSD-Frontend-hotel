@@ -1,5 +1,54 @@
 include ../components/section-pages/section-pages.pug
+include ../components/form-wrap/form-wrap.pug
+include ../components/text-field/text-field.pug
 
 +section-pages('Cards')
-  hr
-  p cards.pug подключен
+  .content-cards
+
+    +form-wrap({title: "Найдём номера под ваши пожелания"})
+      
+      .container-flex
+
+        +form-element({title: "прибытие", width: "xs"})
+          +dropdown({id: "dropdown-date-1", width: "xs"})
+            +option-for-dropdown({})
+            a(href="https://schoolsw3.com/howto/howto_js_dropdown.php") schoolsw3.com
+            a(href="#") Link 2
+            a(href="#") Link 3
+        
+        +form-element({title: "выезд", width: "xs"})
+          +dropdown({id: "dropdown-date-2", width: "xs"})
+            a(href="https://schoolsw3.com/howto/howto_js_dropdown.php") schoolsw3.com
+            a(href="#") Link 2
+            a(href="#") Link 3
+
+      +form-element({title: "гости", paddingTop: "40"})
+        +dropdown({id: "dropdown-how-many-guests", text: "Сколько гостей"})
+          +option-for-dropdown({title: "Взрослые"})
+          +option-for-dropdown({title: "Дети"})
+          +option-for-dropdown({title: "Младенцы"})
+          +apply-btn-for-dropdown({})
+
+    
+    +form-wrap({title: "Регистрация аккаунта"})
+      +text-field({placeholder: "Имя",})
+      +text-field({placeholder: "Фамилия"})
+    
+      +radio-btn({name: "sex", id: "radio-btn-men-cards", title: "Мужчина", checked: true})
+      +radio-btn({name: "sex", id: "radio-btn-women-cards", title: "Женщина"})
+      
+      +form-element({title: "дата рождения"})
+        +text-field({})
+
+      +form-element({title: "данные для входа в сервис"})
+        +text-field({placeholder: "Email"})
+        +text-field({placeholder: "Пароль"})
+
+      +toggle-btn({id: "toggle-btn-2", title: "Получать спецпредложения"})
+
+
+    +form-wrap({title: "Регистрация аккаунта"})
+
+
+    +form-wrap({title: "Войти"})
+

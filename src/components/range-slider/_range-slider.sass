@@ -1,0 +1,37 @@
+.slidecontainer 
+  width: 100% /* Ширина внешнего контейнера */
+
+
+/* Сам ползунок */
+.slider 
+  -webkit-appearance: none  /* Переопределение стилей CSS по умолчанию */
+  appearance: none
+  border: 1px solid $color-dark-shade-25
+  height: .6rem /* Заданная высота */
+  border-radius: .3rem
+  width: 100% /* Полная ширина */
+  background: #fff /* Серый фон */
+  outline: none /* Удалить контур */
+  transition: all linear .1s
+
+
+/* Эффекты наведения курсора мыши */
+.slider:hover 
+  border: 1px solid $color-dark-shade-50
+
+
+/* Ползунок обработчик (использовать -webkit- (Chrome, Opera, Safari, Edge) и -moz- (Firefox) чтобы переопределить внешний вид по умолчанию ) */
+.slider::-webkit-slider-thumb 
+  -webkit-appearance: none /* Переопределить внешний вид по умолчанию */
+  appearance: none
+  width: 25px /* Установите определенную ширину обработчика ползунка */
+  height: 25px /* Высота обработчика ползунка */
+  background: #4CAF50 /* Зеленый фон */
+  cursor: pointer /* Курсор при наведении */
+
+
+.slider::-moz-range-thumb 
+  width: 25px /* Установите определенную ширину обработчика ползунка */
+  height: 25px /* Высота обработчика подзунка */
+  background: #4CAF50 /* Зеленый фон */
+  cursor: pointer /* Курсор при наведении */

@@ -1,20 +1,71 @@
-.button 
-  outline: none
-  border: 1px solid #e0e0e0
-  color: #008ed6
-  padding: 14px 40px
-  border-radius: 3px
-  font-size: 14px
-  font-weight: bold
-  text-transform: uppercase
-  cursor: pointer
+// .button 
+//   outline: none
+//   border: 1px solid #e0e0e0
+//   color: #008ed6
+//   padding: 14px 40px
+//   border-radius: 3px
+//   font-size: 14px
+//   font-weight: bold
+//   text-transform: uppercase
+//   cursor: pointer
 
-.button:hover 
-  background: #008ed6
-  border: 1px solid #008ed6
-  color: #fff
+// .button:hover 
+//   background: #008ed6
+//   border: 1px solid #008ed6
+//   color: #fff
 
-.button-blue 
-  color: #fff
-  background-color: #008ed6
+// .button-blue 
+//   color: #fff
+//   background-color: #008ed6
 
+
+.btn
+  position: relative
+  padding: 1.4rem 2rem 1.5rem 2rem
+  border-radius: 2.2rem
+  border: none
+  @include font-how-h3($color: #fff)
+
+  &__fill
+    @include linear-gradient
+  
+  &__border
+    border: 2px solid
+    &:before 
+      content: ''
+      position: absolute
+      top: 0
+      right: 0
+      bottom: 0
+      left: 0
+      // z-index: -1
+      margin: -2px
+      border-radius: inherit
+      box-sizing: border-box
+      background: linear-gradient(to right, red, orange)
+    &:after
+      content: ''
+      position: absolute
+      top: 0
+      right: 0
+      bottom: 0
+      left: 0
+      border-radius: inherit
+      background: #fff
+      color: $color-purple
+      
+
+  &__minimalism
+    color: $color-purple
+    background-color: #fff
+
+  &_deactive
+    opacity: .5
+  
+  &__border:after.btn_deactive
+    color: red
+  &__minimalism.btn_deactive
+    color: $color-dark-shade-100
+
+
+  // https://css-tricks.com/gradient-borders-in-css/

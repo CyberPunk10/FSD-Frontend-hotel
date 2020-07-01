@@ -1,5 +1,22 @@
 mixin btn(options)
+  //- -
+  //-   var buttonClassName = "button"
+  //-   buttonClassName += options.isBlue ? " button-blue" : ""
+  //- button(class = buttonClassName)= options.title || "Button"
+
   -
-    var buttonClassName = "button"
-    buttonClassName += options.isBlue ? " button-blue" : ""
-  button(class = buttonClassName)= options.title || "Button"
+    var btnClassName = "btn"
+    var deactive = options.deactive ? " btn_deactive" : ""
+
+  case options.varBtn
+    when "fill"
+      - btnClassName += " btn__fill"
+    when "border"
+      - btnClassName += " btn__border"
+    when "minimalism"
+      - btnClassName += " btn__minimalism"
+
+  -
+    btnClassName += deactive
+
+  button(class = btnClassName)= options.title
