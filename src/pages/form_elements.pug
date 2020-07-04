@@ -17,35 +17,8 @@ include ../components/button/button.pug
 
 +section-pages("Form Elements")
   .content-form-elements
-
-    
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    br
-    br
-    hr
-    hr
-    br
-    p для тестов
-    br
-    hr
-    hr
-    br
-    br
-    
     .grid-container-form-elements
+      
       .cell
         +form-element({title: "Text field", state: "default"})
           +text-field({placeholder: "Email", autofocus: false})
@@ -118,12 +91,14 @@ include ../components/button/button.pug
           +range-btn({name: "range-slider-0", id: "range-slider-0"})
         
         +form-element({title: "Buttons"})
-          +btn({title: "click me", varBtn: "fill", name: "button", id: "button-0"})
-          +btn({title: "click me", varBtn: "fill", name: "button", id: "button-1", deactive: true})
-          +btn({title: "click me", varBtn: "border", name: "button", id: "button-2"})
-          +btn({title: "click me", varBtn: "border", name: "button", id: "button-3", deactive: true})
-          +btn({title: "click me", varBtn: "minimalism", name: "button", id: "button-4"})
-          +btn({title: "click me", varBtn: "minimalism", name: "button", id: "button-5", deactive: true})
+          .container-flex
+            +btn({title: "click me", varBtn: "fill", id: "button-0"})
+            +btn({title: "click me", varBtn: "fill", id: "button-1", deactive: true})
+            +btn({title: "click me", varBtn: "border", id: "button-2"})
+            +btn({title: "click me", varBtn: "border", id: "button-3", deactive: true})
+            +btn({title: "click me", varBtn: "minimalism", id: "button-4"})
+            +btn({title: "click me", varBtn: "minimalism", id: "button-5", deactive: true})
+            +btn({title: "перейти к оплате", varBtn: "fill", id: "button-0", widthBtn: "320", isClickable: true})
 
       .cell.grid-row-2
 

@@ -1,3 +1,108 @@
+$border-radius: 2.2rem
+
+  
+// кнопка (общие свойства)
+.btn
+  position: relative
+  width: 100%
+  max-width: 10rem
+  height: 4.4rem
+
+  .btn__bg, 
+  .btn__bg:before
+    position: absolute
+    content: ""
+    top: 0
+    right: 0
+    bottom: 0
+    left: 0
+    border-radius: $border-radius
+
+  &__title
+    position: absolute
+    content: ""
+    top: 50%
+    left: 50%
+    transform: translate(-50%, -50%)
+    white-space: nowrap
+    @include font-how-h3($color: $color-purple)
+
+
+  // кнопка с заливкой
+  &-fill
+    .btn__bg
+      @include linear-gradient
+              
+    .btn__title
+      color: #fff
+    
+
+  // кнопка с бордером
+  &-border
+    .btn__bg
+      @include linear-gradient
+      &:before
+        margin: 2px
+        width: calc(100% - 4px)
+        height: calc(100% - 4px)
+        background: #fff
+
+      
+  // кнопка без заливки и бордера
+  &-minimalism
+    .btn__title
+      left: 0
+      transform: translateX(0)
+
+
+  // модификатор: deactive
+  &-fill.btn_deactive
+    opacity: .5
+  
+  &-border.btn_deactive
+    .btn__bg
+      opacity: .5
+
+  &-minimalism.btn_deactive
+    .btn__title
+      color: $color-dark-shade-50
+  
+
+  // модификатор: width
+  &_width-320
+    max-width: 32rem
+
+
+  // модификатор: добавление стрелки к кнопке
+  &__icon
+    position: absolute
+    cursor: pointer
+    @include isFlex
+    height: calc(100% - 2px)
+    width: 4.3rem
+    @include linear-gradient
+    border-radius: $border-radius
+    top: 1px
+    bottom: 0
+    right: 1px
+    color: #fff
+
+
+
+
+  
+  
+  
+// https://css-tricks.com/gradient-borders-in-css/
+
+
+
+
+
+
+//............................. старое и ненужное ................................//
+
+
 // .button 
 //   outline: none
 //   border: 1px solid #e0e0e0
@@ -19,53 +124,4 @@
 //   background-color: #008ed6
 
 
-.btn
-  position: relative
-  padding: 1.4rem 2rem 1.5rem 2rem
-  border-radius: 2.2rem
-  border: none
-  @include font-how-h3($color: #fff)
-
-  &__fill
-    @include linear-gradient
-  
-  &__border
-    border: 2px solid
-    &:before 
-      content: ''
-      position: absolute
-      top: 0
-      right: 0
-      bottom: 0
-      left: 0
-      // z-index: -1
-      margin: -2px
-      border-radius: inherit
-      box-sizing: border-box
-      background: linear-gradient(to right, red, orange)
-    &:after
-      content: ''
-      position: absolute
-      top: 0
-      right: 0
-      bottom: 0
-      left: 0
-      border-radius: inherit
-      background: #fff
-      color: $color-purple
-      
-
-  &__minimalism
-    color: $color-purple
-    background-color: #fff
-
-  &_deactive
-    opacity: .5
-  
-  &__border:after.btn_deactive
-    color: red
-  &__minimalism.btn_deactive
-    color: $color-dark-shade-100
-
-
-  // https://css-tricks.com/gradient-borders-in-css/
+//.................................................................................//
