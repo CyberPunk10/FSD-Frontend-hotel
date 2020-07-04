@@ -7,16 +7,31 @@ mixin btn(options)
   -
     var btnClassName = "btn"
     var deactive = options.deactive ? " btn_deactive" : ""
+    var title = options.title
 
   case options.varBtn
     when "fill"
-      - btnClassName += " btn__fill"
+      - btnClassName += " btn-fill"
     when "border"
-      - btnClassName += " btn__border"
+      - btnClassName += " btn-border"
     when "minimalism"
-      - btnClassName += " btn__minimalism"
+      - btnClassName += " btn-minimalism"
+
+  case options.widthBtn
+    when "320"
+      - btnClassName += " btn_width-320"
+    when "200"
+      - btnClassName += " btn_width-200"
+    when "200"
+      - btnClassName += " btn_width-200"
 
   -
     btnClassName += deactive
 
-  button(class = btnClassName)= options.title
+  div(class = btnClassName)
+    div(class = "btn__bg")
+    div(class = "btn__title")= title
+    if options.isClickable
+      <i class="btn__icon material-icons">arrow_forward</i>
+
+    
