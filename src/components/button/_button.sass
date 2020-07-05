@@ -26,7 +26,7 @@ $border-radius: 2.2rem
     transform: translate(-50%, -50%)
     white-space: nowrap
     @include font-how-h3($color: $color-purple)
-
+    // padding: 0 4.3rem
 
   // кнопка с заливкой
   &-fill
@@ -69,8 +69,11 @@ $border-radius: 2.2rem
   
 
   // модификатор: width
-  &_width-320
+  &_max-width-320
     max-width: 32rem
+
+  &_min-width-250
+    min-width: 25rem
 
 
   // модификатор: добавление стрелки к кнопке

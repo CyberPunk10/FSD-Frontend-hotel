@@ -19,7 +19,7 @@ include ../components/button/button.pug
   .content-form-elements
     .grid-container-form-elements
       
-      .cell
+      .cell.cell-1
         +form-element({title: "Text field", state: "default"})
           +text-field({placeholder: "Email", autofocus: false})
         
@@ -40,20 +40,20 @@ include ../components/button/button.pug
         .container-flex
 
           +form-element({title: "date dropdown", width: "xs"})
-            +dropdown({id: "dropdown-date-1", width: "xs"})
+            +dropdown({id: "dropdown-date-1", maxWidth: "xs"})
               +option-for-dropdown({})
               a(href="https://schoolsw3.com/howto/howto_js_dropdown.php") schoolsw3.com
               a(href="#") Link 2
               a(href="#") Link 3
           
           +form-element({title: "date dropdown", width: "xs"})
-            +dropdown({id: "dropdown-date-2", width: "xs"})
+            +dropdown({id: "dropdown-date-2", maxWidth: "xs"})
               a(href="https://schoolsw3.com/howto/howto_js_dropdown.php") schoolsw3.com
               a(href="#") Link 2
               a(href="#") Link 3
 
         +form-element({title: "filter date dropdown", width: "sm", paddingTop: "40"})
-          +dropdown({id: "dropdown-filter", width: "sm"})
+          +dropdown({id: "dropdown-filter", maxWidth: "sm"})
             a(href="https://schoolsw3.com/howto/howto_js_dropdown.php") schoolsw3.com
             a(href="#") Link 2
             a(href="#") Link 3
@@ -61,7 +61,9 @@ include ../components/button/button.pug
         +form-element({title: "subscription text field", width: "sm", paddingTop: "40"})
           +text-field({placeholder: "Email", autofocus: false, width: "sm", isClickable: true})
       
-      .cell
+      .cell.cell-2.cell-empty
+        //- p 2
+      .cell.cell-3
 
         +form-element({title: "Checkbox Buttons", paddingBottom: "11"})
           +checkbox-btn({id: "checkbox-btn-1", title: "Можно курить"})
@@ -85,7 +87,10 @@ include ../components/button/button.pug
           +rate-btn({name: "rate-btn-1", id: "rate-btn-1", rating: "5/5"})
 
           
-      .cell
+      .cell.cell-4.cell-empty
+        //- p 4
+      .cell.cell-5
+        //- p 5
 
         +form-element({title: "Range Slider"})
           +range-btn({name: "range-slider-0", id: "range-slider-0"})
@@ -98,41 +103,49 @@ include ../components/button/button.pug
             +btn({title: "click me", varBtn: "border", id: "button-3", deactive: true})
             +btn({title: "click me", varBtn: "minimalism", id: "button-4"})
             +btn({title: "click me", varBtn: "minimalism", id: "button-5", deactive: true})
-            +btn({title: "перейти к оплате", varBtn: "fill", id: "button-0", widthBtn: "320", isClickable: true})
+            +btn({title: "перейти к оплате", varBtn: "fill", id: "button-0", minWidthBtn: "250", maxWidthBtn: "320", isClickable: true})
 
-      .cell.grid-row-2
+      .cell.cell-6
+        //- p 6
 
         +form-element({title: "dropdown", state: "default", width: "sm"})
-          +dropdown({id: "dropdown-how-many-guests-4-1", text: "2 спальни, 2 кровати...", width: "sm"})
+          +dropdown({id: "dropdown-how-many-guests-4-1", text: "2 спальни, 2 кровати...", maxWidth: "sm"})
             +option-for-dropdown({title: "Спальни"})
             +option-for-dropdown({title: "Кровати"})
             +option-for-dropdown({title: "Ванные комнаты"})
 
         +form-element({title: "dropdown", state: "expanded", width: "sm"})
-          +dropdown({id: "dropdown-how-many-guests-4-2", text: "2 спальни, 2 кровати...", width: "sm", show: true, noAbsolute: true})
+          +dropdown({id: "dropdown-how-many-guests-4-2", text: "2 спальни, 2 кровати...", maxWidth: "sm", show: true, noAbsolute: true})
             +option-for-dropdown({title: "Спальни"})
             +option-for-dropdown({title: "Кровати"})
             +option-for-dropdown({title: "Ванные комнаты"})
 
-      .cell.grid-row-2
+      .cell.cell-7.cell-empty
+        //- p 7
+      .cell.cell-8
+        //- p 8
 
         +form-element({title: "dropdown"})
-          +dropdown({id: "dropdown-how-many-guests-5", text: "Сколько гостей", show: true})
+          +dropdown({id: "dropdown-how-many-guests-5", text: "Сколько гостей", show: true, minWidth: "sm"})
             +option-for-dropdown({title: "Взрослые"})
             +option-for-dropdown({title: "Дети"})
             +option-for-dropdown({title: "Младенцы"})
             +apply-btn-for-dropdown({})
 
-      .cell.grid-row-2
+      .cell.cell-9.cell-empty
+        //- p 9
+      .cell.cell-10
+        //- p 10
 
         +form-element({title: "dropdown"})
-          +dropdown({id: "dropdown-how-many-guests-6", text: "3 гостя", show: true})
+          +dropdown({id: "dropdown-how-many-guests-6", text: "3 гостя", show: true, minWidth: "sm"})
             +option-for-dropdown({title: "Взрослые"})
             +option-for-dropdown({title: "Дети"})
             +option-for-dropdown({title: "Младенцы"})
             +apply-btn-for-dropdown({})
 
-      .cell.grid-row-3
+      .cell.cell-11
+        //- p 11
         
         +form-element({width: "sm"})
           +checkbox-list({})
@@ -152,45 +165,31 @@ include ../components/button/button.pug
             +checkbox-btn({id: "checkbox-list-item-25", title: "Телевизор"})
             +checkbox-btn({id: "checkbox-list-item-26", title: "Шампунь"})
 
-      .cell.grid-row-3
+      .cell.cell-12.cell-empty
+        //- p 12
+      .cell.cell-13
+        //- p 13
       
         +form-element({title: "rich Checkbox Buttons", paddingBottom: "11"})
           +checkbox-btn({id: "rich-checkbox-1", title: "Широкий коридор", description: "Ширина коридоров в номере не менее 91 см."})
           +checkbox-btn({id: "rich-checkbox-2", title: "Помощник для инвалидов", description: "На 1 этаже вас встретит специалист  и проводит до номера."})
 
-      .cell.grid-row-3
+      .cell.cell-14.cell-empty
+        //- p 14
+      .cell.cell-15
+        //- p 15
 
         +form-element({title: "bullet list"})
 
-      .cell 10
-      .cell 11
-      .cell 12
+      .cell.cell-16
+        //- p 16
 
+      .cell.cell-17.cell-empty
+        //- p 17
+      .cell.cell-18
+        //- p 18
 
-    
-    
-    
-    
-
-    
-    
-
-
-
-    br
-    br
-    hr
-    hr
-    br
-    p для тестов
-    br
-    hr
-    hr
-    br
-    br
-    
-
-
-    
-
-    
+      .cell.cell-19.cell-empty
+        //- p 19
+      .cell.cell-20
+        //- p 20

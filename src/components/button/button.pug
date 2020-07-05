@@ -17,13 +17,15 @@ mixin btn(options)
     when "minimalism"
       - btnClassName += " btn-minimalism"
 
-  case options.widthBtn
+  case options.maxWidthBtn
     when "320"
-      - btnClassName += " btn_width-320"
+      - btnClassName += " btn_max-width-320"
     when "200"
-      - btnClassName += " btn_width-200"
-    when "200"
-      - btnClassName += " btn_width-200"
+      - btnClassName += " btn_max-width-200"
+  
+  case options.minWidthBtn
+    when "250"
+      - btnClassName += " btn_min-width-250"
 
   -
     btnClassName += deactive

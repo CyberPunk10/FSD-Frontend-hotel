@@ -16,7 +16,7 @@ html
 body
   background-color: #e5e5e5
   font-size: 14px
-  @include container()
+  @include container($width: 1490) // 1440px + 2.5rem +2.5rem
 // .container 
 //   @include container(964)
 //   width: 100%
@@ -59,3 +59,7 @@ li
 //   display: flex
 //   justify-content: space-around
 //   flex-wrap: wrap
+
+@media screen and ( max-width: 420px )
+  body
+    background-color: $color-purple
