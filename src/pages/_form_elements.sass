@@ -2,7 +2,7 @@
 
 .content-form-elements
   padding: 13.3rem 5rem 13.1rem
-  // min-width: 1200px
+  transition: .3s padding linear
 
 .grid-container-form-elements
   display: grid
@@ -17,10 +17,14 @@
   // .cell:nth-child(odd)
   //   background-color: #efefef
 
-.grid-row-2
+.cell-6,
+.cell-8,
+.cell-10
   padding-top: 8rem
 
-.grid-row-3
+.cell-11,
+.cell-13,
+.cell-15
   padding-top: 5.44rem
 
 .container-flex
@@ -35,12 +39,35 @@
 @media screen and ( max-width: 1260px )
   .grid-container-form-elements
     grid-template-columns: minmax(auto, 32rem) minmax(4rem, calc(4rem + 54px)) minmax(auto, 32rem) 4rem minmax(auto, 32rem)
+  
 
 @media screen and ( max-width: 1045px )
+
+  // меняем на 2 колонки (2 колонки и одна пустая колонка по середине)
   .grid-container-form-elements
     grid-template-columns: minmax(auto, 32rem) minmax(4rem, 8rem) minmax(auto, 32rem)
-  // .cell-empty
-  //   order: -1
+  
+  // сбасываем padding-top, используемый для 2-го и 3-тьего рядов в 3-ёх колоночной сетке
+  .cell-6,
+  .cell-8,
+  .cell-10
+    padding-top: 0
+  .cell-11,
+  .cell-13,
+  .cell-15
+    padding-top: 0
+
+  // устанавливаем новый padding-top для других ячеек
+  .cell-5,
+  .cell-6,
+  .cell-8,
+  .cell-10,
+  .cell-11,
+  .cell-13,
+  .cell-15
+    padding-top: 7rem
+
+  // переопределяем порядок
   .cell-1
     order: 0
   .cell-2
@@ -84,14 +111,27 @@
     order: 119
 
 @media screen and ( max-width: 767px )
+  .content-form-elements
+    padding: 3rem
+
+@media screen and ( max-width: 680px )
   .grid-container-form-elements
     grid-template-columns: minmax(auto, 32rem)
 
-  .cell-empty
-    order: -1
+@media screen and ( max-width: 420px )
+  .content-form-elements
+    padding: 3rem 1rem
 
-  .cell:not(.cell-empty)
-    order: 0
+
+// @media screen and ( max-width: 767px )
+//   .grid-container-form-elements
+//     grid-template-columns: minmax(auto, 32rem)
+
+//   .cell-empty
+//     order: -1
+
+//   .cell:not(.cell-empty)
+//     order: 0
 
 
 

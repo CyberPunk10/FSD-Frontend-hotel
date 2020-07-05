@@ -9,11 +9,15 @@
     &:checked + .checkbox-btn__label:after
       opacity: 1
 
+    &:not(:checked) + .checkbox-btn__label:after
+      opacity: 0
+
     &:checked + .checkbox-btn__label:before
       border-color: $color-purple
 
-    &:not(:checked) + .checkbox-btn__label:after
-      opacity: 0
+    &:checked + .checkbox-btn__label
+      color: $color-dark-shade-75
+
 
   &__label
     color: $color-dark-shade-50
