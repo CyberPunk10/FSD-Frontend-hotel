@@ -2,8 +2,9 @@ mixin dropdown(options)
   -
     // for dropdown
     var classNameDrop = "dropdown"
-    var width = options.width ? `${classNameDrop}_width-${options.width}` : ''   //- "sm/xs"
-    classNameDrop += ` ${width}`
+    var minWidth = options.minWidth ? `${classNameDrop}_min-width-${options.minWidth}` : ''   //- "sm/xs"
+    var maxWidth = options.maxWidth ? `${classNameDrop}_max-width-${options.maxWidth}` : ''   //- "sm/xs"
+    classNameDrop += ` ${minWidth} ${maxWidth}`
     var show = options.show ? 'show' : ''   //- "true" (при зарузке страницы dropdown будет открытым. Используется в __btn & __content) 
 
     // for dropdown__btn

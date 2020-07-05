@@ -2,12 +2,19 @@
 .dropdown                      
   position: relative
   display: inline-block
+  min-width: 15rem
   max-width: 32rem
   width: 100%
+  margin-bottom: 1rem
 
-  &_width-sm
+  &_min-width-sm
+    min-width: 26.6rem
+  &_min-width-xs
+    min-width: 15rem
+
+  &_max-width-sm
     max-width: 26.6rem
-  &_width-xs
+  &_max-width-xs
     max-width: 15rem
 
   &:hover &__btn,

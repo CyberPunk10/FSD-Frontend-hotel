@@ -1,15 +1,17 @@
 /* src\pages\_form_elements.sass */
 
 .content-form-elements
-  padding-top: 14.4rem
-  padding-bottom: 13.1rem
-  padding-left: 14.1rem
+  padding: 13.3rem 5rem 13.1rem
+  // min-width: 1200px
 
 .grid-container-form-elements
   display: grid
-  grid: auto auto auto / repeat(3, minmax(auto, 320px))
-  grid-column-gap: 20px
-  max-width: 1200px
+  grid-template-columns: 32rem minmax(calc(4rem + 54px), 126px) 32rem minmax(4rem, 72px) 32rem
+  max-width: max-content
+  margin: 0 auto
+  transition: 1s all linear
+
+  // заливка ячеек в шхматном порядке
   // .cell:nth-child(even)
   //   background-color: #e4e4e4
   // .cell:nth-child(odd)
@@ -26,3 +28,73 @@
   display: flex
   justify-content: space-between
   flex-wrap: wrap
+
+
+
+  
+@media screen and ( max-width: 1260px )
+  .grid-container-form-elements
+    grid-template-columns: minmax(auto, 32rem) minmax(4rem, calc(4rem + 54px)) minmax(auto, 32rem) 4rem minmax(auto, 32rem)
+
+@media screen and ( max-width: 1045px )
+  .grid-container-form-elements
+    grid-template-columns: minmax(auto, 32rem) minmax(4rem, 8rem) minmax(auto, 32rem)
+  // .cell-empty
+  //   order: -1
+  .cell-1
+    order: 0
+  .cell-2
+    order: 1
+  .cell-3
+    order: 2
+  .cell-4
+    order: 4
+  .cell-5
+    order: 3
+  .cell-6
+    order: 5
+
+  .cell-7
+    order: 7
+  .cell-8
+    order: 6
+  .cell-9
+    order: 200
+  .cell-10
+    order: 8
+  .cell-11
+    order: 10
+  .cell-12
+    order: 11
+  .cell-13
+    order: 12
+  .cell-14
+    order: 14
+  .cell-15
+    order: 13
+  .cell-16
+    order: 115
+  .cell-17
+    order: 116
+  .cell-18
+    order: 117
+  .cell-19
+    order: 118
+  .cell-20
+    order: 119
+
+@media screen and ( max-width: 767px )
+  .grid-container-form-elements
+    grid-template-columns: minmax(auto, 32rem)
+
+  .cell-empty
+    order: -1
+
+  .cell:not(.cell-empty)
+    order: 0
+
+
+
+
+
+
