@@ -3,7 +3,8 @@ mixin text-field(options)
     // for text-field
     var className = "text-field"
     var width = options.width ? `${className}_width-${options.width}` : ''   //- "sm"
-    className += ` ${width}`
+    var marginBottom = options.marginBottom ? ` text-field_margin-bottom-${options.marginBottom}` : ''   //- "5"
+    className += ` ${width} ${marginBottom}`
     
     // for text-field__input
     var className__input = "text-field__input"
@@ -11,7 +12,7 @@ mixin text-field(options)
     var value = options.value || false
     var type = options.type || "text"
     var focus = options.autofocus ? true : false  //- ""
-  
+
   
   div(class = className)
     input(type = type, class = className__input, value = value, placeholder = placeholder, autofocus=focus)

@@ -1,39 +1,22 @@
-include ../components/section-pages/section-pages.pug
+//- include ../components/section-pages/section-pages.pug
 include ../components/form-wrap/form-wrap.pug
-include ../components/text-field/text-field.pug
+include ../components/card-preview/card-preview.pug
+include ../components/calendar-card/calendar-card.pug
+//- include ../components/text-field/text-field.pug
+include ../components/cards/card-registration/card-registration.pug
+include ../components/cards/card-search/card-search.pug
 
 +section-pages('Cards')
   .content-cards
-    .grid-container-cards
+    .flex-container-cards
+
+      +card-search()
       
-      .cell.cell-1
+      +card-registration()
 
-        +form-wrap({title: "Найдём номера под ваши пожелания"})
-          
-          .container-flex
+        
 
-            +form-element({title: "прибытие", width: "xs"})
-              +dropdown({id: "dropdown-date-1", width: "xs"})
-                +option-for-dropdown({})
-                a(href="https://schoolsw3.com/howto/howto_js_dropdown.php") schoolsw3.com
-                a(href="#") Link 2
-                a(href="#") Link 3
-            
-            +form-element({title: "выезд", width: "xs"})
-              +dropdown({id: "dropdown-date-2", width: "xs"})
-                a(href="https://schoolsw3.com/howto/howto_js_dropdown.php") schoolsw3.com
-                a(href="#") Link 2
-                a(href="#") Link 3
-
-          +form-element({title: "гости", paddingTop: "40"})
-            +dropdown({id: "dropdown-how-many-guests", text: "Сколько гостей"})
-              +option-for-dropdown({title: "Взрослые"})
-              +option-for-dropdown({title: "Дети"})
-              +option-for-dropdown({title: "Младенцы"})
-              +apply-btn-for-dropdown({})
-
-      
-      .cell.cell-2
+      .cell.cell-3
 
         +form-wrap({title: "Регистрация аккаунта"})
           +text-field({placeholder: "Имя",})
@@ -41,23 +24,11 @@ include ../components/text-field/text-field.pug
         
           +radio-btn({name: "sex", id: "radio-btn-men-cards", title: "Мужчина", checked: true})
           +radio-btn({name: "sex", id: "radio-btn-women-cards", title: "Женщина"})
-          
-          +form-element({title: "дата рождения"})
-            +text-field({})
-
-          +form-element({title: "данные для входа в сервис"})
-            +text-field({placeholder: "Email"})
-            +text-field({placeholder: "Пароль"})
-
-          +toggle-btn({id: "toggle-btn-2", title: "Получать спецпредложения"})
-          
-          +btn({title: "перейти к оплате", varBtn: "fill", id: "cards-0", widthBtn: "320", isClickable: true})
-                      
-          +btn({title: "Войти", varBtn: "border", id: "cards-1"})
-
-      .cell.cell-3
-
-        +form-wrap({title: "Регистрация аккаунта"})
+          +text-field({placeholder: "Имя",})
+        
+          +radio-btn({name: "sex", id: "radio-btn-men-cards", title: "Мужчина", checked: true})
+          +radio-btn({name: "sex", id: "radio-btn-women-cards", title: "Женщина"})
+          +radio-btn({name: "sex", id: "radio-btn-women-cards", title: "Женщина"})
       
       .cell.cell-4
 
@@ -77,31 +48,14 @@ include ../components/text-field/text-field.pug
 
           +toggle-btn({id: "toggle-btn-2", title: "Получать спецпредложения"})
           
-          +btn({title: "перейти к оплате", varBtn: "fill", id: "cards-0", widthBtn: "320", isClickable: true})
                       
       .cell.cell-5
 
-        +form-wrap({title: "Войти"})
-          +text-field({placeholder: "Имя",})
-          +text-field({placeholder: "Фамилия"})
-        
-          +radio-btn({name: "sex", id: "radio-btn-men-cards", title: "Мужчина", checked: true})
-          +radio-btn({name: "sex", id: "radio-btn-women-cards", title: "Женщина"})
-          
-          +form-element({title: "дата рождения"})
-            +text-field({})
-
-          +form-element({title: "данные для входа в сервис"})
-            +text-field({placeholder: "Email"})
-            +text-field({placeholder: "Пароль"})
-
-          +toggle-btn({id: "toggle-btn-2", title: "Получать спецпредложения"})
-          
-          +btn({title: "перейти к оплате", varBtn: "fill", id: "cards-0", widthBtn: "320", isClickable: true})
+        +calendar-card({title: "Календарь"})
                     
       .cell.cell-6
 
+        +card-preview({title: "Карточка отеля"})        
 
       .cell.cell-7
-
 

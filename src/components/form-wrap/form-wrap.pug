@@ -2,11 +2,9 @@ mixin form-wrap(options)
 
   - 
     var title = options.title
+    var marginBottom = options.marginBottom ? ` form-wrap__title_margin-bottom-${options.marginBottom}` : ''   //- "20"
+
 
   .form-wrap
-    h1.form-wrap__title= title
+    h1(class=`form-wrap__title h1-special-for-cards ${marginBottom}`)= title
     block
-
-
-
-// добавить разную ширину блоков?

@@ -2,26 +2,31 @@
 
 .content-cards
   background-color: #f4f4f6
-  padding-top: 14rem
+  padding-top: 15rem
 
-.grid-container-cards
-  // display: grid
-  // // grid-template-columns: 38rem 38rem 32rem
-  // grid-template-rows: auto auto
-  // grid-gap: 4rem
-  // grid-auto-flow: column
-  // max-width: max-content
-  // margin: 0 auto
-  // transition: 1s all linear
-
+.flex-container-cards
   display: flex
   flex-flow: column wrap
-  max-height: 1060px
-  max-width: 1160px
+  align-content: space-between
+  max-height: 1100px
+  max-width: calc(38rem + 4rem + 38rem + 4rem + 32rem)
   margin: 0 auto
+  transition: .3s all linear
 
-  // заливка ячеек в шхматном порядке
-  // .cell:nth-child(even)
-  //   background-color: #e4e4e4
-  // .cell:nth-child(odd)
-  //   background-color: #efefef
+
+  
+@media screen and ( max-width: 1300px )
+  .flex-container-cards
+    max-height: 2000px
+    max-width: 89%
+    align-content: space-around
+
+
+
+@media screen and ( max-width: 991px )
+ .flex-container-cards
+    max-height: none
+    max-width: 38rem
+    flex-wrap: nowrap
+    align-content: center
+
