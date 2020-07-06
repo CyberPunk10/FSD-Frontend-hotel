@@ -4,6 +4,7 @@ mixin radio-btn(options)
     var isChecked = options.checked || false          // checked: true
     var id = options.id || false          
     var name = options.name || false          
+    var marginLeft = options.marginLeft ? ` radio-btn_margin-left-${options.marginLeft}` : ''   //- "20"
 
     // for radio-btn__label
     var classNameLabel = "radio-btn__label"         
@@ -13,7 +14,7 @@ mixin radio-btn(options)
     // for radio-btn__description
     var classNameDescription = "radio-btn__description"         
 
-  .radio-btn
+  div(class=`radio-btn ${marginLeft}`)
     input(type="radio", class="radio-btn__input", id = id, name = name, checked = isChecked)
     label(class = classNameLabel, for = id)= title
     if description

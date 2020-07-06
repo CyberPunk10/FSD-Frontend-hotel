@@ -8,6 +8,9 @@ mixin btn(options)
     var btnClassName = "btn"
     var deactive = options.deactive ? " btn_deactive" : ""
     var title = options.title
+    var marginTop = options.marginTop ? ` btn_margin-top-${options.marginTop}` : ''   //- "20"
+    var marginBottom = options.marginBottom ? ` btn_margin-bottom-${options.marginBottom}` : ''   //- "30"
+
 
   case options.varBtn
     when "fill"
@@ -28,7 +31,7 @@ mixin btn(options)
       - btnClassName += " btn_min-width-250"
 
   -
-    btnClassName += deactive
+    btnClassName += deactive + marginTop + marginBottom
 
   div(class = btnClassName)
     div(class = "btn__bg")

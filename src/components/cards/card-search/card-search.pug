@@ -1,0 +1,29 @@
+mixin card-search()
+
+  .card-search
+          
+    +form-wrap({title: "Найдём номера под ваши пожелания"})
+      
+      .container-flex
+
+        +form-element({title: "прибытие", width: "xs"})
+          +dropdown({id: "dropdown-date-1", width: "xs"})
+            +option-for-dropdown({})
+            a(href="https://schoolsw3.com/howto/howto_js_dropdown.php") schoolsw3.com
+            a(href="#") Link 2
+            a(href="#") Link 3
+        
+        +form-element({title: "выезд", width: "xs"})
+          +dropdown({id: "dropdown-date-2", width: "xs"})
+            a(href="https://schoolsw3.com/howto/howto_js_dropdown.php") schoolsw3.com
+            a(href="#") Link 2
+            a(href="#") Link 3
+
+      +form-element({title: "гости"})
+        +dropdown({id: "dropdown-how-many-guests", text: "Сколько гостей"})
+          +option-for-dropdown({title: "Взрослые"})
+          +option-for-dropdown({title: "Дети"})
+          +option-for-dropdown({title: "Младенцы"})
+          +apply-btn-for-dropdown({})
+      
+      +btn({title: "подобрать номер", varBtn: "fill", id: "button-0", minWidthBtn: "250", maxWidthBtn: "320", isClickable: true, marginTop: '20'})
