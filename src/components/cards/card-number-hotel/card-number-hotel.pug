@@ -1,0 +1,24 @@
+mixin card-number-hotel()
+
+  .card-number-hotel
+    +form-wrap({title: "Регистрация аккаунта", marginBottom: "20"})
+      +text-field({placeholder: "Имя",})
+      +text-field({placeholder: "Фамилия", marginBottom: "5"})
+
+      +radio-btn({name: "sex", id: "radio-btn-men-cards", title: "Мужчина", checked: true})
+      +radio-btn({name: "sex", id: "radio-btn-women-cards", title: "Женщина", marginLeft: "20"})
+      
+      +form-element({title: "дата рождения", paddingTop: "20"})
+        +text-field({})
+
+      +form-element({title: "данные для входа в сервис"})
+        +text-field({placeholder: "Email"})
+        +text-field({placeholder: "Пароль", marginBottom: "5"})
+
+      +toggle-btn({id: "toggle-btn-2", title: "Получать спецпредложения", marginBottom: "20"})
+      
+      +btn({title: "перейти к оплате", varBtn: "fill", id: "cards-0", maxWidthBtn: "320", isClickable: true, marginBottom: "30"})
+                  
+      .card-number-hotel__flex-wrap-log-in
+        p Уже есть аккаунт на Toxin
+        +btn({title: "Войти", varBtn: "border", id: "cards-1"})
