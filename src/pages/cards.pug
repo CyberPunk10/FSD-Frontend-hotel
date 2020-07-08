@@ -5,6 +5,8 @@ include ../components/calendar-card/calendar-card.pug
 //- include ../components/text-field/text-field.pug
 include ../components/cards/card-registration/card-registration.pug
 include ../components/cards/card-search/card-search.pug
+include ../components/cards/card-number-hotel/card-number-hotel.pug
+include ../components/cards/card-log-in/card-log-in.pug
 
 +section-pages('Cards')
   .content-cards
@@ -14,48 +16,11 @@ include ../components/cards/card-search/card-search.pug
       
       +card-registration()
 
-        
+      +card-number-hotel()
 
-      .cell.cell-3
+      +card-log-in()
 
-        +form-wrap({title: "Регистрация аккаунта"})
-          +text-field({placeholder: "Имя",})
-          +text-field({placeholder: "Фамилия"})
-        
-          +radio-btn({name: "sex", id: "radio-btn-men-cards", title: "Мужчина", checked: true})
-          +radio-btn({name: "sex", id: "radio-btn-women-cards", title: "Женщина"})
-          +text-field({placeholder: "Имя",})
-        
-          +radio-btn({name: "sex", id: "radio-btn-men-cards", title: "Мужчина", checked: true})
-          +radio-btn({name: "sex", id: "radio-btn-women-cards", title: "Женщина"})
-          +radio-btn({name: "sex", id: "radio-btn-women-cards", title: "Женщина"})
-      
-      .cell.cell-4
-
-        +form-wrap({title: "Войти"})
-          +text-field({placeholder: "Имя",})
-          +text-field({placeholder: "Фамилия"})
-        
-          +radio-btn({name: "sex", id: "radio-btn-men-cards", title: "Мужчина", checked: true})
-          +radio-btn({name: "sex", id: "radio-btn-women-cards", title: "Женщина"})
-          
-          +form-element({title: "дата рождения"})
-            +text-field({})
-
-          +form-element({title: "данные для входа в сервис"})
-            +text-field({placeholder: "Email"})
-            +text-field({placeholder: "Пароль"})
-
-          +toggle-btn({id: "toggle-btn-2", title: "Получать спецпредложения"})
-          
-                      
-      .cell.cell-5
-
-        +calendar-card({title: "Календарь"})
+      +calendar-card({title: "Календарь"})
                     
-      .cell.cell-6
-
-        +card-preview({title: "Карточка отеля"})        
-
-      .cell.cell-7
+      +card-preview({title: "Карточка отеля"})
 

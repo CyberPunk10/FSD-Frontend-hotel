@@ -1,0 +1,13 @@
+mixin card-log-in()
+
+  .card-log-in
+    +form-wrap({title: "Войти"})
+
+      +text-field({placeholder: "Email"})
+      +text-field({placeholder: "Пароль"})
+
+      +btn({title: "перейти к оплате", varBtn: "fill", id: "cards-0", maxWidthBtn: "320", isClickable: true, marginBottom: "30"})
+
+      .card-log-in__flex-wrap-log-in
+        p Нет аккаунта на Toxin?
+        +btn({title: "Создать", varBtn: "border", id: "cards-1"})
