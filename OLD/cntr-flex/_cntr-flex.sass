@@ -1,0 +1,91 @@
+//- МОЖНО УДАЛИТЬ - УНИВЕРСАЛЬНЫЙ МИКСИН CNTR-FLEX В ДАННОМ ПРОЕКТЕ ПОКА НЕ ОПРАВДАН
+
+.test-flex-temp
+  width: 2rem
+  height: 5rem
+  margin: 1rem
+  background-color: $color-purple
+
+// обнулённый
+.cntr-flex-flex-start-stretch-nowrap-row
+  display: flex
+
+
+// // only justify
+// .cntr-flex-center-stretch-nowrap-row
+//   display: flex
+//   justify-content: center
+
+// .cntr-flex-between-stretch-nowrap-row
+//   display: flex
+//   justify-content: space-between
+
+// .cntr-flex-around-stretch-nowrap-row
+//   display: flex
+//   justify-content: space-around
+
+
+// // justify + align
+// .cntr-flex-between-center-nowrap-row
+//   display: flex
+//   justify-content: space-between
+//   align-items: center
+
+// // justify + align + wrap
+// .cntr-flex-between-center-wrap-row
+//   display: flex
+//   justify-content: space-between
+//   align-items: center
+//   flex-wrap: wrap
+
+  
+// justify + wrap
+.cntr-flex-between-stretch-wrap-row
+  display: flex
+  justify-content: space-between
+  flex-wrap: wrap
+  
+.cntr-flex-between-stretch-nowrap-row
+  display: flex
+  justify-content: space-between
+  flex-wrap: nowrap
+
+  
+/*  Ниже рабочий более универсальный способ, но создаёт много классов,
+    которые не нужны на текущий момент разработки. Если проект потребует 
+    большой вариации использования flex-контейнеров, то этот способ
+    имеет место быть.
+ */
+
+// .cntr-flex 
+
+//   $justify: (flex-start: flex-start, center: center, flex-end: flex-end, around: space-around, between: space-between)
+//   $align: (start: flex-start, center: center, end: flex-end)
+//   $wrap: (nowrap: nowrap, wrap: wrap)
+//   // $direction: (row: row, column: column)
+
+
+//   // only justify
+//   @each $nameClass, $prop in $justify 
+
+//     &-#{$nameClass}-stretch-nowrap-row
+//       display: flex
+//       justify-content: $prop
+  
+
+//   // // only align
+//   // @each $nameClass, $prop in $align 
+
+//   //   &-flex-start-#{$nameClass}-nowrap-row
+//   //     display: flex
+//   //     align-items: $prop
+  
+  
+//   // only wrap
+//   @each $nameClass, $prop in $wrap 
+
+//     &-flex-start-stretch-#{$nameClass}-row
+//       display: flex
+//       flex-wrap: $prop
+      
+    

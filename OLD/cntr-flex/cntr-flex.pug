@@ -1,0 +1,18 @@
+//- МОЖНО УДАЛИТЬ - УНИВЕРСАЛЬНЫЙ МИКСИН CNTR-FLEX В ДАННОМ ПРОЕКТЕ ПОКА НЕ ОПРАВДАН
+
+//- cntr-flex-(justify-content)-(align-items)-(flex-wrap)-(flex-direction)
+
+mixin cntr-flex(options)
+
+  - 
+    var justify = options.justify ? `-${options.justify}` : '-flex-start'    // 'between'
+    var align = options.align ? `-${options.align}` : '-stretch'             // 'center'
+    var wrap = options.wrap ? `-${options.wrap}` : '-nowrap'                 // 'wrap'
+    var direction = options.direction ? `-${options.direction}` : '-row'     // 'column'
+    
+    var className = `cntr-flex`
+    
+    className += `${justify}${align}${wrap}${direction}`
+    
+  div(class = className)
+    block

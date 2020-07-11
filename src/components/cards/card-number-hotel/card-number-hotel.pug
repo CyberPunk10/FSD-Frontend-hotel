@@ -1,24 +1,56 @@
+include ../../form-wrap/form-wrap.pug
+
 mixin card-number-hotel()
 
   .card-number-hotel
-    +form-wrap({title: "Регистрация аккаунта", marginBottom: "20"})
-      +text-field({placeholder: "Имя",})
-      +text-field({placeholder: "Фамилия", marginBottom: "5"})
-
-      +radio-btn({name: "sex", id: "radio-btn-men-cards", title: "Мужчина", checked: true})
-      +radio-btn({name: "sex", id: "radio-btn-women-cards", title: "Женщина", marginLeft: "20"})
+    +form-wrap({marginBottom: "0"})
       
-      +form-element({title: "дата рождения", paddingTop: "20"})
-        +text-field({})
+      .container-flex
 
-      +form-element({title: "данные для входа в сервис"})
-        +text-field({placeholder: "Email"})
-        +text-field({placeholder: "Пароль", marginBottom: "5"})
+        .card-number-hotel__header-title
+          span.font-how-h2 № 
+          span.font-how-h1 888 
+          span.font-how-h3 люкс
 
-      +toggle-btn({id: "toggle-btn-2", title: "Получать спецпредложения", marginBottom: "20"})
+        .card-number-hotel__header-price
+          span 9 990₽ 
+          span в сутки
+
+        +form-element({title: "прибытие", width: "xs"})
+          +dropdown({id: "dropdown-date-1", maxWidth: "xs"})
+            a(href="https://schoolsw3.com/howto/howto_js_dropdown.php") schoolsw3.com
+            a(href="#") Link 2
+            a(href="#") Link 3
+        
+        +form-element({title: "выезд", width: "xs"})
+          +dropdown({id: "dropdown-date-2", maxWidth: "xs"})
+            a(href="https://schoolsw3.com/howto/howto_js_dropdown.php") schoolsw3.com
+            a(href="#") Link 2
+            a(href="#") Link 3
       
-      +btn({title: "перейти к оплате", varBtn: "fill", id: "cards-0", maxWidthBtn: "320", isClickable: true, marginBottom: "30"})
-                  
-      .card-number-hotel__flex-wrap-log-in
-        p Уже есть аккаунт на Toxin
-        +btn({title: "Войти", varBtn: "border", id: "cards-1"})
+      +form-element({title: "гости"})
+        +dropdown({id: "dropdown-how-many-guests", text: "3 гостя"})
+          +option-for-dropdown({title: "Взрослые"})
+          +option-for-dropdown({title: "Дети"})
+          +option-for-dropdown({title: "Младенцы"})
+          +apply-btn-for-dropdown({})
+      
+      .card-number-hotel__description.cntr-flex-between
+        span 9 990₽ х 4 суток
+        span
+        span 39 960₽
+      .card-number-hotel__description.cntr-flex-between
+        span Сбор за услуги: скидка 2 179₽
+        span.card-number-hotel__description_icon i
+        span 30₽
+      .card-number-hotel__description.cntr-flex-between
+        span Сбор за дополнительные услуги
+        span.card-number-hotel__description_icon i
+        span 300₽
+      .card-number-hotel__result.cntr-flex-between
+        span.font-how-h2 Итого
+        span
+        span.font-how-h2 38 081₽
+
+      +btn({title: "забронировать", varBtn: "fill", id: "cards-0", maxWidthBtn: "320", isClickable: true})
+  

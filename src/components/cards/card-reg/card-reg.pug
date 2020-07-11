@@ -1,3 +1,5 @@
+include ../../form-wrap/form-wrap.pug
+
 mixin card-reg(options)
   -
     var id_num = options.id_num ? `_${options.id_num}` : ''
@@ -7,8 +9,8 @@ mixin card-reg(options)
       +text-field({placeholder: "Имя",})
       +text-field({placeholder: "Фамилия", marginBottom: "5"})
 
-      +radio-btn({name: `card-reg__sex${id_num}`, title: "Мужчина", checked: true})
-      +radio-btn({name: `card-reg__sex${id_num}`, title: "Женщина", marginLeft: "20"})
+      +radio-btn({name: `card-reg__sex${id_num}`, id: `card-reg__radio-btn-men${id_num}`, title: "Мужчина", checked: true})
+      +radio-btn({name: `card-reg__sex${id_num}`, id: `card-reg__radio-btn-women${id_num}`, title: "Женщина", marginLeft: "20"})
       
       +form-element({title: "дата рождения", paddingTop: "20"})
         +text-field({})
