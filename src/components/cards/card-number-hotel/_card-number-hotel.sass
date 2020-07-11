@@ -1,5 +1,79 @@
 .card-number-hotel
-  .card-number-hotel__flex-wrap-log-in
+
+  &__flex-wrap-log-in
     @include isFlex($justify: space-between)
     p
       padding-bottom: 0.2rem
+  
+  .container-flex
+    max-width: 32rem
+    @include isFlex($justify: space-between, $wrap: wrap)
+  
+  // header-title
+  .card-number-hotel__header-title
+    span
+      &:first-child
+        font-size: 1.5rem         
+      &:last-child
+        color:  $color-purple
+
+  // header-price
+  .card-number-hotel__header-price
+    span
+      color: $color-dark-shade-50
+      &:first-child
+        font-size: 1.5rem     
+        font-weight: bold     
+      &:last-child
+        font-size: 1.2rem
+
+  // description
+  .card-number-hotel__description.cntr-flex-between
+    display: flex
+    justify-content: space-between
+    padding: .76rem 0
+    span
+      &:first-child
+        flex-basis: calc(100% - 2rem - 8rem)
+        padding-left: 1px       // убрать (поставлено только ради pixel-perfect)
+      
+      &:nth-child(2)        
+        flex-basis: 2rem
+        max-width: 2rem
+        
+      &:last-child
+        flex-basis: 8rem
+        max-width: 8rem
+        text-align: right
+        
+    span.card-number-hotel__description_icon
+      border: 1px solid $color-dark-shade-25
+      height: 2rem
+      width: 2rem
+      border-radius: 50%
+      text-align: center
+      color: $color-dark-shade-25
+      font-weight: bold
+
+  // result
+  .card-number-hotel__result.cntr-flex-between
+    display: flex
+    justify-content: space-between
+    align-items: flex-end
+    margin: 1.7rem 0 2.5rem
+    span
+      height: 24px
+      &:first-child
+        padding-right: .5rem
+      &:nth-child(2)        
+        width: 100%
+        border-bottom: 1px dotted $color-dark-shade-25
+      &:last-child
+        padding-left: .5rem
+        white-space: nowrap  // не переносит слова на другую строчку
+    span:before  // Небольшой хак по перемещению текста внутри родителя
+      content: ''
+      display: inline-block
+      vertical-align: baseline  // Благодаря данному стилю текст выравнивается по базовой линии родителя и любой шрифт будет отображаться ровно по низу списка
+      height: 100%
+    

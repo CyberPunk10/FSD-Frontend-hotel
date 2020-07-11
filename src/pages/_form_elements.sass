@@ -4,131 +4,130 @@
   padding: 13.3rem 5rem 13.1rem
   transition: .3s padding linear
 
-.grid-container-form-elements
-  display: grid
-  grid-template-columns: 32rem minmax(calc(4rem + 54px), 126px) 32rem minmax(4rem, 72px) 32rem
-  max-width: max-content
-  margin: 0 auto
-  transition: 1s all linear
-
-  // заливка ячеек в шхматном порядке
-  // .cell:nth-child(even)
-  //   background-color: #e4e4e4
-  // .cell:nth-child(odd)
-  //   background-color: #efefef
-
-.cell-6,
-.cell-8,
-.cell-10
-  padding-top: 8rem
-
-.cell-11,
-.cell-13,
-.cell-15
-  padding-top: 5.44rem
-
-.container-flex
-  max-width: 32rem
-  @include isFlex($justify: space-between, $wrap: wrap)
-
-
-  
-@media screen and ( max-width: 1260px )
   .grid-container-form-elements
-    grid-template-columns: minmax(auto, 32rem) minmax(4rem, calc(4rem + 54px)) minmax(auto, 32rem) 4rem minmax(auto, 32rem)
-  
+    display: grid
+    grid-template-columns: 32rem minmax(calc(4rem + 54px), 126px) 32rem minmax(4rem, 72px) 32rem
+    max-width: max-content
+    margin: 0 auto
+    transition: 1s all linear
 
-@media screen and ( max-width: 1045px )
+    // заливка ячеек в шхматном порядке
+    // .cell:nth-child(even)
+    //   background-color: #e4e4e4
+    // .cell:nth-child(odd)
+    //   background-color: #efefef
 
-  // меняем на 2 колонки (2 колонки и одна пустая колонка по середине)
-  .grid-container-form-elements
-    grid-template-columns: minmax(auto, 32rem) minmax(4rem, 8rem) minmax(auto, 32rem)
-  
-  // сбасываем padding-top, используемый для 2-го и 3-тьего рядов в 3-ёх колоночной сетке
   .cell-6,
   .cell-8,
   .cell-10
-    padding-top: 0
+    padding-top: 8rem
+
   .cell-11,
   .cell-13,
   .cell-15
-    padding-top: 0
+    padding-top: 5.44rem
 
-  // устанавливаем новый padding-top для других ячеек
-  .cell-5,
-  .cell-6,
-  .cell-8,
-  .cell-10,
-  .cell-11,
-  .cell-13,
-  .cell-15
-    padding-top: 7rem
-
-  // переопределяем порядок
-  .cell-1
-    order: 0
-  .cell-2
-    order: 1
-  .cell-3
-    order: 2
-  .cell-4
-    order: 4
-  .cell-5
-    order: 3
-  .cell-6
-    order: 5
-
-  .cell-7
-    order: 7
-  .cell-8
-    order: 6
-  .cell-9
-    order: 200
-  .cell-10
-    order: 8
-  .cell-11
-    order: 10
-  .cell-12
-    order: 11
-  .cell-13
-    order: 12
-  .cell-14
-    order: 14
-  .cell-15
-    order: 13
-  .cell-16
-    order: 115
-  .cell-17
-    order: 116
-  .cell-18
-    order: 117
-  .cell-19
-    order: 118
-  .cell-20
-    order: 119
-
-@media screen and ( max-width: 767px )
-  .content-form-elements
-    padding: 3rem
-
-@media screen and ( max-width: 680px )
-  .grid-container-form-elements
-    grid-template-columns: minmax(auto, 32rem)
-
-@media screen and ( max-width: 420px )
-  .content-form-elements
-    padding: 3rem 1rem
+  .container-flex
+    @include isFlex($justify: space-between, $wrap: wrap)
 
 
-// @media screen and ( max-width: 767px )
-//   .grid-container-form-elements
-//     grid-template-columns: minmax(auto, 32rem)
+    
+  @media screen and ( max-width: 1260px )
+    .grid-container-form-elements
+      grid-template-columns: minmax(auto, 32rem) minmax(4rem, calc(4rem + 54px)) minmax(auto, 32rem) 4rem minmax(auto, 32rem)
+    
 
-//   .cell-empty
-//     order: -1
+  @media screen and ( max-width: 1045px )
 
-//   .cell:not(.cell-empty)
-//     order: 0
+    // меняем на 2 колонки (2 колонки и одна пустая колонка по середине)
+    .grid-container-form-elements
+      grid-template-columns: minmax(auto, 32rem) minmax(4rem, 8rem) minmax(auto, 32rem)
+    
+    // сбасываем padding-top, используемый для 2-го и 3-тьего рядов в 3-ёх колоночной сетке
+    .cell-6,
+    .cell-8,
+    .cell-10
+      padding-top: 0
+    .cell-11,
+    .cell-13,
+    .cell-15
+      padding-top: 0
+
+    // устанавливаем новый padding-top для других ячеек
+    .cell-5,
+    .cell-6,
+    .cell-8,
+    .cell-10,
+    .cell-11,
+    .cell-13,
+    .cell-15
+      padding-top: 7rem
+
+    // переопределяем порядок
+    .cell-1
+      order: 0
+    .cell-2
+      order: 1
+    .cell-3
+      order: 2
+    .cell-4
+      order: 4
+    .cell-5
+      order: 3
+    .cell-6
+      order: 5
+
+    .cell-7
+      order: 7
+    .cell-8
+      order: 6
+    .cell-9
+      order: 200
+    .cell-10
+      order: 8
+    .cell-11
+      order: 10
+    .cell-12
+      order: 11
+    .cell-13
+      order: 12
+    .cell-14
+      order: 14
+    .cell-15
+      order: 13
+    .cell-16
+      order: 115
+    .cell-17
+      order: 116
+    .cell-18
+      order: 117
+    .cell-19
+      order: 118
+    .cell-20
+      order: 119
+
+  @media screen and ( max-width: 767px )
+    .content-form-elements
+      padding: 3rem
+
+  @media screen and ( max-width: 680px )
+    .grid-container-form-elements
+      grid-template-columns: minmax(auto, 32rem)
+
+  @media screen and ( max-width: 420px )
+    .content-form-elements
+      padding: 3rem 1rem
+
+
+  // @media screen and ( max-width: 767px )
+  //   .grid-container-form-elements
+  //     grid-template-columns: minmax(auto, 32rem)
+
+  //   .cell-empty
+  //     order: -1
+
+  //   .cell:not(.cell-empty)
+  //     order: 0
 
 
 

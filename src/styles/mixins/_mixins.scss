@@ -1,12 +1,12 @@
   
 /* src\styles\mixins\_mixins.scss */
 
-@mixin isFlex($align: center, $justify: center, $direction: row, $wrap: nowrap) {
+@mixin isFlex($justify: center, $align: center, $direction: row, $wrap: nowrap) {
   display: flex;
-  align-items: $align;
   justify-content: $justify;
-  flex-direction: $direction;
+  align-items: $align;
   flex-wrap: $wrap;
+  flex-direction: $direction;
 }
   
 @mixin bgImage($url, $repeat: no-repeat, $position: center, $size: initial) {
