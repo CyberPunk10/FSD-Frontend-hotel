@@ -1,12 +1,12 @@
-//- include ../components/section-pages/section-pages.pug
 include ../components/form-wrap/form-wrap.pug
-include ../components/card-preview/card-preview.pug
-include ../components/calendar-card/calendar-card.pug
-//- include ../components/text-field/text-field.pug
-include ../components/cards/card-registration/card-registration.pug
+
+include ../components/cards/card-reg/card-reg.pug
 include ../components/cards/card-search/card-search.pug
 include ../components/cards/card-number-hotel/card-number-hotel.pug
 include ../components/cards/card-log-in/card-log-in.pug
+include ../components/cards/card-preview/card-preview.pug
+include ../components/cards/card-calendar/card-calendar.pug
+
 
 +section-pages('Cards')
   .content-cards
@@ -14,13 +14,13 @@ include ../components/cards/card-log-in/card-log-in.pug
 
       +card-search()
       
-      +card-registration()
+      +card-reg({id_num: "21"})
 
-      +card-number-hotel()
+      +card-number-hotel({id_num: "22"})
 
       +card-log-in()
 
-      +calendar-card({title: "Календарь"})
+      +card-calendar({title: "Календарь"})
                     
       +card-preview({title: "Карточка отеля"})
 
