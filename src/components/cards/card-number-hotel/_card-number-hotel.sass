@@ -1,41 +1,51 @@
 .card-number-hotel
+ 
+  .cntr-flex-between
+    display: flex
+    justify-content: space-between
+  
 
-  &__flex-wrap-log-in
-    @include isFlex($justify: space-between)
-    p
-      padding-bottom: 0.2rem
-  
-  .container-flex
-    max-width: 32rem
-    @include isFlex($justify: space-between, $wrap: wrap)
-  
+  // header
+  &__header
+    align-items: flex-end
+    margin-bottom: 1rem
+
   // header-title
-  .card-number-hotel__header-title
+  &__header-title
     span
       &:first-child
-        font-size: 1.5rem         
+        font-size: 1.5rem
+        letter-spacing: -.04em        // (поставлено только ради pixel-perfect)
+      &:nth-child(2)
+        word-spacing: -.05em          // (поставлено только ради pixel-perfect)
       &:last-child
         color:  $color-purple
 
   // header-price
-  .card-number-hotel__header-price
+  &__header-price
+    padding-bottom: 0.2rem
     span
       color: $color-dark-shade-50
       &:first-child
-        font-size: 1.5rem     
-        font-weight: bold     
+        font-size: 1.4rem     
+        font-weight: bold    
       &:last-child
         font-size: 1.2rem
 
+
+
+  &__dbl-dropdowns
+
+  &__dropdown-guests
+    margin-bottom: 0.3rem
+
   // description
-  .card-number-hotel__description.cntr-flex-between
-    display: flex
-    justify-content: space-between
+  &__description
     padding: .76rem 0
     span
       &:first-child
         flex-basis: calc(100% - 2rem - 8rem)
-        padding-left: 1px       // убрать (поставлено только ради pixel-perfect)
+        padding-left: 1px             // убрать (поставлено только ради pixel-perfect)
       
       &:nth-child(2)        
         flex-basis: 2rem
@@ -65,6 +75,7 @@
       height: 24px
       &:first-child
         padding-right: .5rem
+        padding-left: 1px             // убрать (поставлено только ради pixel-perfect)
       &:nth-child(2)        
         width: 100%
         border-bottom: 1px dotted $color-dark-shade-25
