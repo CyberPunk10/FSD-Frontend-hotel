@@ -1,6 +1,6 @@
 /* src/assets/styles/base/_fonts.scss  */
 
-// http://www.font2web.com/ , https://transfonter.org/
+// http://www.font2web.com/ , https://transfonter.org/, http://fontmassive.com/fd.php (для распознавания по картинке)
 
 
 /*
@@ -33,7 +33,8 @@
   font-display: swap; // параметр swap, который не дожидаясь подгрузки вашего красивого и тяжёлого шрифта показывает текст в браузере используя встроенный в этот же браузер шрифт (например sans-serif)
 }
 
-$Montserrat: "Montserrat", Arial, sans-serif;
+$Montserrat: "Montserrat",  "Open Sans", sans-serif;
+
 
 
 /*
@@ -66,7 +67,8 @@ $Montserrat: "Montserrat", Arial, sans-serif;
   font-display: swap; // параметр swap, который не дожидаясь подгрузки вашего красивого и тяжёлого шрифта показывает текст в браузере используя встроенный в этот же браузер шрифт (например sans-serif)
 }
 
-$Quicksand: "Quicksand", Arial, sans-serif;
+$Quicksand: "Quicksand", "Open Sans", sans-serif;
+
 
 
 /*

@@ -14,7 +14,7 @@ mixin dropdown(options)
     var value = options.value || false
     var type = options.type || "text"
     var focus = options.autofocus ? true : false 
-    var text = options.text || 'dropdown' 
+    var title = options.title || 'dropdown' 
     var classNameDrop__btn = "dropdown__btn"
     classNameDrop__btn += options.show ? ` dropdown__btn_expanded ` : ''
 
@@ -25,6 +25,6 @@ mixin dropdown(options)
     classNameDrop__content += ` ${noAbsolute} ${show}`
   
   div(class = classNameDrop)
-    button(class = classNameDrop__btn, value = value, type = type, focus = focus)= text
+    button(class = classNameDrop__btn, value = value, type = type, focus = focus)= title
     div(class = classNameDrop__content, id = id)
       block

@@ -1,15 +1,12 @@
 mixin btn(options)
-  //- -
-  //-   var buttonClassName = "button"
-  //-   buttonClassName += options.isBlue ? " button-blue" : ""
-  //- button(class = buttonClassName)= options.title || "Button"
-
   -
     var btnClassName = "btn"
+    var btn__titleClassName = "btn__title"
     var deactive = options.deactive ? " btn_deactive" : ""
     var title = options.title
     var marginTop = options.marginTop ? ` btn_margin-top-${options.marginTop}` : ''   //- "20"
     var marginBottom = options.marginBottom ? ` btn_margin-bottom-${options.marginBottom}` : ''   //- "30"
+    var paddingRight = options.paddingRight ? ` btn_padding-right-${options.paddingRight}` : ''   //- "3"
 
 
   case options.varBtn
@@ -31,11 +28,12 @@ mixin btn(options)
       - btnClassName += " btn_min-width-250"
 
   -
-    btnClassName += deactive + marginTop + marginBottom
+    btnClassName += deactive + marginTop + marginBottom + paddingRight
+    btn__titleClassName += paddingRight
 
   div(class = btnClassName)
     div(class = "btn__bg")
-    div(class = "btn__title")= title
+    div(class = btn__titleClassName)= title
     if options.isClickable
       <i class="btn__icon material-icons">arrow_forward</i>
 
