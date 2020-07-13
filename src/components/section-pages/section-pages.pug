@@ -1,7 +1,9 @@
-mixin section-pages(title)
+mixin section-pages(options)
+  -
+    var className = options.className ? options.className : ''
   
-  section.section-pages
-    p.section-pages__title= title
+  section(class=className).section-pages
+    p.section-pages__title= options.title
     .section-pages__logo
     .section-pages__content
       block

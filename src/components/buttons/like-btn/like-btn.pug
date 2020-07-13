@@ -1,5 +1,6 @@
 mixin like-btn(options)
   -
+    var className = options.className ? options.className : ''
     var title = options.title || "label for like"
     var isChecked = options.checked || false          // checked: true
     var id = options.id || false          
@@ -10,7 +11,7 @@ mixin like-btn(options)
     //- classNameLabel += options.description ? " like-btn__label_title" : ""
 
 
-  .like-btn
+  div(class=className).like-btn
     input(type="checkbox", class="like-btn__input", id = id checked = isChecked)
     label(class = classNameLabel, for = id)
       if isChecked

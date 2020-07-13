@@ -1,6 +1,6 @@
 .like-btn
   max-width: 32rem
-  padding: .3rem 0
+  height: 2rem
   display: inline-block
 
   &__input
@@ -27,7 +27,7 @@
       content: ""
       position: absolute
       left: 0
-      top: .2rem
+      top: calc(-100% - .2rem)
       width: 4rem
       height: 2rem
       box-sizing: border-box
@@ -42,12 +42,12 @@
 
   &__icon
     left: .5rem
-    top: .7rem
+    top: calc(-100% + .3rem)
     width: 1.2rem
 
   &__title
-    left: 1.6rem
-    top: .3rem
+    left: 1.5rem
+    top: calc(-100% - .1rem)
     width: calc(100% - 2px - 1.6rem - .4rem)
     text-align: center
 
