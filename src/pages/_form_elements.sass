@@ -1,10 +1,11 @@
 /* src\pages\_form_elements.sass */
+.form-elements
 
-.content-form-elements
-  padding: 13.3rem 5rem 13.1rem
-  transition: .3s padding linear
+  &-content
+    padding: 13.3rem 5rem 13.1rem
+    transition: .3s padding linear
 
-  .grid-container-form-elements
+  &-grid-container
     display: grid
     grid-template-columns: 32rem minmax(calc(4rem + 54px), 126px) 32rem minmax(4rem, 72px) 32rem
     max-width: max-content
@@ -17,30 +18,94 @@
     // .cell:nth-child(odd)
     //   background-color: #efefef
 
-  .cell-6,
-  .cell-8,
-  .cell-10
-    padding-top: 8rem
+    .cell-6,
+    .cell-8,
+    .cell-10
+      padding-top: 8rem
 
-  .cell-11,
-  .cell-13,
-  .cell-15
-    padding-top: 5.44rem
+    .cell-11,
+    .cell-13,
+    .cell-15
+      padding-top: 5.44rem
 
-  .container-flex
-    @include isFlex($justify: space-between, $wrap: wrap)
+    .cntr-flex-between-center-wrap
+      @include isFlex($justify: space-between, $wrap: wrap)
 
 
-    
+    .cell-1
+
+      .cntr-flex-between-center-wrap
+        padding-top: 2rem
+
+      .form-elements__masked-text-field
+        padding-top: 1.3rem
+
+      .form-elements__filter-date-dropdown,
+      .form-elements__subscription-date-dropdown
+        padding-top: 3.1rem
+
+    .cell-3
+
+      .form-elements__checkbox-btns
+        .form-element__title
+          padding-bottom: 1.2rem
+
+      .form-elements__radio-btns
+        padding-top: 3.5rem
+        .form-element__title
+          padding-bottom: 1rem
+
+      .form-elements__toggles
+        padding-top: 3.6rem
+        .form-element__title
+          padding-bottom: 1.1rem        
+        .form-elements__toggle-first
+          padding-bottom: .7rem
+          
+      .form-elements__like-btns
+        .form-element__title
+          margin-bottom: 1.1rem
+        .form-elements__like-btn-first
+          padding-right: .7rem
+      
+      .form-elements__rate-btns
+        .form-element__title
+          margin-bottom: .8rem
+        .rate-btn
+          display: inline-block
+        .form-elements__rate-btn-first
+          padding-right: 1.7rem
+
+
+    .cell-5
+      max-width: 21.8rem
+      
+      .form-elements__btns
+        .form-element__title
+          padding-bottom: 1.6rem
+
+    .cell-6
+      margin-left: -1px
+
+
+
+
+
+    .cell-11
+      margin-left: -1px
+
+
+  // @media
+
   @media screen and ( max-width: 1260px )
-    .grid-container-form-elements
+    .form-elements-grid-container
       grid-template-columns: minmax(auto, 32rem) minmax(4rem, calc(4rem + 54px)) minmax(auto, 32rem) 4rem minmax(auto, 32rem)
     
 
   @media screen and ( max-width: 1045px )
 
     // меняем на 2 колонки (2 колонки и одна пустая колонка по середине)
-    .grid-container-form-elements
+    .form-elements-grid-container
       grid-template-columns: minmax(auto, 32rem) minmax(4rem, 8rem) minmax(auto, 32rem)
     
     // сбасываем padding-top, используемый для 2-го и 3-тьего рядов в 3-ёх колоночной сетке
@@ -107,20 +172,20 @@
       order: 119
 
   @media screen and ( max-width: 767px )
-    .content-form-elements
+    .form-elements-content
       padding: 3rem
 
   @media screen and ( max-width: 680px )
-    .grid-container-form-elements
+    .form-elements-grid-container
       grid-template-columns: minmax(auto, 32rem)
 
   @media screen and ( max-width: 420px )
-    .content-form-elements
+    .form-elements-content
       padding: 3rem 1rem
 
 
   // @media screen and ( max-width: 767px )
-  //   .grid-container-form-elements
+  //   .form-elements-grid-container
   //     grid-template-columns: minmax(auto, 32rem)
 
   //   .cell-empty

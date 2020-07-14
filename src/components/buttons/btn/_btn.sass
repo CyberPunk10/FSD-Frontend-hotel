@@ -21,9 +21,12 @@ $border-radius: 2.2rem
   &__title
     position: absolute
     content: ""
-    top: 50%
-    left: 50%
-    transform: translate(-50%, -50%)
+    line-height: 4.4rem
+    text-align: center
+    width: 100%
+    // top: 50%
+    // left: 50%
+    // transform: translate(-50%, -50%)
     white-space: nowrap
     @include font-how-h3($color: $color-purple)
     padding-bottom: .1rem 
@@ -50,9 +53,14 @@ $border-radius: 2.2rem
       
   // кнопка без заливки и бордера
   &-minimalism
+    height: 1.8rem
     .btn__title
-      left: 0
-      transform: translateX(0)
+      line-height: 1.8rem
+      text-align: left
+      // top: 0
+      // left: 0
+      // transform: translateX(0)
+      // margin: 0
 
 
   // модификатор: deactive

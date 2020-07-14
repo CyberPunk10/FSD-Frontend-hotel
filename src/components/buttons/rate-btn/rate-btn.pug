@@ -1,5 +1,6 @@
 mixin rate-btn(options)
   -
+    var className = options.className ? options.className : ''
     var id = options.id || false          
 
     var rating = options.rating || "4/5"        //"4/5"
@@ -8,12 +9,12 @@ mixin rate-btn(options)
 
 
 
-  div(class="rate-btn", id = id)
-
-    - for (var x = 0; x < arr[0]; x++)
-        span.rate-btn__span
-          <i class="rate-btn__icon material-icons">star</i>   
-    
-    - for (var x = 0; x < (arr[1] - arr[0]); x++)
-        span.rate-btn__span
-          <i class="rate-btn__icon material-icons">star_border</i>
+  div(class = className, id = id).rate-btn
+    .rate-btn-flex-wrap
+      - for (var x = 0; x < arr[0]; x++)
+          span.rate-btn__span
+            <i class="rate-btn__icon material-icons">star</i>   
+      
+      - for (var x = 0; x < (arr[1] - arr[0]); x++)
+          span.rate-btn__span
+            <i class="rate-btn__icon material-icons">star_border</i>

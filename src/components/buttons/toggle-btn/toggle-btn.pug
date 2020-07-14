@@ -1,5 +1,6 @@
 mixin toggle-btn(options)
   -
+    var className = options.className ? options.className : ''
     var title = options.title || "label for toggle"
     var isChecked = options.checked || false          // checked: true
     var id = options.id || false   
@@ -14,7 +15,7 @@ mixin toggle-btn(options)
     // for toggle-btn__description
     var classNameDescription = "toggle-btn__description"         
 
-  div(class=`toggle-btn ${marginBottom}`)
+  div(class=`toggle-btn ${className}${marginBottom}`)
     input(type="checkbox", class="toggle-btn__input", id = id checked = isChecked)
     label(class = classNameLabel, for = id)= title
     if description

@@ -33,7 +33,7 @@ mixin btn(options)
 
   div(class = btnClassName)
     div(class = "btn__bg")
-    div(class = btn__titleClassName)= title
+    span(class = btn__titleClassName)= title
     if options.isClickable
       <i class="btn__icon material-icons">arrow_forward</i>
 
