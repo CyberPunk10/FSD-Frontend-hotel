@@ -25,10 +25,10 @@
   // Кнопка выпадающего списка   
 
   &__btn                       
-    @include text-field-and-drop-btn
     cursor: pointer
     text-align: left
     user-select: none         // делает текст невыделяемым
+    @include text-field-and-drop-btn
 
     &::-webkit-input-placeholder
       color: $color-dark-shade-25
@@ -79,5 +79,5 @@
       user-select: none         // делает текст невыделяемым
 
 // Показать выпадающее меню (используйте JS, чтобы добавить этот класс .dropdown-content содержимого, когда пользователь нажимает на кнопку выпадающего списка)
-.show                          
+.dropdown__content_show                          
   display: block

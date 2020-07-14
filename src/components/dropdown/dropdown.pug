@@ -8,7 +8,8 @@ mixin dropdown(options)
     var minWidth = options.minWidth ? `${classNameDrop}_min-width-${options.minWidth}` : ''   //- "sm/xs"
     var maxWidth = options.maxWidth ? `${classNameDrop}_max-width-${options.maxWidth}` : ''   //- "sm/xs"
     classNameDrop += ` ${minWidth} ${maxWidth}`
-    var show = options.show ? 'show' : ''   //- "true" (при зарузке страницы dropdown будет открытым. Используется в __btn & __content) 
+    var show = options.show ? 'dropdown__content_show' : ''   //- "true" (при зарузке страницы dropdown будет открытым. Используется в __btn & __content) 
+    var showAlways = options.showAlways ? 'true' : ''   //- "true" (при зарузке страницы dropdown будет открытым. Используется в __btn & __content) 
 
     // for dropdown__btn
     var value = options.value || false
@@ -21,10 +22,10 @@ mixin dropdown(options)
     // for dropdown__content
     var id = options.id || false
     var classNameDrop__content = "dropdown__content"
-    var noAbsolute = options.noAbsolute ? `${classNameDrop__content}_no-absolute` : ''   //- "true"
+    var noAbsolute = options.noAbsolute ? `${classNameDrop__content}_no-absolute` : ''   //- "true" // C этим классом dropdown не вываливается из потока и показывает контент, отодвигая нижележащие сущности
     classNameDrop__content += ` ${noAbsolute} ${show}`
   
   div(class = classNameDrop)
-    button(class = classNameDrop__btn, value = value, type = type, focus = focus)= title
+    button(class = classNameDrop__btn, value = value, type = type, focus = focus, data-show-always=showAlways)= title
     div(class = classNameDrop__content, id = id)
       block
