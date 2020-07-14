@@ -1,9 +1,13 @@
 let dropdown__btns = document.querySelectorAll(".dropdown__btn")
+let dropdown__btnsIcon = document.querySelectorAll(".dropdown__btn-icon")
 let dropdowns = document.querySelectorAll(".dropdown__content")
 
 
 // Навешиваем на все dropdowns функцию по клику
 dropdown__btns.forEach(element => {
+  element.addEventListener('click', toggleDropdown);
+});
+dropdown__btnsIcon.forEach(element => {
   element.addEventListener('click', toggleDropdown);
 });
 
@@ -19,7 +23,7 @@ function toggleDropdown() {
 window.onclick = function (event) {
 
   // Закрываем выпадающее меню, если пользователь щелкает за его пределами
-  if (!event.target.matches('.dropdown__btn')) {    // Метод matches позволяет проверить, удовлетворяет ли элемент указанному CSS селектору
+  if (!event.target.matches('.dropdown__btn') && !event.target.matches('.dropdown__btn-icon')) {    // Метод matches позволяет проверить, удовлетворяет ли элемент указанному CSS селектору
 
     for (let i = 0; i < dropdown__btns.length; i++) {
 
