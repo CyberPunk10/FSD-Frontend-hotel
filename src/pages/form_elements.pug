@@ -117,7 +117,7 @@ include ../components/range-slider/range-slider.pug
             +option-for-dropdown({title: "Ванные комнаты"})
 
         +form-element({title: "dropdown", state: "expanded", width: "sm"})
-          +dropdown({id: "dropdown-how-many-guests-4-2", title: "2 спальни, 2 кровати...", maxWidth: "sm", show: true, noAbsolute: true})
+          +dropdown({id: "dropdown-how-many-guests-4-2", title: "2 спальни, 2 кровати...", maxWidth: "sm", show: true, showAlways: true, noAbsolute: true})
             +option-for-dropdown({title: "Спальни"})
             +option-for-dropdown({title: "Кровати"})
             +option-for-dropdown({title: "Ванные комнаты"})
@@ -128,7 +128,7 @@ include ../components/range-slider/range-slider.pug
         //- p 8
 
         +form-element({title: "dropdown"})
-          +dropdown({id: "dropdown-how-many-guests-5", title: "Сколько гостей", show: true, minWidth: "sm"})
+          +dropdown({id: "dropdown-how-many-guests-5", title: "Сколько гостей", show: true, showAlways: true, noAbsolute: true, minWidth: "sm"})
             +option-for-dropdown({title: "Взрослые"})
             +option-for-dropdown({title: "Дети"})
             +option-for-dropdown({title: "Младенцы"})
@@ -140,7 +140,7 @@ include ../components/range-slider/range-slider.pug
         //- p 10
 
         +form-element({title: "dropdown"})
-          +dropdown({id: "dropdown-how-many-guests-6", title: "3 гостя", show: true, minWidth: "sm"})
+          +dropdown({id: "dropdown-how-many-guests-6", title: "3 гостя", show: true, showAlways: true, noAbsolute: true, minWidth: "sm"})
             +option-for-dropdown({title: "Взрослые"})
             +option-for-dropdown({title: "Дети"})
             +option-for-dropdown({title: "Младенцы"})
