@@ -27,5 +27,6 @@ mixin dropdown(options)
   
   div(class = classNameDrop)
     button(class = classNameDrop__btn, value = value, type = type, focus = focus, data-show-always=showAlways)= title
+      <i class="dropdown__btn-icon material-icons">expand_more</i>
     div(class = classNameDrop__content, id = id)
       block

@@ -26,6 +26,7 @@
 
   &__btn                       
     cursor: pointer
+    position: relative
     text-align: left
     user-select: none         // делает текст невыделяемым
     @include text-field-and-drop-btn
@@ -45,6 +46,13 @@
     &_expanded                   
       border-bottom-left-radius: 0
       border-bottom-right-radius: 0
+    
+    // ico
+    &-icon
+      position: absolute
+      top: 0
+      right: 0
+      padding: .9rem
 
 
   // Выпадающее содержимое (скрыто по умолчанию)

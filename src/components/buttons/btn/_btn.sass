@@ -28,8 +28,8 @@ $border-radius: 2.2rem
     // left: 50%
     // transform: translate(-50%, -50%)
     white-space: nowrap
+    padding-bottom: .1rem
     @include font-how-h3($color: $color-purple)
-    padding-bottom: .1rem 
 
   // кнопка с заливкой
   &-fill
@@ -88,15 +88,15 @@ $border-radius: 2.2rem
   &__icon
     position: absolute
     cursor: pointer
-    @include isFlex
     height: calc(100% - 2px)
     width: 4.3rem
-    @include linear-gradient
     border-radius: $border-radius
     top: 1px
     bottom: 0
     right: 1px
     color: #fff
+    @include isFlex
+    @include linear-gradient
 
 
   // модификатор: margin
