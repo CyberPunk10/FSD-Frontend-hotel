@@ -16,11 +16,14 @@
     max-width: 26.6rem
   &_max-width-xs
     max-width: 15rem
+  
+  &:hover
+    box-shadow: 0px 10px 20px $color-dark-shade-5
 
   &:hover &__btn,
   &:hover &__content
     border-color: $color-dark-shade-50
-  
+      
 
   // Кнопка выпадающего списка   
 
@@ -36,10 +39,10 @@
     &::-moz-placeholder
       color: $color-dark-shade-25
 
-    &:focus,
-    &:focus + .dropdown__content
-      border-color: $color-dark-shade-50
-      box-shadow: 0px 10px 20px $color-dark-shade-5
+    // &:focus,
+    // &:focus + .dropdown__content
+    //   border-color: $color-dark-shade-50
+    //   box-shadow: 0px 10px 20px $color-dark-shade-5
 
 
     // Открытое состояние
@@ -53,6 +56,8 @@
       top: 0
       right: 0
       padding: .9rem
+      &-rotate
+        transform: rotate(180deg)
 
 
   // Выпадающее содержимое (скрыто по умолчанию)
