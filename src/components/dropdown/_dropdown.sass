@@ -18,12 +18,12 @@
     max-width: 15rem
   
   &:hover
-    box-shadow: 0px 10px 20px $color-dark-shade-5
+    // box-shadow: 0px 10px 20px $color-dark-shade-5
 
   &:hover &__btn,
   &:hover &__content
     border-color: $color-dark-shade-50
-      
+  
 
   // Кнопка выпадающего списка   
 
@@ -39,10 +39,10 @@
     &::-moz-placeholder
       color: $color-dark-shade-25
 
-    // &:focus,
-    // &:focus + .dropdown__content
-    //   border-color: $color-dark-shade-50
-    //   box-shadow: 0px 10px 20px $color-dark-shade-5
+    &:focus,
+    &:focus + .dropdown__content
+      // border-color: $color-dark-shade-50
+      // box-shadow: 0px 10px 20px $color-dark-shade-5
 
 
     // Открытое состояние
@@ -80,6 +80,10 @@
     &_no-absolute
       position: static
 
+    // Показать выпадающее меню (используйте JS, чтобы добавить этот класс .dropdown-content содержимого, когда пользователь нажимает на кнопку выпадающего списка)
+    &_show                          
+      display: block
+
     // Ссылки внутри выпадающего списка (в макете от FSD не используются)
     a                            
       cursor: pointer
@@ -91,6 +95,9 @@
       color: $color-dark-shade-75
       user-select: none         // делает текст невыделяемым
 
-// Показать выпадающее меню (используйте JS, чтобы добавить этот класс .dropdown-content содержимого, когда пользователь нажимает на кнопку выпадающего списка)
-.dropdown__content_show                          
-  display: block
+  &_active
+    box-shadow: 0px 10px 20px $color-dark-shade-5
+    .dropdown__btn
+      border-color: $color-dark-shade-50
+    .dropdown__content
+      border-color: $color-dark-shade-50
