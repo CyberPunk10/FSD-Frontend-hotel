@@ -19,8 +19,14 @@ function handlerDropdown() {
 
   // если клик по dropdown__btn или dropdown__btn-icon
   if (event.target.matches('.dropdown__btn') || event.target.matches('.dropdown__btn-icon')) {
-    this.childNodes[3].classList.toggle("dropdown__content_show")
-    this.childNodes[1].classList.toggle("dropdown__btn_expanded")
+    
+    for (var i = 0; i < this.children.length; i++) {
+
+      this.children[i].matches('.dropdown__btn')     ? this.children[i].classList.toggle("dropdown__btn_expanded") : false
+      this.children[i].matches('.dropdown__content') ? this.children[i].classList.toggle("dropdown__content_show") : false
+    
+    }
+
   }
 
   clearActiveDropdown()
