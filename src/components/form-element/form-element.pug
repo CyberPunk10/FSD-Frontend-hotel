@@ -5,9 +5,10 @@ mixin form-element(options)
     var width = options.width ? `form-element_width-${options.width}` : ''   //- "sm"
     var className = options.className ? options.className : ''
     var paddingTop = options.paddingTop ? `form-element_padding-top-${options.paddingTop}` : ''   //- "40"
+    var marginRight = options.marginRight ? `form-element_margin-right-${options.marginRight}` : ''   //- "5"
     var paddingBottom = options.paddingBottom ? `form-element__title_padding-bottom-${options.paddingBottom}` : ''   //- "16"
 
-  div(class=`form-element ${width} ${paddingTop} ${className}`)
+  div(class=`form-element ${width} ${paddingTop} ${marginRight} ${className}`)
     if title
       div(class=`form-element__title ${paddingBottom}`)
         h3= title

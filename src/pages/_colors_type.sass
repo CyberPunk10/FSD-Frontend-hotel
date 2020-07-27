@@ -7,12 +7,15 @@
     justify-content: space-around
     padding-top: 13.5rem
     padding-bottom: 13.5rem
+    transition: padding .2s linear
 
   .wrap-color-template
     padding-right: 11.75rem
+    transition: padding .2s linear
 
   .wrap-typography-template
     padding-right: 3.1rem
+    transition: padding .2s linear
 
 
 
@@ -45,3 +48,44 @@
         font-size: 14px
       &_color-dark-shade-25
         color: $color-dark-shade-25
+
+
+  
+@media screen and ( max-width: 1300px )
+
+  .page-color-typography
+
+    .content-colors-type
+
+      .wrap-color-template
+        padding-right: 0
+
+      .wrap-typography-template
+        padding-right: 1rem
+
+@media screen and ( max-width: 991px )
+
+  .page-color-typography
+
+    .content-colors-type
+      flex-direction: column
+      align-items: center
+
+      .wrap-color-template
+        margin-bottom: 13.5rem
+        transition: margin .2s linear
+  
+      .wrap-typography-template
+        
+@media screen and ( max-width: 575px )
+
+  .page-color-typography
+
+    .content-colors-type
+      padding-top: 8rem
+      padding-bottom: 8rem
+
+      .wrap-color-template
+        margin-bottom: 8rem
+  
+      .wrap-typography-template

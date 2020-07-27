@@ -3,6 +3,7 @@
 .content-cards
   background-color: #f4f4f6
   padding-top: 15rem
+  transition: .3s padding linear
 
 .flex-container-cards
   display: flex
@@ -30,3 +31,7 @@
     flex-wrap: nowrap
     align-content: center
 
+@media screen and ( max-width: 575px )
+
+  .content-cards
+    padding-top: 5rem
