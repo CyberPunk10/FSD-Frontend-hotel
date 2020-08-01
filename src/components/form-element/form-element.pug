@@ -6,11 +6,21 @@ mixin form-element(options)
     var className = options.className ? options.className : ''
     var paddingTop = options.paddingTop ? `form-element_padding-top-${options.paddingTop}` : ''   //- "40"
     var marginRight = options.marginRight ? `form-element_margin-right-${options.marginRight}` : ''   //- "5"
-    var paddingBottom = options.paddingBottom ? `form-element__title_padding-bottom-${options.paddingBottom}` : ''   //- "16"
+    var paddingBottomTitle = options.paddingBottomTitle ? `form-element__title_padding-bottom-${options.paddingBottomTitle}` : ''   //- "16"
+    var tagBlock = options.tagBlock || false          
+    var collapse = options.collapse || false          
 
   div(class=`form-element ${width} ${paddingTop} ${marginRight} ${className}`)
     if title
-      div(class=`form-element__title ${paddingBottom}`)
+      div(class=`form-element__title ${paddingBottomTitle}`)
         h3= title
         p.form-element__state= state
-    block
+        
+        if collapse
+          <i class="form-element__icon material-icons">expand_more</i>
+    
+    if tagBlock == "ul"
+      ul
+        block
+    else
+      block
