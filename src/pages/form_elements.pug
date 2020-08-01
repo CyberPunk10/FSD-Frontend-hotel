@@ -2,7 +2,8 @@ include ../components/section-pages/section-pages.pug
 include ../components/form-element/form-element.pug
 include ../components/text-field/text-field.pug
 include ../components/dropdown/dropdown.pug
-include ../components/expandable-checkbox-list/expandable-checkbox-list.pug
+include ../components/buttons/checkbox-btn/checkbox-btn.pug
+include ../components/bullet-list-point/bullet-list-point.pug
 
 //- buttons
 include ../components/buttons/checkbox-btn/checkbox-btn.pug
@@ -149,39 +150,40 @@ include ../components/range-slider/range-slider.pug
       .cell.cell-11
         //- p 11
         
-        +form-element({width: "sm"})
-          +checkbox-list({})
-            +checkbox-btn({id: "checkbox-list-item-1", title: "Завтрак"})
-            +checkbox-btn({id: "checkbox-list-item-2", title: "Письменный стол", checked: true})
-            +checkbox-btn({id: "checkbox-list-item-3", title: "Стул для кормления", checked: true})
-            +checkbox-btn({id: "checkbox-list-item-4", title: "Кроватка", checked: true})
-            +checkbox-btn({id: "checkbox-list-item-5", title: "Телевизор"})
-            +checkbox-btn({id: "checkbox-list-item-6", title: "Шампунь"})
+        +form-element({title: "expandable checkbox list", width: "sm", className: "checkbox-list", collapse: true, tagBlock: "ul"})
+          +checkbox-btn({tag: "li", id: "checkbox-list-item-1", title: "Завтрак"})
+          +checkbox-btn({tag: "li", id: "checkbox-list-item-2", title: "Письменный стол", checked: true})
+          +checkbox-btn({tag: "li", id: "checkbox-list-item-3", title: "Стул для кормления", checked: true})
+          +checkbox-btn({tag: "li", id: "checkbox-list-item-4", title: "Кроватка", checked: true})
+          +checkbox-btn({tag: "li", id: "checkbox-list-item-5", title: "Телевизор"})
+          +checkbox-btn({tag: "li", id: "checkbox-list-item-6", title: "Шампунь"})
                  
-        +form-element({width: "sm"})
-          +checkbox-list({})
-            +checkbox-btn({id: "checkbox-list-item-21", title: "Завтрак"})
-            +checkbox-btn({id: "checkbox-list-item-22", title: "Письменный стол", checked: true})
-            +checkbox-btn({id: "checkbox-list-item-23", title: "Стул для кормления", checked: true})
-            +checkbox-btn({id: "checkbox-list-item-24", title: "Кроватка", checked: true})
-            +checkbox-btn({id: "checkbox-list-item-25", title: "Телевизор"})
-            +checkbox-btn({id: "checkbox-list-item-26", title: "Шампунь"})
+        +form-element({title: "expandable checkbox list", width: "sm", className: "checkbox-list", collapse: true, tagBlock: "ul", paddingBottomTitle: "12"})
+          +checkbox-btn({tag: "li", id: "checkbox-list-item-21", title: "Завтрак"})
+          +checkbox-btn({tag: "li", id: "checkbox-list-item-22", title: "Письменный стол", checked: true})
+          +checkbox-btn({tag: "li", id: "checkbox-list-item-23", title: "Стул для кормления", checked: true})
+          +checkbox-btn({tag: "li", id: "checkbox-list-item-24", title: "Кроватка", checked: true})
+          +checkbox-btn({tag: "li", id: "checkbox-list-item-25", title: "Телевизор"})
+          +checkbox-btn({tag: "li", id: "checkbox-list-item-26", title: "Шампунь"})
 
       .cell.cell-12.cell-empty
         //- p 12
       .cell.cell-13
         //- p 13
       
-        +form-element({title: "rich Checkbox Buttons", paddingBottom: "11"})
-          +checkbox-btn({id: "rich-checkbox-1", title: "Широкий коридор", description: "Ширина коридоров в номере не менее 91 см."})
-          +checkbox-btn({id: "rich-checkbox-2", title: "Помощник для инвалидов", description: "На 1 этаже вас встретит специалист  и проводит до номера."})
+        +form-element({title: "rich Checkbox Buttons", paddingBottomTitle: "11", width: "sm"})
+          +checkbox-btn({id: "rich-checkbox-1", title: "Широкий коридор", description: "Ширина коридоров в номере <br> не менее 91 см."})
+          +checkbox-btn({id: "rich-checkbox-2", title: "Помощник для инвалидов", description: "На 1 этаже вас встретит специалист <br> и проводит до номера."})
 
       .cell.cell-14.cell-empty
         //- p 14
       .cell.cell-15
         //- p 15
 
-        +form-element({title: "bullet list"})
+        +form-element({title: "Bullet list", className: "bullet-list", collapse: true, width: "sm", tagBlock: "ul", paddingBottomTitle: "13"})
+          +bullet-list-point({title: "Нельзя с питомцами"})
+          +bullet-list-point({title: "Без вечеринок и мероприятий"})
+          +bullet-list-point({title: "Время прибытия — после 13:00, <br> а выезд до 12:00"})
 
       .cell.cell-16
         //- p 16

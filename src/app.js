@@ -1,4 +1,5 @@
 import './main.sass'
+import './components/form-element/form-element.js'
 import './components/dropdown/dropdown.js'
 import './components/buttons/like-btn/like-btn.js'
 import './components/buttons/rate-btn/rate-btn.js'

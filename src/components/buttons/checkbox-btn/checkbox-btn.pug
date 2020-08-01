@@ -3,20 +3,29 @@ mixin checkbox-btn(options)
     var title = options.title || "label for checkbox"
     var isChecked = options.checked || false          // checked: true
     var id = options.id || false          
+    var tag = options.tag || false          
 
     // for checkbox-btn__label
     var classNameLabel = "checkbox-btn__label"         
-    var description = options.description || ""
+    var description = options.description || false
     classNameLabel += options.description ? " checkbox-btn__label_title" : ""
 
     // for checkbox-btn__description
     var classNameDescription = "checkbox-btn__description"         
 
-  .checkbox-btn
-    input(type="checkbox", class="checkbox-btn__input", id = id checked = isChecked)
-    label(class = classNameLabel, for = id)= title
-    if description
-      p.checkbox-btn__description= description
+    
+  if tag
+    li.checkbox-btn
+      input(type="checkbox", class="checkbox-btn__input", id = id checked = isChecked)
+      label(class = classNameLabel, for = id)= title
+      if description
+        p.checkbox-btn__description= description
+  else 
+    .checkbox-btn
+      input(type="checkbox", class="checkbox-btn__input", id = id checked = isChecked)
+      label(class = classNameLabel, for = id)= title
+      if description
+        p.checkbox-btn__description !{description}
 
 
       
