@@ -31,10 +31,14 @@ mixin btn(options)
     btnClassName += deactive + marginTop + marginBottom + paddingRight
     btn__titleClassName += paddingRight
 
-  div(class = btnClassName)
-    div(class = "btn__bg")
-    span(class = btn__titleClassName)= title
-    if options.isClickable
-      <i class="btn__icon material-icons">arrow_forward</i>
+  if (options.varBtn == "minimalism") 
+    a(class = btnClassName)= title
+
+  else
+    div(class = btnClassName)
+      div(class = "btn__bg")
+      span(class = btn__titleClassName)= title
+      if options.isClickable
+        <i class="btn__icon material-icons">arrow_forward</i>
 
     
