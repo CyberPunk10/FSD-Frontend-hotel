@@ -26,6 +26,7 @@
     display: flex
     justify-content: space-between
     padding-bottom: 0.5rem
+    user-select: none         // делает текст невыделяемым
 
     &_padding-bottom-16         
       padding-bottom: 1.6rem
@@ -47,10 +48,23 @@
     user-select: none         // делает текст невыделяемым
 
 
+  // ico
   &__icon
     width: 4.4rem
+    text-align: center
     color: $color-dark-shade-50
     line-height: 1.5rem
+    padding-top: 1px
+    transform: rotate(180deg)
+    padding-right: 1px
+
+    &_rotate
+      transform: rotate(360deg)
+      padding-left: 2px
+
+
+  &__content_hide
+    display: none
 
 
 

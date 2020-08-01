@@ -2,25 +2,36 @@ mixin form-element(options)
   -
     var title = options.title || false
     var state = options.state || ''             //- "hover/focus"
-    var width = options.width ? `form-element_width-${options.width}` : ''   //- "sm"
-    var className = options.className ? options.className : ''
-    var paddingTop = options.paddingTop ? `form-element_padding-top-${options.paddingTop}` : ''   //- "40"
-    var marginRight = options.marginRight ? `form-element_margin-right-${options.marginRight}` : ''   //- "5"
-    var paddingBottomTitle = options.paddingBottomTitle ? `form-element__title_padding-bottom-${options.paddingBottomTitle}` : ''   //- "16"
+    var width = options.width ? ` form-element_width-${options.width}` : ''   //- "sm"
+    var className = options.className ? " " + options.className : ''
+    var paddingTop = options.paddingTop ? ` form-element_padding-top-${options.paddingTop}` : ''   //- "40"
+    var marginRight = options.marginRight ? ` form-element_margin-right-${options.marginRight}` : ''   //- "5"
+    var paddingBottomTitle = options.paddingBottomTitle ? ` form-element__title_padding-bottom-${options.paddingBottomTitle}` : ''   //- "16"
     var tagBlock = options.tagBlock || false          
-    var collapse = options.collapse || false          
+    var collapse = options.collapse ? " form-element_collapse-expand" : ""          
+    var contentHide = options.contentHide ? " form-element__content_hide" : ""
+    var iconRotate = options.contentHide ? " form-element__icon_rotate" : ""
 
-  div(class=`form-element ${width} ${paddingTop} ${marginRight} ${className}`)
+  div(class=`form-element${width}${paddingTop}${marginRight}${className}${collapse}`)
     if title
-      div(class=`form-element__title ${paddingBottomTitle}`)
+      div(class=`form-element__title${paddingBottomTitle}`)
         h3= title
         p.form-element__state= state
         
         if collapse
-          <i class="form-element__icon material-icons">expand_more</i>
+          i(class=`form-element__icon${iconRotate} material-icons`) expand_more
     
-    if tagBlock == "ul"
-      ul
-        block
+    if collapse
+      div(class=`form-element__content${contentHide}`)
+        if tagBlock == "ul"
+          ul
+            block
+        else
+          block
+    
     else
-      block
+      if tagBlock == "ul"
+        ul
+          block
+      else
+        block

@@ -150,7 +150,7 @@ include ../components/range-slider/range-slider.pug
       .cell.cell-11
         //- p 11
         
-        +form-element({title: "expandable checkbox list", width: "sm", className: "checkbox-list", collapse: true, tagBlock: "ul"})
+        +form-element({title: "expandable checkbox list", width: "sm", className: "checkbox-list", collapse: true, tagBlock: "ul", contentHide: true, paddingBottomTitle: "12"})
           +checkbox-btn({tag: "li", id: "checkbox-list-item-1", title: "Завтрак"})
           +checkbox-btn({tag: "li", id: "checkbox-list-item-2", title: "Письменный стол", checked: true})
           +checkbox-btn({tag: "li", id: "checkbox-list-item-3", title: "Стул для кормления", checked: true})
@@ -180,7 +180,7 @@ include ../components/range-slider/range-slider.pug
       .cell.cell-15
         //- p 15
 
-        +form-element({title: "Bullet list", className: "bullet-list", collapse: true, width: "sm", tagBlock: "ul", paddingBottomTitle: "13"})
+        +form-element({title: "Bullet list", className: "bullet-list", width: "sm", tagBlock: "ul", paddingBottomTitle: "13"})
           +bullet-list-point({title: "Нельзя с питомцами"})
           +bullet-list-point({title: "Без вечеринок и мероприятий"})
           +bullet-list-point({title: "Время прибытия — после 13:00, <br> а выезд до 12:00"})
