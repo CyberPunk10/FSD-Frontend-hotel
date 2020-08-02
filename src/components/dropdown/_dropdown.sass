@@ -84,16 +84,16 @@
     &_show                          
       display: block
 
-    // Ссылки внутри выпадающего списка (в макете от FSD не используются)
-    a                            
-      cursor: pointer
-      display: block
-      background: #FFFFFF
-      padding: 1.3rem 1.5rem
-      font-size: 14px
-      font-family: $Montserrat
-      color: $color-dark-shade-75
-      user-select: none         // делает текст невыделяемым
+    // Ссылки внутри выпадающего списка (в макете от FSD не используются - можно удалить)
+    // a                            
+    //   cursor: pointer
+    //   display: block
+    //   background: #FFFFFF
+    //   padding: 1.3rem 1.5rem
+    //   font-size: 14px
+    //   font-family: $Montserrat
+    //   color: $color-dark-shade-75
+    //   user-select: none         // делает текст невыделяемым
 
   &_active
     box-shadow: 0px 10px 20px $color-dark-shade-5
@@ -101,3 +101,15 @@
       border-color: $color-dark-shade-50
     .dropdown__content
       border-color: $color-dark-shade-50
+
+
+  &__wrap-btns-clear-apply,
+  &__wrap-btn-apply
+    padding: 1.5rem .6rem .95rem 1.25rem
+
+  &__wrap-btns-clear-apply
+    @include isFlex($justify: space-between)
+
+  &__wrap-btn-apply
+    @include isFlex($justify: flex-end)
+

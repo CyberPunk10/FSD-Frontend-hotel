@@ -29,11 +29,10 @@ include ../components/range-slider/range-slider.pug
           +text-field({value: "This is pretty awesome"})
 
         +form-element({title: "dropdown", state: "default"})
-          +dropdown({id: "dropdown-how-many-guests", title: "Сколько гостей"})
+          +dropdown({id: "dropdown-how-many-guests", title: "Сколько гостей", notSaved: "2"})
             +option-for-dropdown({title: "Взрослые"})
             +option-for-dropdown({title: "Дети"})
             +option-for-dropdown({title: "Младенцы"})
-            +apply-btn-for-dropdown({})
         
         +form-element({className: "form-elements__masked-text-field", title: "Masked text field", state: "default"})
           +text-field({})
@@ -69,7 +68,7 @@ include ../components/range-slider/range-slider.pug
         +form-element({className: "form-elements__checkbox-btns", title: "Checkbox Buttons"})
           +checkbox-btn({id: "checkbox-btn-1", title: "Можно курить"})
           +checkbox-btn({id: "checkbox-btn-2", title: "Можно с питомцами", checked: true})
-          +checkbox-btn({id: "checkbox-btn-3", title: "Можно пригласить гостей (до 10 человек)", checked: true})
+          +checkbox-btn({id: "checkbox-btn-3", title: "Можно пригласить гостей <br> (до 10 человек)", checked: true})
         
         +form-element({className: "form-elements__radio-btns", title: "Radio Buttons"})
           +radio-btn({name: "sex", id: "radio-btn-men", title: "Мужчина", checked: true})
@@ -93,7 +92,7 @@ include ../components/range-slider/range-slider.pug
       .cell.cell-5
         //- p 5
 
-        +form-element({title: "Range Slider"})
+        +form-element({title: "Range Slider", width: "sm", paddingBottomTitle: "16"})
           +range-btn({name: "range-slider-0", id: "range-slider-0"})
         
         +form-element({className: "form-elements__btns", title: "Buttons"})
@@ -101,11 +100,11 @@ include ../components/range-slider/range-slider.pug
           .cntr-flex-between-center-wrap
             +btn({title: "click me", varBtn: "fill", id: "form-elements__button-0", marginBottom: "30"})
             +btn({title: "click me", varBtn: "fill", id: "form-elements__button-1", marginBottom: "30", deactive: true})
-            +btn({title: "click me", varBtn: "border", id: "form-elements__button-2", marginBottom: "30"})
-            +btn({title: "click me", varBtn: "border", id: "form-elements__button-3", marginBottom: "30", deactive: true})
+            +btn({title: "click me", varBtn: "border", id: "form-elements__button-2"})
+            +btn({title: "click me", varBtn: "border", id: "form-elements__button-3", deactive: true})
           
-          +btn({title: "click me", varBtn: "minimalism", id: "form-elements__button-4", marginBottom: "30"})
-          +btn({title: "click me", varBtn: "minimalism", id: "form-elements__button-5", marginBottom: "30", deactive: true})
+          +btn({title: "click me", varBtn: "minimalism", id: "form-elements__button-4"})
+          +btn({title: "click me", varBtn: "minimalism", id: "form-elements__button-5", deactive: true})
 
           +btn({title: "перейти к оплате", varBtn: "fill", id: "button-0", minWidthBtn: "250", maxWidthBtn: "320", isClickable: true})
 
@@ -114,14 +113,14 @@ include ../components/range-slider/range-slider.pug
 
         +form-element({title: "dropdown", state: "default", width: "sm"})
           +dropdown({id: "dropdown-how-many-guests-4-1", title: "2 спальни, 2 кровати...", maxWidth: "sm"})
-            +option-for-dropdown({title: "Спальни"})
-            +option-for-dropdown({title: "Кровати"})
+            +option-for-dropdown({title: "Спальни", defaultValue: "2"})
+            +option-for-dropdown({title: "Кровати", defaultValue: "2"})
             +option-for-dropdown({title: "Ванные комнаты"})
 
         +form-element({title: "dropdown", state: "expanded", width: "sm"})
           +dropdown({id: "dropdown-how-many-guests-4-2", title: "2 спальни, 2 кровати...", maxWidth: "sm", show: true, showAlways: true, noAbsolute: true})
-            +option-for-dropdown({title: "Спальни"})
-            +option-for-dropdown({title: "Кровати"})
+            +option-for-dropdown({title: "Спальни", defaultValue: "2"})
+            +option-for-dropdown({title: "Кровати", defaultValue: "2"})
             +option-for-dropdown({title: "Ванные комнаты"})
 
       .cell.cell-7.cell-empty
@@ -130,11 +129,10 @@ include ../components/range-slider/range-slider.pug
         //- p 8
 
         +form-element({title: "dropdown"})
-          +dropdown({id: "dropdown-how-many-guests-5", title: "Сколько гостей", show: true, showAlways: true, noAbsolute: true, minWidth: "sm"})
+          +dropdown({id: "dropdown-how-many-guests-5", title: "Сколько гостей", show: true, showAlways: true, noAbsolute: true, minWidth: "sm", notSaved: "1"})
             +option-for-dropdown({title: "Взрослые"})
             +option-for-dropdown({title: "Дети"})
             +option-for-dropdown({title: "Младенцы"})
-            +apply-btn-for-dropdown({})
 
       .cell.cell-9.cell-empty
         //- p 9
@@ -142,11 +140,10 @@ include ../components/range-slider/range-slider.pug
         //- p 10
 
         +form-element({title: "dropdown"})
-          +dropdown({id: "dropdown-how-many-guests-6", title: "3 гостя", show: true, showAlways: true, noAbsolute: true, minWidth: "sm"})
-            +option-for-dropdown({title: "Взрослые"})
-            +option-for-dropdown({title: "Дети"})
+          +dropdown({id: "dropdown-how-many-guests-6", title: "3 гостя", show: true, showAlways: true, noAbsolute: true, minWidth: "sm", notSaved: "2"})
+            +option-for-dropdown({title: "Взрослые", defaultValue: "2"})
+            +option-for-dropdown({title: "Дети", defaultValue: "1"})
             +option-for-dropdown({title: "Младенцы"})
-            +apply-btn-for-dropdown({})
 
       .cell.cell-11
         //- p 11

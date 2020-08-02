@@ -1,14 +1,14 @@
 include ./option-for-dropdown/option-for-dropdown.pug
-include ./apply-btn-for-dropdown/apply-btn-for-dropdown.pug
+include ../buttons/btn/btn.pug
 
 mixin dropdown(options)
   -
     // for dropdown
     var classNameDrop = "dropdown"
     var classNameDropCustom = options.className ? options.className : ''
-    var minWidth = options.minWidth ? `${classNameDrop}_min-width-${options.minWidth}` : ''   //- "sm/xs"
-    var maxWidth = options.maxWidth ? `${classNameDrop}_max-width-${options.maxWidth}` : ''   //- "sm/xs"
-    classNameDrop += ` ${minWidth} ${maxWidth} ${classNameDropCustom}`
+    var minWidth = options.minWidth ? ` ${classNameDrop}_min-width-${options.minWidth}` : ''   //- "sm/xs"
+    var maxWidth = options.maxWidth ? ` ${classNameDrop}_max-width-${options.maxWidth}` : ''   //- "sm/xs"
+    classNameDrop += `${minWidth}${maxWidth} ${classNameDropCustom}`
     var show = options.show ? 'dropdown__content_show' : ''   //- "true" (при зарузке страницы dropdown будет открытым. Используется в __btn & __content) 
     var showAlways = options.showAlways ? 'true' : ''   //- "true" (при зарузке страницы dropdown будет открытым. Используется в __btn & __content) 
 
@@ -25,13 +25,22 @@ mixin dropdown(options)
     var classNameDrop__content = "dropdown__content"
     var noAbsolute = options.noAbsolute ? `${classNameDrop__content}_no-absolute` : ''   //- "true" // C этим классом dropdown не вываливается из потока и показывает контент, отодвигая нижележащие сущности
     classNameDrop__content += ` ${noAbsolute} ${show}`
+    var notSaved = options.notSaved || false      // "1", "2" (одна или 2 кнопки)
 
     // for dropdown__btn-icon
     var classNameDrop__btnIcon = "dropdown__btn-icon"
     classNameDrop__btnIcon += options.show ? ' dropdown__btn-icon-rotate' : ''
   
   div(class = classNameDrop)
-    button(class = classNameDrop__btn, value = value, type = type, focus = focus, data-show-always=showAlways)= title
+    button(class = classNameDrop__btn, value = value, type = type, focus = focus, data-show-always=showAlways)
+      span.dropdown__btn-span= title
       i(class=`${classNameDrop__btnIcon} material-icons`) expand_more
     div(class = classNameDrop__content, id = id)
       block
+      if (notSaved == "1")
+        .dropdown__wrap-btn-apply
+          +btn({title: "Применить", varBtn: "minimalism"})
+      if (notSaved == "2")
+        .dropdown__wrap-btns-clear-apply
+          +btn({title: "Очистить", varBtn: "minimalism", deactive: true})
+          +btn({title: "Применить", varBtn: "minimalism"})

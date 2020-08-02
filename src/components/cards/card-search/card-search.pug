@@ -22,10 +22,9 @@ mixin card-search()
             a(href="#") Link 3
 
       +form-element({title: "гости"})
-        +dropdown({id: "dropdown-how-many-guests", title: "Сколько гостей"})
+        +dropdown({id: "dropdown-how-many-guests", title: "Сколько гостей", notSaved: "2"})
           +option-for-dropdown({title: "Взрослые"})
           +option-for-dropdown({title: "Дети"})
           +option-for-dropdown({title: "Младенцы"})
-          +apply-btn-for-dropdown({})
       
       +btn({title: "подобрать номер", varBtn: "fill", id: "button-0", minWidthBtn: "250", maxWidthBtn: "320", isClickable: true, marginTop: '20', paddingRight: "3"})

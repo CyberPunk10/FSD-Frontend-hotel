@@ -1,3 +1,6 @@
+import './option-for-dropdown/option-for-dropdown.js'
+import {handlerOptionDropdown} from './option-for-dropdown/option-for-dropdown.js'
+
 let dropdowns = document.querySelectorAll(".dropdown")
 let dropdown__btns = document.querySelectorAll(".dropdown__btn")
 
@@ -10,29 +13,32 @@ let previousClickOnDropdown = false
 
 // Навешиваем на все dropdowns функцию сворачивания/разворачивания по клику
 dropdowns.forEach(element => {
-  element.addEventListener('click', handlerDropdown);
+  element.addEventListener('click', function () {
+    handlerDropdown (element)
+  });
 });
 
 
-function handlerDropdown() {
+function handlerDropdown(dropdown) {
 
-  // если клик по dropdown__btn или dropdown__btn-icon
-  if (event.target.matches('.dropdown__btn') || event.target.matches('.dropdown__btn-icon')) {
+  // если клик по dropdown__btn, dropdown__btn-span или dropdown__btn-icon
+  if (event.target.matches('.dropdown__btn') || event.target.matches('.dropdown__btn-span') || event.target.matches('.dropdown__btn-icon')) {
     
     // разворачиваем/сворачиваем список
-    for (var i = 0; i < this.children.length; i++) {
+    for (var i = 0; i < dropdown.children.length; i++) {
       
       // показываем контент списка
-      this.children[i].matches('.dropdown__content') ? this.children[i].classList.toggle("dropdown__content_show") : false
-
-      if (this.children[i].matches('.dropdown__btn')) {
-
+      dropdown.children[i].matches('.dropdown__content') ? dropdown.children[i].classList.toggle("dropdown__content_show") : false
+      
+      if (dropdown.children[i].matches('.dropdown__btn')) {
+        console.log(dropdown.querySelector(".dropdown__btn-span").innerText)
+        
         // меняем закругление при разворачивании/сворачивании
-        this.children[i].classList.toggle("dropdown__btn_expanded")
+        dropdown.children[i].classList.toggle("dropdown__btn_expanded")
 
         // поворачиваем icon при разворачивании/сворачивании
-        for (var j = 0; j < this.children[i].children.length; j++) {
-          this.children[i].children[j].matches('.dropdown__btn-icon') ? this.children[i].children[j].classList.toggle("dropdown__btn-icon-rotate") : false
+        for (var j = 0; j < dropdown.children[i].children.length; j++) {
+          dropdown.children[i].children[j].matches('.dropdown__btn-icon') ? dropdown.children[i].children[j].classList.toggle("dropdown__btn-icon-rotate") : false
         }
 
       }
@@ -41,7 +47,15 @@ function handlerDropdown() {
 
   clearActiveDropdown()
 
-  this.classList.add("dropdown_active")
+  dropdown.classList.add("dropdown_active")
+
+  if (event.target.matches('.option-for-dropdown__plus')) {
+    handlerOptionDropdown(event.target, dropdown)
+  }
+
+  if (event.target.matches('.option-for-dropdown__minus')) {
+    handlerOptionDropdown(event.target, dropdown)
+  }
 
 }
 
