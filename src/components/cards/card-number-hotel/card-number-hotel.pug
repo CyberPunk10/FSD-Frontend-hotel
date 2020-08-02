@@ -33,11 +33,10 @@ mixin card-number-hotel()
       .card-number-hotel__dropdown-guests
 
         +form-element({title: "гости"})
-          +dropdown({id: "dropdown-how-many-guests", title: "3 гостя"})
+          +dropdown({id: "dropdown-how-many-guests", title: "3 гостя", notSaved: "2"})
             +option-for-dropdown({title: "Взрослые"})
             +option-for-dropdown({title: "Дети"})
             +option-for-dropdown({title: "Младенцы"})
-            +apply-btn-for-dropdown({})
       
       .card-number-hotel__description.cntr-flex-between
         span 9 990₽ х 4 суток

@@ -2,10 +2,11 @@ mixin option-for-dropdown(options)
   -
     var title = options.title || "Наименование"
     var value = options.value || false
+    var defaultValue = options.defaultValue || "0"
   
   div(class="option-for-dropdown", value = value)
     span.option-for-dropdown__title= title
     .option-for-dropdown__counter
       .option-for-dropdown__minus -
-      span.option-for-dropdown__value 0
+      span.option-for-dropdown__value= defaultValue
       .option-for-dropdown__plus +
