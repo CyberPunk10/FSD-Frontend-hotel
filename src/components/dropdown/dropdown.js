@@ -24,36 +24,15 @@ function handlerDropdown(dropdown) {
   // если клик по dropdown__btn, dropdown__btn-span или dropdown__btn-icon
   if (event.target.matches('.dropdown__btn') || event.target.matches('.dropdown__btn-span') || event.target.matches('.dropdown__btn-icon')) {
     
-    // разворачиваем/сворачиваем список
-    for (var i = 0; i < dropdown.children.length; i++) {
-      
-      // показываем контент списка
-      dropdown.children[i].matches('.dropdown__content') ? dropdown.children[i].classList.toggle("dropdown__content_show") : false
-      
-      if (dropdown.children[i].matches('.dropdown__btn')) {
-        console.log(dropdown.querySelector(".dropdown__btn-span").innerText)
-        
-        // меняем закругление при разворачивании/сворачивании
-        dropdown.children[i].classList.toggle("dropdown__btn_expanded")
+    dropdown.classList.toggle('dropdown_expanded')
 
-        // поворачиваем icon при разворачивании/сворачивании
-        for (var j = 0; j < dropdown.children[i].children.length; j++) {
-          dropdown.children[i].children[j].matches('.dropdown__btn-icon') ? dropdown.children[i].children[j].classList.toggle("dropdown__btn-icon-rotate") : false
-        }
-
-      }
-    }
   }
 
   clearActiveDropdown()
 
   dropdown.classList.add("dropdown_active")
 
-  if (event.target.matches('.option-for-dropdown__plus')) {
-    handlerOptionDropdown(event.target, dropdown)
-  }
-
-  if (event.target.matches('.option-for-dropdown__minus')) {
+  if (event.target.matches('.option-for-dropdown__plus') || event.target.matches('.option-for-dropdown__minus')) {
     handlerOptionDropdown(event.target, dropdown)
   }
 
@@ -90,19 +69,12 @@ document.addEventListener('click', function (e) {
   // надо допилить так, чтобы при открытии другого дропдауна, другие закрывались (которые должны закрываться по умолчанию)
   if (!clickOnDropdown) {
     
-    for (let i = 0; i < dropdown__btns.length; i++) {
-      console.log( dropdown__btns[i].dataset.showAlways )
+    for (let i = 0; i < dropdowns.length; i++) {
       
       // если атрибут 'show-always' НЕ содeржит 'true', то dropdown сворачиваем. иначе оставляем несвернутым
-      if (!dropdown__btns[i].dataset.showAlways) {
+      if (!dropdowns[i].dataset.showAlways && dropdowns[i].classList.contains('dropdown_expanded')) {
         
-        if (dropdown__btns[i].classList.contains('dropdown__btn_expanded')) {   // Метод contains позволяет проверить, содержит ли один элемент внутри себя другой. 
-          dropdown__btns[i].classList.remove('dropdown__btn_expanded');
-        }
-        
-        if (dropdown__btns[i].nextElementSibling.classList.contains('dropdown__content_show')) {
-          dropdown__btns[i].nextElementSibling.classList.remove('dropdown__content_show');
-        }
+        dropdowns[i].classList.remove('dropdown_expanded')
         
       }
     }
@@ -111,39 +83,7 @@ document.addEventListener('click', function (e) {
   // вовращаем значение по умолчанию
   clickOnDropdown = false
 
-
-
-//   if (!event.target.matches('.dropdown')) {    // Метод matches позволяет проверить, удовлетворяет ли элемент указанному CSS селектору
-
-
-//   } else {    // Иначе обрабатываем клик по dropdown
-
-// //     // let drop_id = event.target.nextElementSibling.id  // id dropdown, по которому произошёл клик
-
-// //     // for (let i = 0; i < dropdown__btns.length; i++) {
-
-// //     //   if (dropdowns[i].id != drop_id) {
-
-// //     //     // если атрибут 'show-always' НЕ содeржит 'true', то dropdown сворачиваем. иначе оставляем несвернутым
-// //     //     if (!dropdown__btns[i].dataset.showAlways) {
-
-// //     //       if (dropdown__btns[i].classList.contains('dropdown__btn_expanded')) {
-// //     //         dropdown__btns[i].classList.remove('dropdown__btn_expanded');
-// //     //       }
-// //     //       if (dropdowns[i].classList.contains('dropdown__content_show')) {
-// //     //         dropdowns[i].classList.remove('dropdown__content_show');
-// //     //       }
-
-// //     //     }
-// //     //   }
-// //     // }
-//   }
 })
-
-
-
-
-
 
 
 

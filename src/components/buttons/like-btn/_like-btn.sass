@@ -1,54 +1,32 @@
 .like-btn
-  max-width: 32rem
-  height: 2rem
   display: inline-block
-
-  &__input
-    position: absolute
-    left: -9999px
-    
-    &:checked + .like-btn__label
-      color: $color-purple
-
-    &:checked + .like-btn__label:before
-      border-color: $color-purple
-
-  &__label
-    position: relative
-    cursor: pointer
-    display: inline-block
-    line-height: 1.8rem
-    padding: .3rem .4rem
-    width: 4rem
-    user-select: none         // делает текст невыделяемым
-    color: $color-dark-shade-25
-
-    &:before
-      content: ""
-      position: absolute
-      left: 0
-      top: calc(-100% - .2rem)
-      width: 4rem
-      height: 2rem
-      box-sizing: border-box
-      border: 1px solid $color-dark-shade-25
-      border-radius: 1rem
+  width: 4rem
+  height: 2rem
+  box-sizing: border-box
+  border: 1px solid $color-dark-shade-25
+  border-radius: 1rem
   
   &__icon, &__title
-    position: absolute
-    height: 1.2rem
+    display: inline-block
     box-sizing: border-box
     font-size: 1rem
+    user-select: none         // делает текст невыделяемым
+    color: $color-dark-shade-25
+    line-height: 1.8rem
 
   &__icon
-    left: .5rem
-    top: calc(-100% + .3rem)
-    width: 1.2rem
+    width: 1.5rem
+    padding-left: 0.4rem
 
   &__title
-    left: 1.5rem
-    top: calc(-100% - .1rem)
-    width: calc(100% - 2px - 1.6rem - .4rem)
+    width: 1.8rem
     text-align: center
+    vertical-align: top
+    
 
-
+  &_active
+    border: 1px solid $color-purple
+    
+    .like-btn__icon,
+    .like-btn__title
+      color: $color-purple

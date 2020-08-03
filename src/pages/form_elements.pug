@@ -29,7 +29,7 @@ include ../components/range-slider/range-slider.pug
           +text-field({value: "This is pretty awesome"})
 
         +form-element({title: "dropdown", state: "default"})
-          +dropdown({id: "dropdown-how-many-guests", title: "Сколько гостей", notSaved: "2", typeDrop: "guests"})
+          +dropdown({title: "Сколько гостей", notSaved: "2", typeDrop: "guests"})
             +option-for-dropdown({title: "Взрослые"})
             +option-for-dropdown({title: "Дети"})
             +option-for-dropdown({title: "Младенцы"})
@@ -40,20 +40,20 @@ include ../components/range-slider/range-slider.pug
         .cntr-flex-between-center-wrap
 
           +form-element({title: "date dropdown", width: "xs", marginRight: "5"})
-            +dropdown({id: "dropdown-date-1", maxWidth: "xs", title: "ДД.ММ.ГГГГ"})
+            +dropdown({maxWidth: "xs", title: "ДД.ММ.ГГГГ"})
               +option-for-dropdown({})
               a(href="https://schoolsw3.com/howto/howto_js_dropdown.php") schoolsw3.com
               a(href="#") Link 2
               a(href="#") Link 3
           
           +form-element({title: "date dropdown", width: "xs"})
-            +dropdown({id: "dropdown-date-2", maxWidth: "xs", title: "19.08.2019"})
+            +dropdown({maxWidth: "xs", title: "19.08.2019"})
               a(href="https://schoolsw3.com/howto/howto_js_dropdown.php") schoolsw3.com
               a(href="#") Link 2
               a(href="#") Link 3
 
         +form-element({className: "form-elements__filter-date-dropdown", title: "filter date dropdown", width: "sm"})
-          +dropdown({id: "dropdown-filter", maxWidth: "sm", title: "19 авг - 23 авг"})
+          +dropdown({maxWidth: "sm", title: "19 авг - 23 авг"})
             a(href="https://schoolsw3.com/howto/howto_js_dropdown.php") schoolsw3.com
             a(href="#") Link 2
             a(href="#") Link 3
@@ -79,8 +79,8 @@ include ../components/range-slider/range-slider.pug
           +toggle-btn({id: "toggle-btn-2", title: "Получать спецпредложения"})
         
         +form-element({className: "form-elements__like-btns", title: "Like Button", paddingTop: "40"})
-          +like-btn({className: "form-elements__like-btn-first", id: "like-btn-1", title: "2"})
-          +like-btn({id: "like-btn-2", title: "12", checked: true})
+          +like-btn({className: "form-elements__like-btn-first", title: "2"})
+          +like-btn({title: "12", checked: true})
         
         +form-element({className: "form-elements__rate-btns", title: "Rate button", paddingTop: "40"})
           +rate-btn({className: "form-elements__rate-btn-first", name: "rate-btn-0", id: "rate-btn-0"})
@@ -98,27 +98,27 @@ include ../components/range-slider/range-slider.pug
         +form-element({className: "form-elements__btns", title: "Buttons"})
 
           .cntr-flex-between-center-wrap
-            +btn({title: "click me", varBtn: "fill", id: "form-elements__button-0", marginBottom: "30"})
-            +btn({title: "click me", varBtn: "fill", id: "form-elements__button-1", marginBottom: "30", deactive: true})
-            +btn({title: "click me", varBtn: "border", id: "form-elements__button-2"})
-            +btn({title: "click me", varBtn: "border", id: "form-elements__button-3", deactive: true})
+            +btn({title: "click me", varBtn: "fill", marginBottom: "30"})
+            +btn({title: "click me", varBtn: "fill", marginBottom: "30", deactive: true})
+            +btn({title: "click me", varBtn: "border"})
+            +btn({title: "click me", varBtn: "border", deactive: true})
           
-          +btn({title: "click me", varBtn: "minimalism", id: "form-elements__button-4"})
-          +btn({title: "click me", varBtn: "minimalism", id: "form-elements__button-5", deactive: true})
+          +btn({title: "click me", varBtn: "minimalism"})
+          +btn({title: "click me", varBtn: "minimalism", deactive: true})
 
-          +btn({title: "перейти к оплате", varBtn: "fill", id: "button-0", minWidthBtn: "250", maxWidthBtn: "320", isClickable: true})
+          +btn({title: "перейти к оплате", varBtn: "fill", minWidthBtn: "250", maxWidthBtn: "320", isClickable: true})
 
       .cell.cell-6
         //- p 6
 
         +form-element({title: "dropdown", state: "default", width: "sm"})
-          +dropdown({id: "dropdown-how-many-guests-4-1", title: "2 спальни, 2 кровати...", maxWidth: "sm", typeDrop: "room-amenities"})
+          +dropdown({title: "2 спальни, 2 кровати", maxWidth: "sm", typeDrop: "room-amenities"})
             +option-for-dropdown({title: "Спальни", defaultValue: "2"})
             +option-for-dropdown({title: "Кровати", defaultValue: "2"})
             +option-for-dropdown({title: "Ванные комнаты"})
 
         +form-element({title: "dropdown", state: "expanded", width: "sm"})
-          +dropdown({id: "dropdown-how-many-guests-4-2", title: "2 спальни, 2 кровати...", maxWidth: "sm", show: true, showAlways: true, noAbsolute: true, typeDrop: "room-amenities"})
+          +dropdown({title: "2 спальни, 2 кровати", maxWidth: "sm", showAlways: true, noAbsolute: true, typeDrop: "room-amenities"})
             +option-for-dropdown({title: "Спальни", defaultValue: "2"})
             +option-for-dropdown({title: "Кровати", defaultValue: "2"})
             +option-for-dropdown({title: "Ванные комнаты"})
@@ -129,7 +129,7 @@ include ../components/range-slider/range-slider.pug
         //- p 8
 
         +form-element({title: "dropdown"})
-          +dropdown({id: "dropdown-how-many-guests-5", title: "Сколько гостей", show: true, showAlways: true, noAbsolute: true, minWidth: "sm", notSaved: "1", typeDrop: "guests"})
+          +dropdown({title: "Сколько гостей", showAlways: true, noAbsolute: true, minWidth: "sm", notSaved: "1", typeDrop: "guests"})
             +option-for-dropdown({title: "Взрослые"})
             +option-for-dropdown({title: "Дети"})
             +option-for-dropdown({title: "Младенцы"})
@@ -140,7 +140,7 @@ include ../components/range-slider/range-slider.pug
         //- p 10
 
         +form-element({title: "dropdown"})
-          +dropdown({id: "dropdown-how-many-guests-6", title: "3 гостя", show: true, showAlways: true, noAbsolute: true, minWidth: "sm", notSaved: "2", typeDrop: "guests"})
+          +dropdown({title: "3 гостя", showAlways: true, noAbsolute: true, minWidth: "sm", notSaved: "2", typeDrop: "guests"})
             +option-for-dropdown({title: "Взрослые", defaultValue: "2"})
             +option-for-dropdown({title: "Дети", defaultValue: "1"})
             +option-for-dropdown({title: "Младенцы"})
