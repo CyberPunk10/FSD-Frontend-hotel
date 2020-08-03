@@ -11,10 +11,11 @@ mixin dropdown(options)
     classNameDrop += `${minWidth}${maxWidth} ${classNameDropCustom}`
     var show = options.show ? 'dropdown__content_show' : ''   //- "true" (при зарузке страницы dropdown будет открытым. Используется в __btn & __content) 
     var showAlways = options.showAlways ? 'true' : ''   //- "true" (при зарузке страницы dropdown будет открытым. Используется в __btn & __content) 
+    var typeDrop = options.typeDrop || false  //- "guests", "room-amenities"
 
     // for dropdown__btn
     var value = options.value || false
-    var type = options.type || "text"
+    var typeBtn = options.typeBtn || "button"
     var focus = options.autofocus ? true : false 
     var title = options.title || 'dropdown' 
     var classNameDrop__btn = "dropdown__btn"
@@ -25,14 +26,14 @@ mixin dropdown(options)
     var classNameDrop__content = "dropdown__content"
     var noAbsolute = options.noAbsolute ? `${classNameDrop__content}_no-absolute` : ''   //- "true" // C этим классом dropdown не вываливается из потока и показывает контент, отодвигая нижележащие сущности
     classNameDrop__content += ` ${noAbsolute} ${show}`
-    var notSaved = options.notSaved || false      // "1", "2" (одна или 2 кнопки)
+    var notSaved = options.notSaved || false      //- "1", "2" (одна или 2 кнопки)
 
     // for dropdown__btn-icon
     var classNameDrop__btnIcon = "dropdown__btn-icon"
     classNameDrop__btnIcon += options.show ? ' dropdown__btn-icon-rotate' : ''
   
-  div(class = classNameDrop)
-    button(class = classNameDrop__btn, value = value, type = type, focus = focus, data-show-always=showAlways)
+  div(class = classNameDrop, data-type-drop=typeDrop,)
+    button(class = classNameDrop__btn, value = value, type = typeBtn, focus = focus, data-show-always=showAlways)
       span.dropdown__btn-span= title
       i(class=`${classNameDrop__btnIcon} material-icons`) expand_more
     div(class = classNameDrop__content, id = id)
