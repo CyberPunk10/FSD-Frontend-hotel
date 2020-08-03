@@ -3,24 +3,16 @@ mixin like-btn(options)
     var className = options.className ? options.className : ''
     var title = options.title || "label for like"
     var isChecked = options.checked || false          // checked: true
-    var id = options.id || false          
-
-    // for like-btn__label
-    var classNameLabel = "like-btn__label"         
-    //- var description = options.description || ""
-    //- classNameLabel += options.description ? " like-btn__label_title" : ""
+    className += options.checked ? " like-btn_active" : ""
+    //- var id = options.id || false        
 
 
   div(class=className).like-btn
-    input(type="checkbox", class="like-btn__input", id = id checked = isChecked)
-    label(class = classNameLabel, for = id)
-      if isChecked
-        <i class="like-btn__icon material-icons">favorite</i>
-      else
-        <i class="like-btn__icon material-icons">favorite_border</i>
-      span.like-btn__title= title
-    
-
+    if isChecked
+      <i class="like-btn__icon material-icons">favorite</i>
+    else
+      <i class="like-btn__icon material-icons">favorite_border</i>
+    span.like-btn__title= title
 
 
       

@@ -91,9 +91,7 @@ function changeStringDropdown(dropdown) {
 
         if (optionValue != "0") {
 
-          if (strValue != "") {
-            strValue += ", "
-          }
+          if (strValue != "") strValue += ", "
 
           strValue += optionValue
 
@@ -125,11 +123,8 @@ function changeStringDropdown(dropdown) {
        
       });
 
-      if (strValue == "") {
-        strValue = "Ничего не выбрано"
-      }
+      if (strValue == "") strValue = "Ничего не выбрано"  
 
-      
       return kitcut(strValue, 22)
 
       // функция обрезки строки
