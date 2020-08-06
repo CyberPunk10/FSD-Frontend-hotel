@@ -1,3 +1,5 @@
+'use strict'
+
 const getTemplate = () => {
   return `
     <div class="select__input">
@@ -18,13 +20,13 @@ export class Select {
   constructor(selector, options) {
     this.$el = document.querySelector(selector)
 
-    // this.#render()
+    this.#render()
 
   }
 
-  // #render() {
-  //   this.$el.innerHTML = getTemplate()
-  // }
+  #render() {
+    this.$el.innerHTML = getTemplate()
+  }
 
 
   open() {
