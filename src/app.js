@@ -14,7 +14,19 @@ let k = value => console.log(value)
 k(i)
 
 const select = new Select('#select', {
-
+  data: [
+    { id: '1', value: 'React' },
+    { id: '2', value: 'Vue' },
+    { id: '3', value: 'React Native' },
+    { id: '4', value: 'Next' },
+    { id: '5', value: 'Nest' },
+    { id: '6', value: 'Angular' }
+  ],
+  selectedId: '2',
+  placeholder: "Выберите пожалуйста элемент",
+  onSelect(item) {
+    console.log('Selected item: ', item)
+  }
 })
 
 window.select = select
