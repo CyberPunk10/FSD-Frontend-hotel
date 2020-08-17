@@ -11,6 +11,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const isDev = process.env.NODE_ENV === 'development'
 const isProd = !isDev
 console.log("isDev: ", isDev)
+console.log()
 
 const filename = ext => isDev ? `[name].${ext}` : `[name].[hash:10].${ext}`
 
