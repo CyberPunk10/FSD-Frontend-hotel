@@ -7,6 +7,7 @@ import { Select } from './components/select/select.js'
 import './components/buttons/like-btn/like-btn.js'
 import './components/buttons/rate-btn/rate-btn.js'
 import './components/range-slider/range-slider.js'
+import './components/header/header.js'
 
 // проверка ES6 синтаксиса
 let i = 'проверка ES6 синтаксиса'
